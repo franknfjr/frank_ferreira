@@ -19,6 +19,7 @@ defmodule FrankFerreiraWeb.Router do
 
     get "/", PageController, :home
     live "/test", TestLive
+    live "/about", AboutLive
   end
 
   # Other scopes may use custom stacks.
