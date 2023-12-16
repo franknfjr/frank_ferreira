@@ -1,4 +1,4 @@
-defmodule FrankFerreiraWeb.Timeline do
+defmodule FrankFerreiraWeb.TimelineLive do
   use FrankFerreiraWeb, :live_view
 
   def mount(_params, _session, socket) do
