@@ -51,6 +51,17 @@ config :logger, :console,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
+# Specify which languages you support
+# To create .po files for a language run `mix gettext.merge priv/gettext --locale pt-BR`
+# (fr is France, change to whatever language you want - make sure it's included in the locales config below)
+config :frank_ferreira, FrankFerreiraWeb.Gettext, allowed_locales: ~w(pt-br en es)
+
+config :frank_ferreira, :language_options, [
+  %{locale: "pt-br", flag: "🇧🇷", label: "Brasil"},
+  %{locale: "en", flag: "🇬🇧", label: "English"},
+  %{locale: "es", flag: "🇪🇸", label: "Spain"}
+]
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{config_env()}.exs"

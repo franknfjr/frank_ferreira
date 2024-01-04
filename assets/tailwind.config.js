@@ -11,6 +11,7 @@ module.exports = {
     "../lib/frank_ferreira_web.ex",
     "../lib/frank_ferreira_web/**/*.*ex",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {

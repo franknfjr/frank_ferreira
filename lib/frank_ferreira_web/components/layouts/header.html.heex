@@ -1,5 +1,6 @@
 <nav class="bg-primary">
   <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+    <%!-- Menu Full Screen --%>
     <div class="relative h-16 items-center justify-between">
       <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
         <button
@@ -48,6 +49,51 @@
           </svg>
         </button>
       </div>
+      <div class="absolute inset-y-0 right-0 flex items-center mr-16 sm:hidden">
+        <button style="button" phx-click={JS.dispatch("toogle-darkmode")}>
+          <svg
+            class="hidden h-6 w-6 dark:inline-block"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
+            />
+          </svg>
+
+          <svg
+            class="inline-block h-6 w-6 dark:hidden"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="white"
+            class="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div class="absolute inset-y-0 right-0 flex items-center sm:hidden">
+        <.language_select
+          current_locale={Gettext.get_locale(FrankFerreiraWeb.Gettext)}
+          language_options={[
+            %{locale: "pt-BR", flag: "🇧🇷", label: "Brasil"},
+            %{locale: "en", flag: "🇬🇧", label: "English"},
+            %{locale: "es", flag: "🇪🇸", label: "Spain"}
+          ]}
+        />
+      </div>
       <div class="flex h-16 items-center justify-center">
         <div class="hidden sm:ml-6 sm:block">
           <div class="flex space-x-4">
@@ -82,12 +128,60 @@
             >
               Uses
             </a>
+            <%!-- <a
+              href="/contact"
+              class="text-gray-300 hover:bg-white hover:text-black rounded-md px-3 py-2 text-sm font-medium"
+            >
+              Contact
+            </a> --%>
+            <!-- Novas div para os botões alinhados à direita -->
+            <div class="ml-auto flex space-x-4">
+              <button style="button" phx-click={JS.dispatch("toogle-darkmode")}>
+                <svg
+                  class="hidden h-6 w-6 dark:inline-block"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-6 h-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
+                  />
+                </svg>
+
+                <svg
+                  class="inline-block h-6 w-6 dark:hidden"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="white"
+                  class="w-6 h-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"
+                  />
+                </svg>
+              </button>
+
+              <.language_select
+                current_locale={Gettext.get_locale(FrankFerreiraWeb.Gettext)}
+                language_options={FrankFerreira.config(:language_options)}
+              />
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="sm:hidden" id="mobile-menu">
+  <%!-- Menu Mobile --%>
+  <div class="sm:hidden hidden" id="mobile-menu">
     <div class="space-y-1 px-2 pb-3 pt-2">
       <a
         href="/"
@@ -120,6 +214,12 @@
       >
         Uses
       </a>
+      <%!-- <a
+        href="/contact"
+        class="text-gray-300 hover:bg-white hover:text-black block rounded-md px-3 py-2 text-base font-medium"
+      >
+        Contact
+      </a> --%>
     </div>
   </div>
 </nav>

@@ -11,107 +11,69 @@ defmodule FrankFerreiraWeb.UsesLive do
       <header class="max-w-[44rem] 2xl:max-w-3xl mx-auto mb-14 sm:mb-16">
         <article class="xl:grid grid-cols-auto-span-auto items-start sm:text-lg leading-relaxed">
           <section class="relative max-w-[44rem] 2xl:max-w-3xl mx-auto">
-            <h1 class="relative w-full font-heading text-navy-900 leading-tight sm:leading-tight lg:leading-tight 2xl:leading-tight text-3xl sm:text-4xl lg:text-[2.75rem]">
+            <h1 class="relative w-full font-heading text-navy-900 leading-tight sm:leading-tight lg:leading-tight 2xl:leading-tight text-3xl sm:text-4xl lg:text-[2.75rem] dark:text-white">
               Hardware
             </h1>
             <p>
-              Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
+              Here are some of the hardware devices I use in my daily life, whether it's for studying programming or leisure.
             </p>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-              <div>
-                <img
-                  class="h-auto max-w-full rounded-lg"
-                  src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg"
-                  alt=""
-                />
-              </div>
-              <div>
-                <img
-                  class="h-auto max-w-full rounded-lg"
-                  src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg"
-                  alt=""
-                />
-              </div>
-              <div>
-                <img
-                  class="h-auto max-w-full rounded-lg"
-                  src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg"
-                  alt=""
-                />
-              </div>
-              <div>
-                <img
-                  class="h-auto max-w-full rounded-lg"
-                  src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg"
-                  alt=""
-                />
-              </div>
-              <div>
-                <img
-                  class="h-auto max-w-full rounded-lg"
-                  src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg"
-                  alt=""
-                />
-              </div>
-              <div>
-                <img
-                  class="h-auto max-w-full rounded-lg"
-                  src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg"
-                  alt=""
-                />
-              </div>
-            </div>
+            <p>
+              Soon, I'll create a route `/hardware/:device` to provide detailed explanations of the specifications and configurations that I use.
+            </p>
 
-            <h1 class="relative w-full font-heading text-navy-900 leading-tight sm:leading-tight lg:leading-tight 2xl:leading-tight text-3xl sm:text-4xl lg:text-[2.75rem]">
+            <ul class="max-w-md space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
+              <li>
+                13-inch MacBook Air with M2 chip
+              </li>
+              <li>
+                Dell Universal Dock - UD22
+              </li>
+              <li>
+                Monitor Dell P2719H
+              </li>
+              <li>
+                Dell Pro Wireless Keyboard and Mouse – KM5221W
+              </li>
+              <li>
+                QuadCast S – USB Condenser Gaming Microphone
+              </li>
+              <li>
+                Generic Headset
+              </li>
+            </ul>
+
+            <h1 class="relative w-full font-heading text-navy-900 leading-tight sm:leading-tight lg:leading-tight 2xl:leading-tight text-3xl sm:text-4xl lg:text-[2.75rem] dark:text-white">
               Software
             </h1>
             <p>
-              Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
+              The same train of thought as before, and here are some of the software applications I use on a daily basis.
             </p>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-              <div>
-                <img
-                  class="h-auto max-w-full rounded-lg"
-                  src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg"
-                  alt=""
-                />
-              </div>
-              <div>
-                <img
-                  class="h-auto max-w-full rounded-lg"
-                  src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg"
-                  alt=""
-                />
-              </div>
-              <div>
-                <img
-                  class="h-auto max-w-full rounded-lg"
-                  src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg"
-                  alt=""
-                />
-              </div>
-              <div>
-                <img
-                  class="h-auto max-w-full rounded-lg"
-                  src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg"
-                  alt=""
-                />
-              </div>
-              <div>
-                <img
-                  class="h-auto max-w-full rounded-lg"
-                  src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg"
-                  alt=""
-                />
-              </div>
-              <div>
-                <img
-                  class="h-auto max-w-full rounded-lg"
-                  src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg"
-                  alt=""
-                />
-              </div>
-            </div>
+            <ul class="max-w-md space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
+              <li>
+                Zed Editor
+              </li>
+              <li>
+                XCode
+              </li>
+              <li>
+                CleanShot X
+              </li>
+              <li>
+                iTerm 2
+              </li>
+              <li>
+                Postico 2
+              </li>
+              <li>
+                Calendar.app (default apple)
+              </li>
+              <li>
+                Mail.app (default apple)
+              </li>
+              <li>
+                Notion
+              </li>
+            </ul>
           </section>
         </article>
       </header>

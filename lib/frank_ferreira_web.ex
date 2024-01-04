@@ -17,7 +17,7 @@ defmodule FrankFerreiraWeb do
   those modules here.
   """
 
-  def static_paths, do: ~w(assets fonts images favicon.ico robots.txt)
+  def static_paths, do: ~w(assets fonts images favicon.ico robots.txt f-16.png f-24.svg f-32.png)
 
   def router do
     quote do
@@ -54,6 +54,8 @@ defmodule FrankFerreiraWeb do
       use Phoenix.LiveView,
         layout: {FrankFerreiraWeb.Layouts, :app}
 
+      on_mount(FrankFerreiraWeb.RestoreLocaleHook)
+
       unquote(html_helpers())
     end
   end
@@ -85,6 +87,7 @@ defmodule FrankFerreiraWeb do
       import Phoenix.HTML
       # Core UI components and translation
       import FrankFerreiraWeb.CoreComponents
+      import FrankFerreiraWeb.Components.LanguageSelect
       import FrankFerreiraWeb.Gettext
 
       # Shortcut for generating JS commands

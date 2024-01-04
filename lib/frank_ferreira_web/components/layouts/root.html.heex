@@ -4,33 +4,32 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="csrf-token" content={get_csrf_token()} />
-    <.live_title suffix=" · Phoenix Framework">
+    <.live_title>
       <%= assigns[:page_title] || "Frank Ferreira" %>
     </.live_title>
-    <link
-      rel="mask-icon"
-      href="https://github.githubassets.com/assets/pinned-octocat-093da3e6fa40.svg"
-      color="#000000"
-    />
-    <link
-      rel="alternate icon"
-      class="js-site-favicon"
-      type="image/png"
-      href="https://github.githubassets.com/favicons/favicon-dark.png"
-    />
-    <link
-      rel="icon"
-      class="js-site-favicon"
-      type="image/svg+xml"
-      href="https://github.githubassets.com/favicons/favicon-dark.svg"
-    />
+    <link rel="icon" href={~p"/f-32.png"} />
     <link phx-track-static rel="stylesheet" href={~p"/assets/app.css"} />
     <script defer phx-track-static type="text/javascript" src={~p"/assets/app.js"}>
     </script>
+    <script type="text/javascript">
+      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+      if (
+        !window.matchMedia('print').matches &&
+        localStorage.theme === 'dark' ||
+        (
+          !('theme' in localStorage) &&
+          window.matchMedia('(prefers-color-scheme: dark)').matches
+        )
+      ) {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
+    </script>
   </head>
-  <body class="bg-gradient-to-r from-violet-800/5 via-violet-800/20 to-violet-800/5">
+  <body class="bg-gradient-to-r from-violet-800/5 via-violet-800/20 to-violet-800/5 dark:bg-[#111] dark:text-gray-100">
     <%= FrankFerreiraWeb.Layouts.header(assigns) %>
     <%= @inner_content %>
-    <%!-- <%= FrankFerreiraWeb.Layouts.footer(assigns) %> --%>
+    <%= FrankFerreiraWeb.Layouts.footer(assigns) %>
   </body>
 </html>
