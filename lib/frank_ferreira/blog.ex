@@ -11,7 +11,8 @@ defmodule FrankFerreira.Blog do
     as: :posts,
     highlighters: [:makeup_elixir, :makeup_erlang],
     earmark_options: [
-      postprocessor: &FrankFerreira.Markdown.post_processor/1
+      postprocessor: &FrankFerreira.Markdown.post_processor/1,
+      code_class_prefix: "language-"
     ]
 
   # The @posts variable is first defined by NimblePublisher.

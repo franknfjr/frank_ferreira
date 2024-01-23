@@ -722,7 +722,7 @@ defmodule FrankFerreiraWeb.CoreComponents do
     <div
       {@rest}
       {js_attributes("container", @js_lib, @options_container_id)}
-      class={[@class, "pc-dropdown"]}
+      class={[@class, "dropdown"]}
     >
       <div>
         <button
@@ -736,7 +736,7 @@ defmodule FrankFerreiraWeb.CoreComponents do
           <%= if @label do %>
             <%= @label %>
             <svg
-              class="pc-dropdown__chevron"
+              class="dropdown_chevron"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="currentColor"
@@ -756,7 +756,7 @@ defmodule FrankFerreiraWeb.CoreComponents do
 
           <%= if !@label && @trigger_element == [] do %>
             <svg
-              class="pc-dropdown__ellipsis"
+              class="dropdown_ellipsis"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="currentColor"
@@ -773,7 +773,7 @@ defmodule FrankFerreiraWeb.CoreComponents do
       </div>
       <div
         {js_attributes("options_container", @js_lib, @options_container_id)}
-        class={"#{placement_class(@placement)} #{@menu_items_wrapper_class} pc-dropdown__menu-items-wrapper"}
+        class={"#{placement_class(@placement)} #{@menu_items_wrapper_class} dropdown_menu_items_wrapper"}
         role="menu"
         id={@options_container_id}
         aria-orientation="vertical"
@@ -800,20 +800,20 @@ defmodule FrankFerreiraWeb.CoreComponents do
 
   def dropdown_menu_item(assigns) do
     ~H"""
-    <.link patch={@patch} class={[@class, "pc-dropdown__menu-item"]} {@rest}>
+    <.link patch={@patch} class={[@class, "dropdown_menu-item"]} {@rest}>
       <%= render_slot(@inner_block) || @label %>
     </.link>
     """
   end
 
   defp trigger_button_classes(nil, []),
-    do: "pc-dropdown__trigger-button--no-label"
+    do: "dropdown_trigger-button--no-label"
 
   defp trigger_button_classes(_label, []),
-    do: "pc-dropdown__trigger-button--with-label"
+    do: "dropdown_trigger-button--with-label"
 
   defp trigger_button_classes(_label, _trigger_element),
-    do: "pc-dropdown__trigger-button--with-label-and-trigger-element"
+    do: "dropdown_trigger-button--with-label-and-trigger-element"
 
   defp js_attributes("container", "live_view_js", options_container_id) do
     %{
@@ -843,9 +843,6 @@ defmodule FrankFerreiraWeb.CoreComponents do
     }
   end
 
-  defp placement_class("left"), do: "pc-dropdown__menu-items-wrapper-placement--left"
-  defp placement_class("right"), do: "pc-dropdown__menu-items-wrapper-placement--right"
-
-  defp get_disabled_classes(true), do: "pc-dropdown__menu-item--disabled"
-  defp get_disabled_classes(false), do: ""
+  defp placement_class("left"), do: "dropdown_menu_items_wrapper_placement_left"
+  defp placement_class("right"), do: "dropdown_menu_items_wrapper_placement_right"
 end

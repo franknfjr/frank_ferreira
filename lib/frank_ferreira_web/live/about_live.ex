@@ -7,6 +7,22 @@ defmodule FrankFerreiraWeb.AboutLive do
     {:ok, put_date(socket)}
   end
 
+  def handle_event("keyup", %{"key" => key} = _params, socket) do
+    case key do
+      "e" ->
+        {:noreply, push_redirect(socket, to: "/elixir")}
+
+      "p" ->
+        {:noreply, push_redirect(socket, to: "/pacman")}
+
+      "t" ->
+        {:noreply, push_redirect(socket, to: "/tetris")}
+
+      _ ->
+        {:noreply, socket}
+    end
+  end
+
   def render(assigns) do
     ~H"""
     <div class="flex mt-6">
@@ -404,7 +420,7 @@ defmodule FrankFerreiraWeb.AboutLive do
               }
             </style>
 
-            <div class="contribuiton-calendar rounded">
+            <div class="contribuiton-calendar rounded" phx-window-keyup="keyup" phx-debounce="1000">
               <ul class="months">
                 <li class="dark:text-white">Jan</li>
                 <li class="dark:text-white">Feb</li>
@@ -450,7 +466,7 @@ defmodule FrankFerreiraWeb.AboutLive do
   defp put_date(socket) do
     now_me = Timex.now("America/Belem") |> Timex.format!("%H:%M", :strftime)
 
-    %DateTime{zone_abbr: zone_me} = Timex.now("America/Belem")
+    %DateTime{zone_abbr: _zone_me} = Timex.now("America/Belem")
     %DateTime{time_zone: time_zone, zone_abbr: zone_you} = Timex.local()
 
     assign(socket, date: now_me, time_zone: time_zone, zone_abbr: zone_you)

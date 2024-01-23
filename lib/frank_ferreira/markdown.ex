@@ -1,6 +1,7 @@
 defmodule FrankFerreira.Markdown do
   def post_processor(
-        {"blockquote", attrs, [{_tag, [{"class", admonition}], _children, _meta} | _], meta} =
+        {"blockquote", _attrs, [{_tag, [{"class", admonition}], _children, _meta} | _],
+         _meta_diff} =
           line
       )
       when admonition in ["warning", "info", "error", "neutral", "tip"] do

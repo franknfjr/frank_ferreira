@@ -25,11 +25,12 @@ defmodule FrankFerreiraWeb.BlogLive do
               />
             </div>
             <div class="px-4 py-4 lg:px-0">
-              <a
-                href={~p"/blog/#{post.id}"}
-                class="px-2.5  py-0.5 mr-2 text-xs text-gray-700 bg-gray-200 rounded hover:bg-blue-600 dark:bg-gray-700 dark:text-gray-400 hover:text-gray-100 dark:hover:bg-gray-800"
-              >
-                <%= Enum.join(post.tags, ", ") %>
+              <a href={~p"/blog/#{post.id}"}>
+                <%= for tag <- post.tags do %>
+                  <span class="px-2.5 py-0.5 mr-2 text-xs text-gray-700 bg-gray-200 rounded hover:bg-blue-600 dark:bg-gray-700 dark:text-gray-400 hover:text-gray-100 dark:hover:bg-gray-800">
+                    <%= tag %>
+                  </span>
+                <% end %>
               </a>
               <a href={~p"/blog/#{post.id}"}>
                 <h2 class="mt-3 mb-3 text-xl font-semibold text-gray-600 hover:text-blue-600 dark:text-gray-400">
