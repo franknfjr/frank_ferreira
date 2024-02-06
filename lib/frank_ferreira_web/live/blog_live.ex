@@ -4,7 +4,7 @@ defmodule FrankFerreiraWeb.BlogLive do
 
   def mount(_params, _session, socket) do
     posts = Blog.all_posts()
-    socket = assign(socket, posts: posts ++ posts ++ posts ++ posts)
+    socket = assign(socket, posts: posts)
     {:ok, socket}
   end
 
@@ -13,10 +13,10 @@ defmodule FrankFerreiraWeb.BlogLive do
     <main class="max-w-[52rem] mx-auto px-4 pb-28 sm:px-6 md:px-8 xl:px-12 lg:max-w-6xl">
       <header class="py-16 sm:text-center">
         <h1 class="mb-4 text-3xl sm:text-4xl tracking-tight text-slate-900 font-extrabold dark:text-slate-200">
-          List all posts
+          Listing all posts
         </h1>
         <p class="text-lg text-slate-700 dark:text-slate-400">
-          All the latest news, straight from the team.
+          Subscribe to receive updates.
         </p>
         <section class="mt-3 max-w-sm sm:mx-auto sm:px-4">
           <h2 class="sr-only">Sign up for our newsletter</h2>
