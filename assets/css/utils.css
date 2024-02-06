@@ -13,9 +13,9 @@
 
 /* Blog Details */
 @layer base {
-  h1 {
+  /* h1 {
     @apply my-4 pt-2 font-sans text-4xl font-semibold text-gray-900 dark:text-white;
-  }
+  } */
 
   h2 {
     @apply my-3 pt-2 font-sans text-3xl font-semibold text-gray-900 dark:text-white;

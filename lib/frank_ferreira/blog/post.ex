@@ -8,7 +8,8 @@ defmodule FrankFerreira.Blog.Post do
     :tags,
     :created_at,
     :updated_at,
-    :published
+    :published,
+    :twitter
   ]
   defstruct [
     :id,
@@ -19,7 +20,8 @@ defmodule FrankFerreira.Blog.Post do
     :tags,
     :created_at,
     :updated_at,
-    :published
+    :published,
+    :twitter
   ]
 
   def build(filename, attrs, body) do

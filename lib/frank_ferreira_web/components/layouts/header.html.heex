@@ -99,7 +99,7 @@
           <div class="flex space-x-4">
             <a
               href="/"
-              class="bg-purple-400 text-white rounded-md px-3 py-2 text-sm font-medium"
+              class="text-gray-300 hover:bg-white hover:text-black rounded-md px-3 py-2 text-sm font-medium"
               aria-current="page"
             >
               Home
@@ -117,6 +117,12 @@
               Blog
             </a>
             <a
+              href="/projects"
+              class="text-gray-300 hover:bg-white hover:text-black rounded-md px-3 py-2 text-sm font-medium"
+            >
+              Projects
+            </a>
+            <a
               href="/timeline"
               class="text-gray-300 hover:bg-white hover:text-black rounded-md px-3 py-2 text-sm font-medium"
             >
@@ -128,12 +134,6 @@
             >
               Uses
             </a>
-            <%!-- <a
-              href="/contact"
-              class="text-gray-300 hover:bg-white hover:text-black rounded-md px-3 py-2 text-sm font-medium"
-            >
-              Contact
-            </a> --%>
             <!-- Novas div para os botões alinhados à direita -->
             <div class="ml-auto flex space-x-4">
               <button style="button" phx-click={JS.dispatch("toogle-darkmode")}>
@@ -185,7 +185,7 @@
     <div class="space-y-1 px-2 pb-3 pt-2">
       <a
         href="/"
-        class="bg-purple-400 text-white block rounded-md px-3 py-2 text-base font-medium"
+        class="text-gray-300 hover:bg-white hover:text-black block rounded-md px-3 py-2 text-base font-medium"
         aria-current="page"
       >
         Home
@@ -203,6 +203,12 @@
         Blog
       </a>
       <a
+        href="/projects"
+        class="text-gray-300 hover:bg-white hover:text-black block rounded-md px-3 py-2 text-base font-medium"
+      >
+        Projects
+      </a>
+      <a
         href="/timeline"
         class="text-gray-300 hover:bg-white hover:text-black block rounded-md px-3 py-2 text-base font-medium"
       >
@@ -214,12 +220,6 @@
       >
         Uses
       </a>
-      <%!-- <a
-        href="/contact"
-        class="text-gray-300 hover:bg-white hover:text-black block rounded-md px-3 py-2 text-base font-medium"
-      >
-        Contact
-      </a> --%>
     </div>
   </div>
 </nav>

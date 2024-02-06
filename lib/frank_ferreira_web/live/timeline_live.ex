@@ -30,7 +30,7 @@ defmodule FrankFerreiraWeb.TimelineLive do
                     </div>
                   </div>
                   <!-- Content -->
-                  <div class="text-slate-500">
+                  <div class="font-medium text-slate-500">
                     <%= history.description %>
                   </div>
                 </div>

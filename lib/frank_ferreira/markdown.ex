@@ -89,6 +89,16 @@ defmodule FrankFerreira.Markdown do
     {"pre", attrs, nil, meta}
   end
 
+  # Update <img> for code highlighting
+  def post_processor({"img", attrs, _children, meta}) do
+    class =
+      "relative not-prose [a:not(:first-child)]:mt-12 [a:not(:last-child)]:mb-12 my-12 first:mt-0 last:mb-0 rounded-2xl overflow-hidden [figure]:my-0 absolute inset-0 rounded-2xl ring-1 ring-inset ring-slate-900/10 dark:ring-white/10"
+
+    attrs = [{"class", class} | attrs]
+
+    {"img", attrs, nil, meta}
+  end
+
   def post_processor(node) do
     node
   end

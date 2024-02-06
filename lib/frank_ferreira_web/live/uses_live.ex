@@ -11,9 +11,9 @@ defmodule FrankFerreiraWeb.UsesLive do
       <header class="max-w-[44rem] 2xl:max-w-3xl mx-auto mb-14 sm:mb-16">
         <article class="xl:grid grid-cols-auto-span-auto items-start sm:text-lg leading-relaxed">
           <section class="relative max-w-[44rem] 2xl:max-w-3xl mx-auto">
-            <h1 class="relative w-full font-heading text-navy-900 leading-tight sm:leading-tight lg:leading-tight 2xl:leading-tight text-3xl sm:text-4xl lg:text-[2.75rem] dark:text-white">
+            <h2 class="relative w-full font-heading text-navy-900 leading-tight sm:leading-tight lg:leading-tight 2xl:leading-tight text-3xl sm:text-4xl lg:text-[2.75rem] dark:text-white">
               Hardware
-            </h1>
+            </h2>
             <p>
               Here are some of the hardware devices I use in my daily life, whether it's for studying programming or leisure.
             </p>
@@ -42,9 +42,9 @@ defmodule FrankFerreiraWeb.UsesLive do
               </li>
             </ul>
 
-            <h1 class="relative w-full font-heading text-navy-900 leading-tight sm:leading-tight lg:leading-tight 2xl:leading-tight text-3xl sm:text-4xl lg:text-[2.75rem] dark:text-white">
+            <h2 class="relative w-full font-heading text-navy-900 leading-tight sm:leading-tight lg:leading-tight 2xl:leading-tight text-3xl sm:text-4xl lg:text-[2.75rem] dark:text-white">
               Software
-            </h1>
+            </h2>
             <p>
               The same train of thought as before, and here are some of the software applications I use on a daily basis.
             </p>

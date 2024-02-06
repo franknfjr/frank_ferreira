@@ -25,6 +25,7 @@ defmodule FrankFerreiraWeb.Router do
     live "/timeline", TimelineLive
     live "/uses", UsesLive
     live "/contact", ContactLive
+    live "/projects", ProjectsLive
   end
 
   # Other scopes may use custom stacks.
