@@ -13,13 +13,13 @@ defmodule FrankFerreiraWeb.BlogLive do
     <main class="max-w-[52rem] mx-auto px-4 pb-28 sm:px-6 md:px-8 xl:px-12 lg:max-w-6xl">
       <header class="py-16 sm:text-center">
         <h1 class="mb-4 text-3xl sm:text-4xl tracking-tight text-slate-900 font-extrabold dark:text-slate-200">
-          Listing all posts
+          <%= gettext("Listing all posts") %>
         </h1>
         <p class="text-lg text-slate-700 dark:text-slate-400">
-          Subscribe to receive updates.
+          <%= gettext("Subscribe to receive updates.") %>
         </p>
         <section class="mt-3 max-w-sm sm:mx-auto sm:px-4">
-          <h2 class="sr-only">Sign up for our newsletter</h2>
+          <h2 class="sr-only"><%= gettext("Sign up for our newsletter") %></h2>
           <%= news_latter(assigns) %>
         </section>
       </header>
@@ -56,7 +56,7 @@ defmodule FrankFerreiraWeb.BlogLive do
                     <%= post.description %>
                   </div>
                   <dl class="absolute left-0 top-0 lg:left-auto lg:right-full lg:mr-[calc(6.5rem+1px)]">
-                    <dt class="sr-only">Date</dt>
+                    <dt class="sr-only"><%= gettext("Date") %></dt>
                     <dd class="whitespace-nowrap text-sm leading-6 dark:text-slate-400">
                       <time dateTime={"#{post.created_at}"}>
                         <%= formatted_date(post.created_at) %>
@@ -69,7 +69,7 @@ defmodule FrankFerreiraWeb.BlogLive do
                   class="flex items-center text-sm text-sky-500 font-medium"
                 >
                   <span class="relative">
-                    Read more<span class="sr-only">, <%= post.title %></span>
+                    <%= gettext("Read more") %><span class="sr-only">, <%= post.title %></span>
                   </span>
                   <svg
                     class="relative mt-px overflow-visible ml-2.5 text-sky-300 dark:text-sky-700"
@@ -120,7 +120,7 @@ defmodule FrankFerreiraWeb.BlogLive do
             autoComplete="email"
             aria-label="Email address"
             class="appearance-none shadow rounded-md ring-1 ring-slate-900/5 leading-5 sm:text-sm border border-transparent py-2 placeholder:text-slate-400 pl-12 pr-3 block w-full text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-500 bg-white dark:bg-slate-700/20 dark:ring-slate-200/20 dark:focus:ring-sky-500 dark:text-white"
-            placeholder="Subscribe via email"
+            placeholder={gettext("Subscribe via email")}
           />
         </div>
       </div>
@@ -129,7 +129,7 @@ defmodule FrankFerreiraWeb.BlogLive do
           type="submit"
           class="bg-purple-500 flex-auto shadow text-white rounded-md text-sm border-y border-transparent py-2 font-semibold px-3 hover:bg-purple-600 dark:hover:bg-purple-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-300 dark:focus:ring-offset-slate-900 dark:focus:ring-sky-700"
         >
-          Subscribe
+          <%= gettext("Subscribe") %>
         </button>
       </div>
     </form>

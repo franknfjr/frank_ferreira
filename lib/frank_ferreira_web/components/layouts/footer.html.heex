@@ -7,7 +7,7 @@
           href="/about"
           class="text-base leading-6 text-violet-800 hover:text-gray-900 dark:text-white dark:houver:text-gray-500"
         >
-          About
+          <%= gettext("About") %>
         </a>
       </div>
       <div class="px-5 py-2">
@@ -15,7 +15,7 @@
           href="/blog"
           class="text-base leading-6 text-violet-800 hover:text-gray-900 dark:text-white dark:houver:text-gray-500"
         >
-          Blog
+          <%= gettext("Blog") %>
         </a>
       </div>
       <div class="px-5 py-2">
@@ -23,7 +23,7 @@
           href="/projects"
           class="text-base leading-6 text-violet-800 hover:text-gray-900 dark:text-white dark:houver:text-gray-500"
         >
-          Projects
+          <%= gettext("Projects") %>
         </a>
       </div>
       <div class="px-5 py-2">
@@ -31,7 +31,7 @@
           href="/timeline"
           class="text-base leading-6 text-violet-800 hover:text-gray-900 dark:text-white dark:houver:text-gray-500"
         >
-          Timeline
+          <%= gettext("Timeline") %>
         </a>
       </div>
       <div class="px-5 py-2">
@@ -39,7 +39,7 @@
           href="/uses"
           class="text-base leading-6 text-violet-800 hover:text-gray-900 dark:text-white dark:houver:text-gray-500"
         >
-          Uses
+          <%= gettext("Uses") %>
         </a>
       </div>
       <%!-- <div class="px-5 py-2">
@@ -118,8 +118,9 @@
       </a>
     </div>
     <p class="mt-8 text-base leading-6 text-center text-violet-800 dark:text-white">
-      © <%= Timex.now().year %> Made with 💜 <a href="https://elixir-lang.org/">elixir</a>
-      by Frank Ferreira
+      © <%= Timex.now().year %> <%= gettext("Made with") %> 💜
+      <a href="https://elixir-lang.org/">elixir</a>
+      <%= gettext("by") %> Frank Ferreira
     </p>
   </div>
 </footer>

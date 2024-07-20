@@ -50,7 +50,8 @@ defmodule FrankFerreira.MixProject do
       {:makeup, "1.1.1"},
       {:makeup_elixir, ">= 0.0.0"},
       {:makeup_erlang, ">= 0.0.0"},
-      {:html_entities, "~> 0.5"}
+      {:html_entities, "~> 0.5"},
+      {:mdex, "~> 0.1"}
     ]
   end
 

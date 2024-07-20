@@ -4,57 +4,69 @@ defmodule FrankFerreiraWeb.ProjectsLive do
   def mount(_params, _session, socket) do
     categories = [
       %{
-        name: "Open-source",
+        name: gettext("Open-source"),
         slug: "open-source",
-        description: "Open-source projects I've contributed to",
+        description: gettext("Open-source projects I've contributed to"),
         projects: [
           %{
-            name: "IrriSusten",
+            name: gettext("IrriSusten"),
             description:
-              "The study introduces Irrisusten, an information system to manage plantation irrigation. It automates agricultural production control and reduces water wastage. It features web and mobile interfaces, utilizing physical components like Arduino Uno, sensors, relays, and Bluetooth modules.",
+              gettext(
+                "The study introduces Irrisusten, an information system to manage plantation irrigation. It automates agricultural production control and reduces water wastage. It features web and mobile interfaces, utilizing physical components like Arduino Uno, sensors, relays, and Bluetooth modules."
+              ),
             url: "https://sol.sbc.org.br/index.php/wcama/article/view/2941",
             image: "/images/irrisusten.png"
           },
           %{
-            name: "Introduction to Elixir and Phoenix",
+            name: gettext("Introduction to Elixir and Phoenix"),
             description:
-              "Repository for the Elixir and Phoenix mini-course, provided by the Applied Computing Laboratory at UFRA, functioning as a central repository for educational materials tailored to students and tech enthusiasts keen on exploring the dynamic realms of Elixir and Phoenix development.",
+              gettext(
+                "Repository for the Elixir and Phoenix mini-course, provided by the Applied Computing Laboratory at UFRA, functioning as a central repository for educational materials tailored to students and tech enthusiasts keen on exploring the dynamic realms of Elixir and Phoenix development."
+              ),
             url: "https://github.com/franknfjr/elixir-phoenix",
             image: "/images/phx1.png"
           },
           %{
             name: "Mdown_ex",
             description:
-              "The Markdown in Elixir project converts Markdown files to HTML and Livebook using the Elixir language, leveraging its efficiency and scalability. It provides a flexible solution for developers to format text quickly and effectively in various online and data development contexts.",
+              gettext(
+                "The Markdown in Elixir project converts Markdown files to HTML and Livebook using the Elixir language, leveraging its efficiency and scalability. It provides a flexible solution for developers to format text quickly and effectively in various online and data development contexts."
+              ),
             url: "https://github.com/franknfjr/md2livemd",
             image: "/images/md.png"
           }
         ]
       },
       %{
-        name: "Client's projects",
+        name: gettext("Client's projects"),
         slug: "clients-projects",
-        description: "Freelance projects I've worked on",
+        description: gettext("Freelance projects I've worked on"),
         projects: [
           %{
-            name: "Healthcare",
+            name: gettext("Healthcare"),
             description:
-              "
-            The 'Healthcare' app provides a comprehensive overview of patient appointments, medications, phone calls, surgeries, financial transactions, and other relevant data, offering healthcare professionals a detailed insight into daily hospital indicators for better management and decision-making.",
+              gettext(
+                "
+            The 'Healthcare' app provides a comprehensive overview of patient appointments, medications, phone calls, surgeries, financial transactions, and other relevant data, offering healthcare professionals a detailed insight into daily hospital indicators for better management and decision-making."
+              ),
             url: nil,
             image: "/images/healthcare.png"
           },
           %{
             name: "CDN",
             description:
-              "The CDN (Content Delivery Network) system developed in Elixir was initially designed for internal file management. Using the Elixir language, the system offered an efficient and scalable solution to manage content distribution, optimizing access and file delivery across a network. This platform allowed for the storage, retrieval, and updating of files quickly and reliably, meeting the internal control needs of an organization.",
+              gettext(
+                "The CDN (Content Delivery Network) system developed in Elixir was initially designed for internal file management. Using the Elixir language, the system offered an efficient and scalable solution to manage content distribution, optimizing access and file delivery across a network. This platform allowed for the storage, retrieval, and updating of files quickly and reliably, meeting the internal control needs of an organization."
+              ),
             url: nil,
             image: "/images/cdn2.png"
           },
           %{
-            name: "Voter Intentions System",
+            name: gettext("Voter Intentions System"),
             description:
-              "The Voter Intentions System is a digital platform designed to facilitate the collection and analysis of data related to voters' preferences in a specific political context.",
+              gettext(
+                "The Voter Intentions System is a digital platform designed to facilitate the collection and analysis of data related to voters' preferences in a specific political context."
+              ),
             url: nil,
             image: "/images/vote1.png"
           }
@@ -74,14 +86,15 @@ defmodule FrankFerreiraWeb.ProjectsLive do
             <div class="mx-auto max-w-2xl lg:max-w-5xl">
               <div class="relative max-w-3xl px-4 sm:px-6 lg:px-8 mx-auto sm:text-center">
                 <p class="mt-6 text-[2.5rem] leading-none sm:text-6xl tracking-tight font-bold text-slate-900 dark:text-white">
-                  My Journey Through Projects: Where Ideas Become Reality
+                  <%= gettext("My Journey Through Projects: Where Ideas Become Reality") %>
                 </p>
                 <p class="mt-4 text-lg text-slate-600 dark:text-slate-400">
-                  I've created various projects with the aim of making a positive impact. While I've experimented with numerous endeavors, these particular ones hold a special place in my heart. Most of them are open-source, meaning you're welcome to explore the code and offer suggestions for enhancements if you feel inspired.
-                  Below is a <em>list</em>
-                  of my current
+                  <%= gettext(
+                    "I've created various projects with the aim of making a positive impact. While I've experimented with numerous endeavors, these particular ones hold a special place in my heart. Most of them are open-source, meaning you're welcome to explore the code and offer suggestions for enhancements if you feel inspired.
+                  Below is a "
+                  ) %><em><%= gettext("list") %></em><%= gettext(" of my current") %>
                   <a class="font-semibold border-b border-sky-300 text-gray-900 hover:border-b-2 dark:text-white dark:border-sky-400">
-                    projects
+                    <%= gettext("projects") %>
                   </a>
                   .
                 </p>

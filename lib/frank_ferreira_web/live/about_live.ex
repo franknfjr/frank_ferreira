@@ -42,7 +42,7 @@ defmodule FrankFerreiraWeb.AboutLive do
             </div>
             <div class="pb-6 border-b">
               <div class="no-underline text-grey-dark text-sm ">
-                Software Engineer
+                <%= gettext("Software Engineer") %>
               </div>
             </div>
 
@@ -93,7 +93,9 @@ defmodule FrankFerreiraWeb.AboutLive do
                     >
                     </path>
                   </svg>
-                  <span class="ml-2 dark:text-white">Ananindeua, Brazil</span>
+                  <span class="ml-2 dark:text-white">
+                    <%= gettext("Ananindeua") %>, <%= gettext("Brazil") %>
+                  </span>
                 </li>
                 <li class="pt-1 hide-sm hide-md flex items-center">
                   <svg
@@ -110,7 +112,9 @@ defmodule FrankFerreiraWeb.AboutLive do
                     >
                     </path>
                   </svg>
-                  <span class="ml-2 dark:text-white"><%= @date %> - same time</span>
+                  <span class="ml-2 dark:text-white">
+                    <%= @date %> - <%= gettext("same time") %>
+                  </span>
                 </li>
                 <li class="pt-1 hide-sm hide-md flex items-center">
                   <svg
@@ -167,7 +171,7 @@ defmodule FrankFerreiraWeb.AboutLive do
             </div>
             <div class="">
               <div class="font-medium text-grey-darkest dark:text-white">
-                Organizations
+                <%= gettext("Organizations") %>
               </div>
               <div class="flex items-center mt-2">
                 <div class="mr-1">
@@ -181,7 +185,7 @@ defmodule FrankFerreiraWeb.AboutLive do
           <div class="w-3/4 ml-6 mt-2">
             <div class="flex items-center font-thin text-grey-dark text-sm border-b">
               <div class="p-4 border-b-2 font-semibold text-grey-darkest border-orange -mb-2px">
-                Overview
+                <%= gettext("Overview") %>
               </div>
             </div>
             <div class="py-6 border-b md:border md:rounded-lg md:px-8">
@@ -189,7 +193,9 @@ defmodule FrankFerreiraWeb.AboutLive do
               <div class="my-6">
                 <img class="w-64" src="" alt="" />
                 <p class="text-black dark:text-white">
-                  This is my version of the Github Clone, so why i made this? I dont know ¯\_(ツ)_/¯
+                  <%= gettext(
+                    "This is my version of the Github Clone, so why i made this? I dont know"
+                  ) %> ¯\_(ツ)_/¯
                 </p>
                 <div class="flex">
                   <div class="flex mr-2 items-center my-4">
@@ -217,29 +223,37 @@ defmodule FrankFerreiraWeb.AboutLive do
                     <path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1">
                     </path>
                   </svg>
-                  <p class="text-black dark:text-white">About me</p>
+                  <p class="text-black dark:text-white">
+                    <%= gettext("About me") %>
+                  </p>
                 </div>
                 <hr />
                 <div class="my-4">
-                  Hello! I'm an enthusiastic programmer dedicated to exploring and refining my skills in the realm of software development. Throughout my journey, I've found my path in the Elixir ecosystem, where I've been involved in challenging projects that have allowed me to grow as a developer.
+                  <%= gettext(
+                    "Hello! I'm an enthusiastic programmer dedicated to exploring and refining my skills in the realm of software development. Throughout my journey, I've found my path in the Elixir ecosystem, where I've been involved in challenging projects that have allowed me to grow as a developer."
+                  ) %>
                 </div>
               </div>
               <div class="mb-6">
                 <div class="my-4">
-                  My passion for solving complex problems and crafting efficient solutions drives me to constantly pursue excellence in my work. I'm always eager to learn new technologies and innovative approaches to further enhance my expertise and make meaningful contributions to the projects I'm engaged in.
+                  <%= gettext(
+                    "My passion for solving complex problems and crafting efficient solutions drives me to constantly pursue excellence in my work. I'm always eager to learn new technologies and innovative approaches to further enhance my expertise and make meaningful contributions to the projects I'm engaged in."
+                  ) %>
                 </div>
                 <div class="my-4">
-                  Whether exploring new concepts, collaborating with teams, or tackling challenges, I am committed to evolving as a professional and making a positive impact on the software development community.
+                  <%= gettext(
+                    "Whether exploring new concepts, collaborating with teams, or tackling challenges, I am committed to evolving as a professional and making a positive impact on the software development community."
+                  ) %>
                 </div>
                 <a href="#" class="my-4 text-blue-600 hover:underline"></a>
               </div>
             </div>
             <div class="flex items-center">
               <div class="w-1/2 pt-6 pb-2 font-normal text-grey-darkest">
-                Pinned
+                <%= gettext("Pinned") %>
               </div>
               <div class="w-1/2 justify-end text-right text-grey-dark text-sm font-light pt-6 pb-2">
-                Customize your pinned repositories
+                <%= gettext("Customize your pinned repositories") %>
               </div>
             </div>
             <div class="flex">
@@ -333,11 +347,11 @@ defmodule FrankFerreiraWeb.AboutLive do
                 <%= Enum.random(1000..2000)
                 |> Integer.to_string()
                 |> String.split(~r/(?<=\d)(?=(\d{3})+$)/, trim: true)
-                |> Enum.join(",") %> contributions in the last year
+                |> Enum.join(",") %> <%= gettext("contributions in the last year") %>
               </div>
               <div class="w-1/2 pt-6 pb-2 justify-end text-right text-grey-dark text-sm font-light flex">
                 <div>
-                  Contribution settings
+                  <%= gettext("Contribution settings") %>
                 </div>
                 <div class="">
                   <svg
@@ -422,27 +436,27 @@ defmodule FrankFerreiraWeb.AboutLive do
 
             <div class="contribuiton-calendar rounded" phx-window-keyup="keyup" phx-debounce="1000">
               <ul class="months">
-                <li class="dark:text-white">Jan</li>
-                <li class="dark:text-white">Feb</li>
-                <li class="dark:text-white">Mar</li>
-                <li class="dark:text-white">Apr</li>
-                <li class="dark:text-white">May</li>
-                <li class="dark:text-white">Jun</li>
-                <li class="dark:text-white">Jul</li>
-                <li class="dark:text-white">Aug</li>
-                <li class="dark:text-white">Sep</li>
-                <li class="dark:text-white">Oct</li>
-                <li class="dark:text-white">Nov</li>
-                <li class="dark:text-white">Dec</li>
+                <li class="dark:text-white"><%= gettext("Jan") %></li>
+                <li class="dark:text-white"><%= gettext("Feb") %></li>
+                <li class="dark:text-white"><%= gettext("Mar") %></li>
+                <li class="dark:text-white"><%= gettext("Apr") %></li>
+                <li class="dark:text-white"><%= gettext("May") %></li>
+                <li class="dark:text-white"><%= gettext("Jun") %></li>
+                <li class="dark:text-white"><%= gettext("Jul") %></li>
+                <li class="dark:text-white"><%= gettext("Aug") %></li>
+                <li class="dark:text-white"><%= gettext("Sep") %></li>
+                <li class="dark:text-white"><%= gettext("Oct") %></li>
+                <li class="dark:text-white"><%= gettext("Nov") %></li>
+                <li class="dark:text-white"><%= gettext("Dec") %></li>
               </ul>
               <ul class="days">
-                <li class="dark:text-white">Sun</li>
-                <li class="dark:text-white">Mon</li>
-                <li class="dark:text-white">Tue</li>
-                <li class="dark:text-white">Wed</li>
-                <li class="dark:text-white">Thu</li>
-                <li class="dark:text-white">Fri</li>
-                <li class="dark:text-white">Sat</li>
+                <li class="dark:text-white"><%= gettext("Sun") %></li>
+                <li class="dark:text-white"><%= gettext("Mon") %></li>
+                <li class="dark:text-white"><%= gettext("Tue") %></li>
+                <li class="dark:text-white"><%= gettext("Wed") %></li>
+                <li class="dark:text-white"><%= gettext("Thu") %></li>
+                <li class="dark:text-white"><%= gettext("Fri") %></li>
+                <li class="dark:text-white"><%= gettext("Sat") %></li>
               </ul>
               <ul class="squares">
                 <%= for _ <- 1..number_of_days_in_current_year() do %>

@@ -15,10 +15,14 @@ defmodule FrankFerreiraWeb.UsesLive do
               Hardware
             </h2>
             <p>
-              Here are some of the hardware devices I use in my daily life, whether it's for studying programming or leisure.
+              <%= gettext(
+                "Here are some of the hardware devices I use in my daily life, whether it's for studying programming or leisure."
+              ) %>
             </p>
             <p>
-              Soon, I'll create a route `/hardware/:device` to provide detailed explanations of the specifications and configurations that I use.
+              <%= gettext(
+                "Soon, I'll create a route `/hardware/:device` to provide detailed explanations of the specifications and configurations that I use."
+              ) %>
             </p>
 
             <ul class="max-w-md space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
@@ -46,7 +50,9 @@ defmodule FrankFerreiraWeb.UsesLive do
               Software
             </h2>
             <p>
-              The same train of thought as before, and here are some of the software applications I use on a daily basis.
+              <%= gettext(
+                "The same train of thought as before, and here are some of the software applications I use on a daily basis."
+              ) %>
             </p>
             <ul class="max-w-md space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
               <li>
@@ -65,10 +71,10 @@ defmodule FrankFerreiraWeb.UsesLive do
                 Postico 2
               </li>
               <li>
-                Calendar.app (default apple)
+                Calendar.app <%= gettext("(default apple)") %>
               </li>
               <li>
-                Mail.app (default apple)
+                Mail.app <%= gettext("(default apple)") %>
               </li>
               <li>
                 Notion

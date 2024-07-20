@@ -88,9 +88,8 @@
         <.language_select
           current_locale={Gettext.get_locale(FrankFerreiraWeb.Gettext)}
           language_options={[
-            %{locale: "pt-BR", flag: "🇧🇷", label: "Brasil"},
-            %{locale: "en", flag: "🇬🇧", label: "English"},
-            %{locale: "es", flag: "🇪🇸", label: "Spain"}
+            %{locale: "br", flag: "🇧🇷", label: "Brasil"},
+            %{locale: "en", flag: "🇬🇧", label: "English"}
           ]}
         />
       </div>
@@ -102,37 +101,37 @@
               class="text-gray-300 hover:bg-white hover:text-black rounded-md px-3 py-2 text-sm font-medium"
               aria-current="page"
             >
-              Home
+              <%= gettext("Home") %>
             </a>
             <a
               href="/about"
               class="text-gray-300 hover:bg-white hover:text-black rounded-md px-3 py-2 text-sm font-medium"
             >
-              About
+              <%= gettext("About") %>
             </a>
             <a
               href="/blog"
               class="text-gray-300 hover:bg-white hover:text-black rounded-md px-3 py-2 text-sm font-medium"
             >
-              Blog
+              <%= gettext("Blog") %>
             </a>
             <a
               href="/projects"
               class="text-gray-300 hover:bg-white hover:text-black rounded-md px-3 py-2 text-sm font-medium"
             >
-              Projects
+              <%= gettext("Projects") %>
             </a>
             <a
               href="/timeline"
               class="text-gray-300 hover:bg-white hover:text-black rounded-md px-3 py-2 text-sm font-medium"
             >
-              Timeline
+              <%= gettext("Timeline") %>
             </a>
             <a
               href="/uses"
               class="text-gray-300 hover:bg-white hover:text-black rounded-md px-3 py-2 text-sm font-medium"
             >
-              Uses
+              <%= gettext("Uses") %>
             </a>
             <!-- Novas div para os botões alinhados à direita -->
             <div class="ml-auto flex space-x-4">
@@ -188,37 +187,37 @@
         class="text-gray-300 hover:bg-white hover:text-black block rounded-md px-3 py-2 text-base font-medium"
         aria-current="page"
       >
-        Home
+        <%= gettext("Home") %>
       </a>
       <a
         href="/about"
         class="text-gray-300 hover:bg-white hover:text-black block rounded-md px-3 py-2 text-base font-medium"
       >
-        About
+        <%= gettext("About") %>
       </a>
       <a
         href="/blog"
         class="text-gray-300 hover:bg-white hover:text-black block rounded-md px-3 py-2 text-base font-medium"
       >
-        Blog
+        <%= gettext("Blog") %>
       </a>
       <a
         href="/projects"
         class="text-gray-300 hover:bg-white hover:text-black block rounded-md px-3 py-2 text-base font-medium"
       >
-        Projects
+        <%= gettext("Projects") %>
       </a>
       <a
         href="/timeline"
         class="text-gray-300 hover:bg-white hover:text-black block rounded-md px-3 py-2 text-base font-medium"
       >
-        Timeline
+        <%= gettext("Timeline") %>
       </a>
       <a
         href="/uses"
         class="text-gray-300 hover:bg-white hover:text-black block rounded-md px-3 py-2 text-base font-medium"
       >
-        Uses
+        <%= gettext("Uses") %>
       </a>
     </div>
   </div>

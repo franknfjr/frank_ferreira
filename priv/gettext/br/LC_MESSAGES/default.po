@@ -1,0 +1,707 @@
+## "msgid"s in this file come from POT (.pot) files.
+###
+### Do not add, change, or remove "msgid"s manually here as
+### they're tied to the ones in the corresponding POT file
+### (with the same domain).
+###
+### Use "mix gettext.extract --merge" or "mix gettext.merge"
+### to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: br\n"
+"Plural-Forms: nplurals=2; plural=(n>1);\n"
+
+#: lib/frank_ferreira_web/components/layouts/footer.html.heex:10
+#: lib/frank_ferreira_web/components/layouts/header.html.heex:111
+#: lib/frank_ferreira_web/components/layouts/header.html.heex:197
+#, elixir-autogen, elixir-format
+msgid "About"
+msgstr "Sobre"
+
+#: lib/frank_ferreira_web/components/core_components.ex:483
+#, elixir-autogen, elixir-format
+msgid "Actions"
+msgstr "Ações"
+
+#: lib/frank_ferreira_web/components/layouts/footer.html.heex:18
+#: lib/frank_ferreira_web/components/layouts/header.html.heex:117
+#: lib/frank_ferreira_web/components/layouts/header.html.heex:203
+#, elixir-autogen, elixir-format
+msgid "Blog"
+msgstr "Blog"
+
+#: lib/frank_ferreira_web/components/layouts/footer.html.heex:121
+#, elixir-autogen, elixir-format
+msgid "Made with"
+msgstr "Feito com"
+
+#: lib/frank_ferreira_web/components/layouts/footer.html.heex:26
+#: lib/frank_ferreira_web/components/layouts/header.html.heex:123
+#: lib/frank_ferreira_web/components/layouts/header.html.heex:209
+#, elixir-autogen, elixir-format
+msgid "Projects"
+msgstr "Projetos"
+
+#: lib/frank_ferreira_web/components/layouts/footer.html.heex:34
+#: lib/frank_ferreira_web/components/layouts/header.html.heex:129
+#: lib/frank_ferreira_web/components/layouts/header.html.heex:215
+#, elixir-autogen, elixir-format
+msgid "Timeline"
+msgstr "Cronologia"
+
+#: lib/frank_ferreira_web/components/layouts/footer.html.heex:42
+#: lib/frank_ferreira_web/components/layouts/header.html.heex:135
+#: lib/frank_ferreira_web/components/layouts/header.html.heex:221
+#, elixir-autogen, elixir-format
+msgid "Uses"
+msgstr "Equipamentos"
+
+#: lib/frank_ferreira_web/components/layouts/footer.html.heex:123
+#, elixir-autogen, elixir-format
+msgid "by"
+msgstr "por"
+
+#: lib/frank_ferreira_web/components/core_components.ex:76
+#: lib/frank_ferreira_web/components/core_components.ex:130
+#, elixir-autogen, elixir-format
+msgid "close"
+msgstr "fechar"
+
+#: lib/frank_ferreira_web/components/layouts/header.html.heex:105
+#: lib/frank_ferreira_web/components/layouts/header.html.heex:191
+#, elixir-autogen, elixir-format
+msgid "Home"
+msgstr "Início"
+
+#: lib/frank_ferreira_web/components/core_components.ex:160
+#, elixir-autogen, elixir-format
+msgid "Attempting to reconnect"
+msgstr "Tentando reconectar"
+
+#: lib/frank_ferreira_web/controllers/error_html/404.html.heex:38
+#, elixir-autogen, elixir-format
+msgid "Back to Homepage"
+msgstr "Voltar para o Início"
+
+#: lib/frank_ferreira_web/components/core_components.ex:151
+#, elixir-autogen, elixir-format
+msgid "Error!"
+msgstr "Erro!"
+
+#: lib/frank_ferreira_web/components/core_components.ex:172
+#, elixir-autogen, elixir-format
+msgid "Hang in there while we get back on track"
+msgstr "Aguente firme enquanto voltamos aos trilhos"
+
+#: lib/frank_ferreira_web/controllers/page_html/home.html.heex:18
+#, elixir-autogen, elixir-format
+msgid "I am someone from Brazil 🇧🇷 with a strong passion for software. I find fulfillment in creating tools that enhance the ease and convenience of life for individuals."
+msgstr "Sou alguém do Brasil 🇧🇷 com uma forte paixão por software. Encontro satisfação em criar ferramentas que aprimoram a facilidade e a conveniência da vida para as pessoas."
+
+#: lib/frank_ferreira_web/controllers/error_html/500.html.heex:1
+#, elixir-autogen, elixir-format
+msgid "Internal Server Error"
+msgstr "Erro Interno do Servidor"
+
+#: lib/frank_ferreira_web/controllers/page_html/home.html.heex:14
+#: lib/frank_ferreira_web/live/about_live.ex:45
+#, elixir-autogen, elixir-format
+msgid "Software Engineer"
+msgstr "Engenheiro de Software"
+
+#: lib/frank_ferreira_web/components/core_components.ex:167
+#, elixir-autogen, elixir-format
+msgid "Something went wrong!"
+msgstr "Algo deu errado!"
+
+#: lib/frank_ferreira_web/controllers/error_html/404.html.heex:27
+#, elixir-autogen, elixir-format
+msgid "Something's missing."
+msgstr "Está faltando algo."
+
+#: lib/frank_ferreira_web/controllers/error_html/404.html.heex:30
+#, elixir-autogen, elixir-format
+msgid "Sorry, we can't find that page. You'll find lots to explore on the home page."
+msgstr "Desculpe, não conseguimos encontrar essa página. Você encontrará muitas coisas para explorar na página inicial."
+
+#: lib/frank_ferreira_web/components/core_components.ex:150
+#, elixir-autogen, elixir-format
+msgid "Success!"
+msgstr "Sucesso!"
+
+#: lib/frank_ferreira_web/components/core_components.ex:155
+#, elixir-autogen, elixir-format
+msgid "We can't find the internet"
+msgstr "Não conseguimos encontrar a internet"
+
+#: lib/frank_ferreira_web/live/about_live.ex:227
+#, elixir-autogen, elixir-format, fuzzy
+msgid "About me"
+msgstr "Sobre"
+
+#: lib/frank_ferreira_web/live/about_live.ex:97
+#, elixir-autogen, elixir-format
+msgid "Ananindeua"
+msgstr "Ananindeua"
+
+#: lib/frank_ferreira_web/live/about_live.ex:442
+#, elixir-autogen, elixir-format
+msgid "Apr"
+msgstr "Abr"
+
+#: lib/frank_ferreira_web/live/about_live.ex:446
+#, elixir-autogen, elixir-format
+msgid "Aug"
+msgstr "Ago"
+
+#: lib/frank_ferreira_web/live/about_live.ex:97
+#, elixir-autogen, elixir-format
+msgid "Brazil"
+msgstr "Brasil"
+
+#: lib/frank_ferreira_web/live/about_live.ex:354
+#, elixir-autogen, elixir-format
+msgid "Contribution settings"
+msgstr "Configurações de Contribuição"
+
+#: lib/frank_ferreira_web/live/about_live.ex:256
+#, elixir-autogen, elixir-format
+msgid "Customize your pinned repositories"
+msgstr "Personalize seus repositórios fixados"
+
+#: lib/frank_ferreira_web/live/about_live.ex:450
+#, elixir-autogen, elixir-format
+msgid "Dec"
+msgstr "Dez"
+
+#: lib/frank_ferreira_web/live/about_live.ex:440
+#, elixir-autogen, elixir-format
+msgid "Feb"
+msgstr "Fev"
+
+#: lib/frank_ferreira_web/live/about_live.ex:458
+#, elixir-autogen, elixir-format
+msgid "Fri"
+msgstr "Sex."
+
+#: lib/frank_ferreira_web/live/about_live.ex:232
+#, elixir-autogen, elixir-format
+msgid "Hello! I'm an enthusiastic programmer dedicated to exploring and refining my skills in the realm of software development. Throughout my journey, I've found my path in the Elixir ecosystem, where I've been involved in challenging projects that have allowed me to grow as a developer."
+msgstr "Olá! Sou um programador entusiasta dedicado a explorar e aprimorar minhas habilidades no campo do desenvolvimento de software. Ao longo da minha jornada, encontrei meu caminho no ecossistema Elixir, onde estive envolvido em projetos desafiadores que me permitiram crescer como desenvolvedor."
+
+#: lib/frank_ferreira_web/live/about_live.ex:439
+#, elixir-autogen, elixir-format
+msgid "Jan"
+msgstr "Jan"
+
+#: lib/frank_ferreira_web/live/about_live.ex:445
+#, elixir-autogen, elixir-format
+msgid "Jul"
+msgstr "Jul"
+
+#: lib/frank_ferreira_web/live/about_live.ex:444
+#, elixir-autogen, elixir-format
+msgid "Jun"
+msgstr "Jun"
+
+#: lib/frank_ferreira_web/live/about_live.ex:441
+#, elixir-autogen, elixir-format
+msgid "Mar"
+msgstr "Mar"
+
+#: lib/frank_ferreira_web/live/about_live.ex:443
+#, elixir-autogen, elixir-format
+msgid "May"
+msgstr "Mai"
+
+#: lib/frank_ferreira_web/live/about_live.ex:454
+#, elixir-autogen, elixir-format
+msgid "Mon"
+msgstr "Seg"
+
+#: lib/frank_ferreira_web/live/about_live.ex:239
+#, elixir-autogen, elixir-format
+msgid "My passion for solving complex problems and crafting efficient solutions drives me to constantly pursue excellence in my work. I'm always eager to learn new technologies and innovative approaches to further enhance my expertise and make meaningful contributions to the projects I'm engaged in."
+msgstr "Minha paixão por resolver problemas complexos e criar soluções eficientes me motiva a buscar constantemente a excelência no meu trabalho. Estou sempre ansioso para aprender novas tecnologias e abordagens inovadoras para aprimorar ainda mais minha expertise e fazer contribuições significativas nos projetos em que estou envolvido."
+
+#: lib/frank_ferreira_web/live/about_live.ex:449
+#, elixir-autogen, elixir-format
+msgid "Nov"
+msgstr "Nov"
+
+#: lib/frank_ferreira_web/live/about_live.ex:448
+#, elixir-autogen, elixir-format
+msgid "Oct"
+msgstr "Out"
+
+#: lib/frank_ferreira_web/live/about_live.ex:174
+#, elixir-autogen, elixir-format
+msgid "Organizations"
+msgstr "Organizações"
+
+#: lib/frank_ferreira_web/live/about_live.ex:188
+#, elixir-autogen, elixir-format
+msgid "Overview"
+msgstr "Overview"
+
+#: lib/frank_ferreira_web/live/about_live.ex:253
+#, elixir-autogen, elixir-format
+msgid "Pinned"
+msgstr "Pinned"
+
+#: lib/frank_ferreira_web/live/about_live.ex:459
+#, elixir-autogen, elixir-format
+msgid "Sat"
+msgstr "Sab"
+
+#: lib/frank_ferreira_web/live/about_live.ex:447
+#, elixir-autogen, elixir-format
+msgid "Sep"
+msgstr "Set"
+
+#: lib/frank_ferreira_web/live/about_live.ex:453
+#, elixir-autogen, elixir-format
+msgid "Sun"
+msgstr "Dom"
+
+#: lib/frank_ferreira_web/live/about_live.ex:457
+#, elixir-autogen, elixir-format
+msgid "Thu"
+msgstr "Qui"
+
+#: lib/frank_ferreira_web/live/about_live.ex:455
+#, elixir-autogen, elixir-format
+msgid "Tue"
+msgstr "Ter"
+
+#: lib/frank_ferreira_web/live/about_live.ex:456
+#, elixir-autogen, elixir-format
+msgid "Wed"
+msgstr "Qua"
+
+#: lib/frank_ferreira_web/live/about_live.ex:244
+#, elixir-autogen, elixir-format
+msgid "Whether exploring new concepts, collaborating with teams, or tackling challenges, I am committed to evolving as a professional and making a positive impact on the software development community."
+msgstr "Seja explorando novos conceitos, colaborando com equipes ou enfrentando desafios, estou comprometido em evoluir como profissional e causar um impacto positivo na comunidade de desenvolvimento de software."
+
+#: lib/frank_ferreira_web/live/about_live.ex:350
+#, elixir-autogen, elixir-format
+msgid "contributions in the last year"
+msgstr "contribuições no último ano"
+
+#: lib/frank_ferreira_web/live/about_live.ex:116
+#, elixir-autogen, elixir-format
+msgid "same time"
+msgstr "mesma hora"
+
+#: lib/frank_ferreira_web/live/blog_live.ex:59
+#, elixir-autogen, elixir-format
+msgid "Date"
+msgstr "Data"
+
+#: lib/frank_ferreira_web/live/blog_live.ex:16
+#, elixir-autogen, elixir-format
+msgid "Listing all posts"
+msgstr "Lista de artigos"
+
+#: lib/frank_ferreira_web/live/blog_live.ex:72
+#, elixir-autogen, elixir-format
+msgid "Read more"
+msgstr "Ler mais"
+
+#: lib/frank_ferreira_web/live/blog_live.ex:22
+#, elixir-autogen, elixir-format
+msgid "Sign up for our newsletter"
+msgstr "Inscreva-se em nossa newsletter"
+
+#: lib/frank_ferreira_web/live/blog_live.ex:132
+#, elixir-autogen, elixir-format
+msgid "Subscribe"
+msgstr "Inscreva-se"
+
+#: lib/frank_ferreira_web/live/blog_live.ex:19
+#, elixir-autogen, elixir-format
+msgid "Subscribe to receive updates."
+msgstr "Inscreva-se para receber atualizações"
+
+#: lib/frank_ferreira_web/live/about_live.ex:196
+#, elixir-autogen, elixir-format, fuzzy
+msgid "This is my version of the Github Clone, so why i made this? I dont know"
+msgstr "Esta é a minha versão do Clone do Github, então por que eu fiz isso? Eu não sei"
+
+#: lib/frank_ferreira_web/live/blog_live.ex:123
+#, elixir-autogen, elixir-format, fuzzy
+msgid "Subscribe via email"
+msgstr "Inscreva-se com email"
+
+#: lib/frank_ferreira_web/live/projects.ex:48
+#, elixir-autogen, elixir-format
+msgid "\n            The 'Healthcare' app provides a comprehensive overview of patient appointments, medications, phone calls, surgeries, financial transactions, and other relevant data, offering healthcare professionals a detailed insight into daily hospital indicators for better management and decision-making."
+msgstr "\n            O aplicativo 'Healthcare' fornece uma visão abrangente das consultas dos pacientes, medicamentos, telefonemas, cirurgias, transações financeiras e outros dados relevantes, oferecendo aos profissionais de saúde uma visão detalhada dos indicadores diários do hospital para melhor gestão e tomada de decisões."
+
+#: lib/frank_ferreira_web/live/projects.ex:95
+#, elixir-autogen, elixir-format
+msgid " of my current"
+msgstr " dos meus atuais"
+
+#: lib/frank_ferreira_web/live/projects.ex:41
+#, elixir-autogen, elixir-format
+msgid "Client's projects"
+msgstr "Projetos de Clientes"
+
+#: lib/frank_ferreira_web/live/projects.ex:43
+#, elixir-autogen, elixir-format
+msgid "Freelance projects I've worked on"
+msgstr "Projetos freelance em que trabalhei"
+
+#: lib/frank_ferreira_web/live/projects.ex:46
+#, elixir-autogen, elixir-format
+msgid "Healthcare"
+msgstr "Cuidados de saúde"
+
+#: lib/frank_ferreira_web/live/projects.ex:92
+#, elixir-autogen, elixir-format
+msgid "I've created various projects with the aim of making a positive impact. While I've experimented with numerous endeavors, these particular ones hold a special place in my heart. Most of them are open-source, meaning you're welcome to explore the code and offer suggestions for enhancements if you feel inspired.\n              Below is a "
+msgstr "Criei vários projetos com o objetivo de causar um impacto positivo. Embora tenha experimentado inúmeras iniciativas, essas em particular têm um lugar especial no meu coração. A maioria delas é open-source, o que significa que você é bem-vindo para explorar o código e oferecer sugestões para melhorias, se sentir inspirado.\n Abaixo está uma "
+
+#: lib/frank_ferreira_web/live/projects.ex:21
+#, elixir-autogen, elixir-format
+msgid "Introduction to Elixir and Phoenix"
+msgstr "Introdução ao Elixir e Phoenix"
+
+#: lib/frank_ferreira_web/live/projects.ex:12
+#, elixir-autogen, elixir-format
+msgid "IrriSusten"
+msgstr ""
+
+#: lib/frank_ferreira_web/live/projects.ex:89
+#, elixir-autogen, elixir-format
+msgid "My Journey Through Projects: Where Ideas Become Reality"
+msgstr "Minha Jornada Através de Projetos: Onde Ideias Se Tornam Realidade"
+
+#: lib/frank_ferreira_web/live/projects.ex:7
+#, elixir-autogen, elixir-format
+msgid "Open-source"
+msgstr "Código-aberto"
+
+#: lib/frank_ferreira_web/live/projects.ex:9
+#, elixir-autogen, elixir-format
+msgid "Open-source projects I've contributed to"
+msgstr "Projetos open-source aos quais contribui"
+
+#: lib/frank_ferreira_web/live/projects.ex:23
+#, elixir-autogen, elixir-format
+msgid "Repository for the Elixir and Phoenix mini-course, provided by the Applied Computing Laboratory at UFRA, functioning as a central repository for educational materials tailored to students and tech enthusiasts keen on exploring the dynamic realms of Elixir and Phoenix development."
+msgstr "Repositório para o mini-curso de Elixir e Phoenix, fornecido pelo Laboratório de Computação Aplicada da UFRA, funcionando como um repositório central para materiais educativos voltados para estudantes e entusiastas de tecnologia interessados em explorar os dinâmicos campos de desenvolvimento de Elixir e Phoenix."
+
+#: lib/frank_ferreira_web/live/projects.ex:58
+#, elixir-autogen, elixir-format
+msgid "The CDN (Content Delivery Network) system developed in Elixir was initially designed for internal file management. Using the Elixir language, the system offered an efficient and scalable solution to manage content distribution, optimizing access and file delivery across a network. This platform allowed for the storage, retrieval, and updating of files quickly and reliably, meeting the internal control needs of an organization."
+msgstr "O sistema CDN (Content Delivery Network) desenvolvido em Elixir foi inicialmente projetado para gerenciamento interno de arquivos. Usando a linguagem Elixir, o sistema ofereceu uma solução eficiente e escalável para gerenciar a distribuição de conteúdo, otimizando o acesso e a entrega de arquivos através de uma rede. Esta plataforma permitiu o armazenamento, recuperação e atualização de arquivos de forma rápida e confiável, atendendo às necessidades de controle interno de uma organização."
+
+#: lib/frank_ferreira_web/live/projects.ex:67
+#, elixir-autogen, elixir-format
+msgid "The Voter Intentions System is a digital platform designed to facilitate the collection and analysis of data related to voters' preferences in a specific political context."
+msgstr "O Sistema de Intenções de Voto é uma plataforma digital projetada para facilitar a coleta e análise de dados relacionados às preferências dos eleitores em um contexto político específico."
+
+#: lib/frank_ferreira_web/live/projects.ex:14
+#, elixir-autogen, elixir-format
+msgid "The study introduces Irrisusten, an information system to manage plantation irrigation. It automates agricultural production control and reduces water wastage. It features web and mobile interfaces, utilizing physical components like Arduino Uno, sensors, relays, and Bluetooth modules."
+msgstr "O estudo apresenta o Irrisusten, um sistema de informações para gerenciar a irrigação de plantações. Ele automatiza o controle da produção agrícola e reduz o desperdício de água. Possui interfaces web e mobile, utilizando componentes físicos como Arduino Uno, sensores, relés e módulos Bluetooth."
+
+#: lib/frank_ferreira_web/live/projects.ex:65
+#, elixir-autogen, elixir-format
+msgid "Voter Intentions System"
+msgstr "Sistema de Intenções de Voto"
+
+#: lib/frank_ferreira_web/live/projects.ex:95
+#, elixir-autogen, elixir-format
+msgid "list"
+msgstr "lista"
+
+#: lib/frank_ferreira_web/live/projects.ex:97
+#, elixir-autogen, elixir-format, fuzzy
+msgid "projects"
+msgstr "Projetos"
+
+#: lib/frank_ferreira_web/live/projects.ex:32
+#, elixir-autogen, elixir-format
+msgid "The Markdown in Elixir project converts Markdown files to HTML and Livebook using the Elixir language, leveraging its efficiency and scalability. It provides a flexible solution for developers to format text quickly and effectively in various online and data development contexts."
+msgstr "O projeto Markdown em Elixir converte arquivos Markdown para HTML e Livebook usando a linguagem Elixir, aproveitando sua eficiência e escalabilidade. Ele oferece uma solução flexível para desenvolvedores formatarem texto de forma rápida e eficaz em diversos contextos de desenvolvimento online e de dados."
+
+#: lib/frank_ferreira_web/live/timeline_live.ex:60
+#, elixir-autogen, elixir-format
+msgid "'Santa' gave me a Pentium"
+msgstr "'Noel' me deu um Pentium"
+
+#: lib/frank_ferreira_web/live/uses_live.ex:74
+#: lib/frank_ferreira_web/live/uses_live.ex:77
+#, elixir-autogen, elixir-format
+msgid "(default apple)"
+msgstr "(padrão apple)"
+
+#: lib/frank_ferreira_web/live/timeline_live.ex:153
+#, elixir-autogen, elixir-format
+msgid "Another graduation, this time from college. This time, distant relatives came to visit me to celebrate this moment. I am very grateful to everyone who, in one way or another, contributed to my journey, and without you, I wouldn't have achieved it. And yes, once again, graduated!"
+msgstr "Outra graduação, desta vez da faculdade. Desta vez, parentes distantes vieram me visitar para celebrar este momento. Sou muito grato a todos que, de alguma forma, contribuíram para a minha jornada, e sem vocês, eu não teria conseguido. E sim, mais uma vez, graduado!"
+
+#: lib/frank_ferreira_web/live/timeline_live.ex:51
+#, elixir-autogen, elixir-format
+msgid "Aug, 1994"
+msgstr "Ago, 1994"
+
+#: lib/frank_ferreira_web/live/timeline_live.ex:90
+#, elixir-autogen, elixir-format
+msgid "Beginning of College"
+msgstr "Início da Faculdade"
+
+#: lib/frank_ferreira_web/live/timeline_live.ex:80
+#, elixir-autogen, elixir-format
+msgid "Beginning of technical studies"
+msgstr "Início dos estudos técnicos"
+
+#: lib/frank_ferreira_web/live/timeline_live.ex:52
+#, elixir-autogen, elixir-format
+msgid "Born"
+msgstr "Nasci"
+
+#: lib/frank_ferreira_web/live/timeline_live.ex:150
+#, elixir-autogen, elixir-format
+msgid "Completion of College"
+msgstr "Conclusão da Faculdade"
+
+#: lib/frank_ferreira_web/live/timeline_live.ex:120
+#, elixir-autogen, elixir-format
+msgid "Completion of technical studies"
+msgstr "Conclusão dos estudos técnicos"
+
+#: lib/frank_ferreira_web/live/timeline_live.ex:58
+#, elixir-autogen, elixir-format
+msgid "Dez, 2004"
+msgstr ""
+
+#: lib/frank_ferreira_web/live/timeline_live.ex:79
+#, elixir-autogen, elixir-format
+msgid "Dez, 2014"
+msgstr ""
+
+#: lib/frank_ferreira_web/live/timeline_live.ex:169
+#, elixir-autogen, elixir-format
+msgid "Dez, 2023"
+msgstr ""
+
+#: lib/frank_ferreira_web/live/timeline_live.ex:81
+#, elixir-autogen, elixir-format
+msgid "Federal Institute of Para - Ananindeua"
+msgstr "Instituto Federal do Pará - Ananindeua"
+
+#: lib/frank_ferreira_web/live/timeline_live.ex:91
+#, elixir-autogen, elixir-format
+msgid "Federal Rural University of Amazonia - Belém"
+msgstr "Universidade Federal Rural da Amazônia - Belém"
+
+#: lib/frank_ferreira_web/live/timeline_live.ex:89
+#, elixir-autogen, elixir-format
+msgid "Fev, 2015"
+msgstr ""
+
+#: lib/frank_ferreira_web/live/timeline_live.ex:140
+#: lib/frank_ferreira_web/live/timeline_live.ex:160
+#, elixir-autogen, elixir-format
+msgid "First Job!"
+msgstr "Primeiro trampo!"
+
+#: lib/frank_ferreira_web/live/timeline_live.ex:59
+#, elixir-autogen, elixir-format
+msgid "First PC"
+msgstr "Primeiro PC!"
+
+#: lib/frank_ferreira_web/live/timeline_live.ex:110
+#, elixir-autogen, elixir-format
+msgid "First apresentation in Seminar"
+msgstr "Primeira apresentação em um Seminário"
+
+#: lib/frank_ferreira_web/live/timeline_live.ex:54
+#, elixir-autogen, elixir-format
+msgid "First release in prod."
+msgstr "Primeiro release em prod."
+
+#: lib/frank_ferreira_web/live/timeline_live.ex:130
+#, elixir-autogen, elixir-format
+msgid "First trip presenting programming"
+msgstr "Primeira viagem de apresentaçao sobre programação"
+
+#: lib/frank_ferreira_web/live/timeline_live.ex:151
+#, elixir-autogen, elixir-format
+msgid "Graduation in Information Systems"
+msgstr "Graduaçao em Sistemas de Informação"
+
+#: lib/frank_ferreira_web/live/timeline_live.ex:70
+#, elixir-autogen, elixir-format
+msgid "Hello World Delphi"
+msgstr "Olá Mundo Delphi"
+
+#: lib/frank_ferreira_web/live/timeline_live.ex:53
+#, elixir-autogen, elixir-format
+msgid "Hello World!"
+msgstr "Olá Mundo!"
+
+#: lib/frank_ferreira_web/live/uses_live.ex:18
+#, elixir-autogen, elixir-format
+msgid "Here are some of the hardware devices I use in my daily life, whether it's for studying programming or leisure."
+msgstr "Aqui estão alguns dos dispositivos de hardware que uso no meu dia a dia, seja para estudar programação ou para lazer."
+
+#: lib/frank_ferreira_web/live/timeline_live.ex:173
+#, elixir-autogen, elixir-format
+msgid "I finally brought to life this project that I have been thinking about for years but hadn't started. It ended up becoming a goal for 2023 at the last minute. Exciting updates coming soon!!!"
+msgstr "Finalmente trouxe à vida este projeto que venho pensando há anos, mas que ainda não havia começado. Acabou se tornando um objetivo para 2023 na última hora. Atualizações emocionantes em breve!!!"
+
+#: lib/frank_ferreira_web/live/timeline_live.ex:93
+#, elixir-autogen, elixir-format
+msgid "I opted for Information Systems instead of Journalism. I arrived smurfing, already familiar with Portuguese pseudocode and C by that time."
+msgstr "Optei por Sistemas de Informação em vez de Jornalismo. Cheguei 'smurfando', já familiarizado com pseudocódigo em português e C naquela época."
+
+#: lib/frank_ferreira_web/live/timeline_live.ex:133
+#, elixir-autogen, elixir-format
+msgid "I remember that the idea for the scientific article came from a friend in environmental engineering, and simply, me and two other crazy friends embraced the cause and ended up traveling to Rio Grande do Norte - Natal to present a paper on the topic of Applied Computing to Environmental Management and Natural Resources."
+msgstr "Lembro que a ideia para o artigo científico veio de um amigo de engenharia ambiental, e simplesmente, eu e dois outros amigos malucos abraçamos a causa e acabamos viajando para Rio Grande do Norte - Natal para apresentar um trabalho sobre o tema Computação Aplicada à Gestão Ambiental e Recursos Naturais."
+
+#: lib/frank_ferreira_web/live/timeline_live.ex:113
+#, elixir-autogen, elixir-format
+msgid "I submitted my first academic work entitled 'MOBILE APPLICATION: DEVELOPMENT OF A QUIZ GAME WITH COMPUTER SCIENCE CONTENT' and presented it at the VIII Seminar on Scientific, Technological, and Innovation Initiation."
+msgstr "Submeti meu primeiro trabalho acadêmico intitulado 'APLICATIVO MÓVEL: DESENVOLVIMENTO DE UM JOGO DE QUIZ COM CONTEÚDO DE CIÊNCIAS DA COMPUTAÇÃO' e o apresentei no VIII Seminário de Iniciação Científica, Tecnológica e em Inovação."
+
+#: lib/frank_ferreira_web/live/timeline_live.ex:73
+#, elixir-autogen, elixir-format
+msgid "It was a gift from my friend, my first DVD course on Hacking! I remembered to make a browser at the end and it was amazing, I had no idea what I was writing but I knew what I wanted."
+msgstr "Foi um presente do meu amigo, meu primeiro curso em DVD sobre Hacking! Lembro que fiz um navegador no final e foi incrível; eu não tinha ideia do que estava escrevendo, mas sabia o que queria."
+
+#: lib/frank_ferreira_web/live/timeline_live.ex:103
+#, elixir-autogen, elixir-format
+msgid "It was an amazing experience, firstly because I was embraced by a teacher who believed in my potential when everyone raised difficulties. She proposed to teach programming to underprivileged children using the Scratch tool, where they could take their first steps in programming."
+msgstr "Foi uma experiência incrível, primeiramente porque fui acolhido por uma professora que acreditou no meu potencial quando todos levantaram dificuldades. Ela propôs ensinar programação para crianças de baixo poder aquisitivo usando a ferramenta Scratch, onde elas poderiam dar seus primeiros passos na programação."
+
+#: lib/frank_ferreira_web/live/timeline_live.ex:123
+#, elixir-autogen, elixir-format
+msgid "It was an honor to be one of the first four students to graduate in computer science from the municipality of Ananindeua. I had the opportunity to learn a lot and make great friends."
+msgstr "Foi uma honra ser um dos primeiros quatro alunos a se formar em ciência da computação no município de Ananindeua. Tive a oportunidade de aprender muito e fazer grandes amigos."
+
+#: lib/frank_ferreira_web/live/timeline_live.ex:149
+#, elixir-autogen, elixir-format
+msgid "Jan, 2020"
+msgstr ""
+
+#: lib/frank_ferreira_web/live/timeline_live.ex:129
+#, elixir-autogen, elixir-format
+msgid "Jul, 2018"
+msgstr ""
+
+#: lib/frank_ferreira_web/live/timeline_live.ex:99
+#, elixir-autogen, elixir-format
+msgid "Jun, 2016"
+msgstr ""
+
+#: lib/frank_ferreira_web/live/timeline_live.ex:139
+#, elixir-autogen, elixir-format
+msgid "Jun, 2019"
+msgstr ""
+
+#: lib/frank_ferreira_web/live/timeline_live.ex:171
+#, elixir-autogen, elixir-format
+msgid "Ladies and gentlemen, welcome!"
+msgstr "Senhoras e senhores, sejam bem-vindos!"
+
+#: lib/frank_ferreira_web/live/timeline_live.ex:69
+#, elixir-autogen, elixir-format
+msgid "Mai, 2013"
+msgstr ""
+
+#: lib/frank_ferreira_web/live/timeline_live.ex:159
+#, elixir-autogen, elixir-format
+msgid "May, 2022"
+msgstr "Mai, 2022"
+
+#: lib/frank_ferreira_web/live/timeline_live.ex:163
+#, elixir-autogen, elixir-format
+msgid "My first job as a backend developer in Elixir, it was a fantastic few months. I learned the equivalent of 10 years in 1 year, personally met amazing friends who provided great guidance."
+msgstr "Meu primeiro trabalho como desenvolvedor backend em Elixir foi um período fantástico. Aprendi o equivalente a 10 anos em 1 ano e conheci pessoalmente amigos incríveis que forneceram ótimas orientações."
+
+#: lib/frank_ferreira_web/live/timeline_live.ex:170
+#, elixir-autogen, elixir-format
+msgid "Official launch of this website"
+msgstr "Lançamento oficial deste site"
+
+#: lib/frank_ferreira_web/live/timeline_live.ex:141
+#, elixir-autogen, elixir-format
+msgid "On site"
+msgstr "Presencial"
+
+#: lib/frank_ferreira_web/live/timeline_live.ex:83
+#, elixir-autogen, elixir-format
+msgid "One year later of my first code in Delphi, I started studying computing in my hometown, being one of the first graduates in the city's history."
+msgstr "Um ano após meu primeiro código em Delphi, comecei a estudar computação na minha cidade natal, sendo um dos primeiros graduados na história da cidade."
+
+#: lib/frank_ferreira_web/live/timeline_live.ex:119
+#, elixir-autogen, elixir-format
+msgid "Out, 2017"
+msgstr ""
+
+#: lib/frank_ferreira_web/live/timeline_live.ex:101
+#, elixir-autogen, elixir-format
+msgid "Programming class with Scratch for underprivileged children."
+msgstr "Aula de programação com Scratch para crianças de baixo poder aquisitivo."
+
+#: lib/frank_ferreira_web/live/timeline_live.ex:161
+#, elixir-autogen, elixir-format
+msgid "Remote"
+msgstr "Remoto"
+
+#: lib/frank_ferreira_web/live/timeline_live.ex:109
+#, elixir-autogen, elixir-format
+msgid "Sep, 2016"
+msgstr "Set, 2016"
+
+#: lib/frank_ferreira_web/live/uses_live.ex:23
+#, elixir-autogen, elixir-format
+msgid "Soon, I'll create a route `/hardware/:device` to provide detailed explanations of the specifications and configurations that I use."
+msgstr "Em breve, criarei uma rota `/hardware/:device` para fornecer explicações detalhadas das especificações e configurações que eu uso."
+
+#: lib/frank_ferreira_web/live/timeline_live.ex:100
+#, elixir-autogen, elixir-format
+msgid "Teaching to learn"
+msgstr "Ensinar para aprender"
+
+#: lib/frank_ferreira_web/live/timeline_live.ex:121
+#, elixir-autogen, elixir-format
+msgid "Technical degree graduation in computer science."
+msgstr "Graduação técnica em ciência da computação."
+
+#: lib/frank_ferreira_web/live/timeline_live.ex:111
+#, elixir-autogen, elixir-format
+msgid "The Model City - Castanhal"
+msgstr "A Cidade Modelo - Castanhal"
+
+#: lib/frank_ferreira_web/live/timeline_live.ex:143
+#, elixir-autogen, elixir-format
+msgid "The most amazing experience I've ever had in my life, I was able to connect with various people from different fields, where I could apply my knowledge for a long time and absorb knowledge from others. A journey full of challenges in personal and technical development where I could leave my mark and assist everyone."
+msgstr "A experiência mais incrível que já tive na minha vida, consegui me conectar com várias pessoas de diferentes áreas, onde pude aplicar meu conhecimento por um longo tempo e absorver conhecimento de outros. Uma jornada cheia de desafios no desenvolvimento pessoal e técnico, onde pude deixar minha marca e ajudar a todos."
+
+#: lib/frank_ferreira_web/live/uses_live.ex:53
+#, elixir-autogen, elixir-format
+msgid "The same train of thought as before, and here are some of the software applications I use on a daily basis."
+msgstr "O mesmo raciocínio de antes, e aqui estão alguns dos aplicativos de software que uso no dia a dia."
+
+#: lib/frank_ferreira_web/live/timeline_live.ex:62
+#, elixir-autogen, elixir-format
+msgid "With a lot of sacrifice, my parents gave me a super fast Pentium computer on Christmas Eve.\n            I remember putting in a password and forgetting it the next day. lol"
+msgstr "Com muito sacrifício, meus pais me deram um computador Pentium super rápido na véspera de Natal.\n            Lembro de colocar uma senha e esquecê-la no dia seguinte. lol"
+
+#: lib/frank_ferreira_web/live/timeline_live.ex:131
+#, elixir-autogen, elixir-format
+msgid "XXXVIII Brazilian Computer Society Congress (CSBC 2018)"
+msgstr "XXXVIII Congresso da Sociedade Brasileira de Computação (CSBC 2018)"
+
+#: lib/frank_ferreira_web/live/timeline_live.ex:71
+#, elixir-autogen, elixir-format
+msgid "Yes, my first code was made in Delphi"
+msgstr "Sim, meu primeiro código foi feito em Delphi."
