@@ -24,6 +24,10 @@ import topbar from "../vendor/topbar";
 import { initialize as initCopyButton } from "./copy-button";
 import { onDocumentReady } from "./helpers";
 import { fixBlockquotes } from "./content";
+import ParseHTML from "./parse-html";
+
+let Hooks = {};
+Hooks.ParseHTML = ParseHTML;
 
 onDocumentReady(() => {
   initCopyButton();
@@ -36,6 +40,7 @@ let csrfToken = document
   .getAttribute("content");
 let liveSocket = new LiveSocket("/live", Socket, {
   params: { _csrf_token: csrfToken },
+  hooks: Hooks,
 });
 
 window.addEventListener("scroll", function () {
