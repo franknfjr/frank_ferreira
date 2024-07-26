@@ -51,7 +51,8 @@ defmodule FrankFerreira.MixProject do
       {:makeup_elixir, ">= 0.0.0"},
       {:makeup_erlang, ">= 0.0.0"},
       {:html_entities, "~> 0.5"},
-      {:mdex, "~> 0.1"}
+      {:mdex, "~> 0.1"},
+      {:phoenix_live_dashboard, "~> 0.7"}
     ]
   end
 

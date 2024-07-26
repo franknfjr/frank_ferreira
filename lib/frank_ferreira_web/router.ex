@@ -1,5 +1,6 @@
 defmodule FrankFerreiraWeb.Router do
   use FrankFerreiraWeb, :router
+  import Phoenix.LiveDashboard.Router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -28,11 +29,25 @@ defmodule FrankFerreiraWeb.Router do
     live "/uses", UsesLive
     live "/contact", ContactLive
     live "/projects", ProjectsLive
-    live "/markdown", MarkdownLive
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", FrankFerreiraWeb do
-  #   pipe_through :api
-  # end
+  scope "/admin", FrankFerreiraWeb do
+    pipe_through [:browser, :check_auth]
+    live "/markdown", MarkdownLive
+
+    live_dashboard "/dashboard", metrics: FrankFerreiraWeb.Telemetry
+  end
+
+  def check_auth(conn, _opts) do
+    with {user, pass} <- Plug.BasicAuth.parse_basic_auth(conn),
+         true <- user == System.get_env("AUTH_USER", "admin"),
+         true <- pass == System.get_env("AUTH_PASS", "admin") do
+      conn
+    else
+      _ ->
+        conn
+        |> Plug.BasicAuth.request_basic_auth()
+        |> halt()
+    end
+  end
 end
