@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 
 #: lib/frank_ferreira_web/components/layouts/footer.html.heex:10
-#: lib/frank_ferreira_web/components/layouts/header.html.heex:111
-#: lib/frank_ferreira_web/components/layouts/header.html.heex:197
+#: lib/frank_ferreira_web/components/layouts/header.html.heex:110
+#: lib/frank_ferreira_web/components/layouts/header.html.heex:196
 #, elixir-autogen, elixir-format
 msgid "About"
 msgstr ""
@@ -24,8 +24,8 @@ msgid "Actions"
 msgstr ""
 
 #: lib/frank_ferreira_web/components/layouts/footer.html.heex:18
-#: lib/frank_ferreira_web/components/layouts/header.html.heex:117
-#: lib/frank_ferreira_web/components/layouts/header.html.heex:203
+#: lib/frank_ferreira_web/components/layouts/header.html.heex:116
+#: lib/frank_ferreira_web/components/layouts/header.html.heex:202
 #, elixir-autogen, elixir-format
 msgid "Blog"
 msgstr ""
@@ -36,22 +36,22 @@ msgid "Made with"
 msgstr ""
 
 #: lib/frank_ferreira_web/components/layouts/footer.html.heex:26
-#: lib/frank_ferreira_web/components/layouts/header.html.heex:123
-#: lib/frank_ferreira_web/components/layouts/header.html.heex:209
+#: lib/frank_ferreira_web/components/layouts/header.html.heex:122
+#: lib/frank_ferreira_web/components/layouts/header.html.heex:208
 #, elixir-autogen, elixir-format
 msgid "Projects"
 msgstr ""
 
 #: lib/frank_ferreira_web/components/layouts/footer.html.heex:34
-#: lib/frank_ferreira_web/components/layouts/header.html.heex:129
-#: lib/frank_ferreira_web/components/layouts/header.html.heex:215
+#: lib/frank_ferreira_web/components/layouts/header.html.heex:128
+#: lib/frank_ferreira_web/components/layouts/header.html.heex:214
 #, elixir-autogen, elixir-format
 msgid "Timeline"
 msgstr ""
 
 #: lib/frank_ferreira_web/components/layouts/footer.html.heex:42
-#: lib/frank_ferreira_web/components/layouts/header.html.heex:135
-#: lib/frank_ferreira_web/components/layouts/header.html.heex:221
+#: lib/frank_ferreira_web/components/layouts/header.html.heex:134
+#: lib/frank_ferreira_web/components/layouts/header.html.heex:220
 #, elixir-autogen, elixir-format
 msgid "Uses"
 msgstr ""
@@ -67,8 +67,8 @@ msgstr ""
 msgid "close"
 msgstr ""
 
-#: lib/frank_ferreira_web/components/layouts/header.html.heex:105
-#: lib/frank_ferreira_web/components/layouts/header.html.heex:191
+#: lib/frank_ferreira_web/components/layouts/header.html.heex:104
+#: lib/frank_ferreira_web/components/layouts/header.html.heex:190
 #, elixir-autogen, elixir-format
 msgid "Home"
 msgstr ""
@@ -210,6 +210,7 @@ msgid "Mar"
 msgstr ""
 
 #: lib/frank_ferreira_web/live/about_live.ex:443
+#: lib/frank_ferreira_web/live/blog_live/show.ex:123
 #, elixir-autogen, elixir-format
 msgid "May"
 msgstr ""
@@ -294,32 +295,32 @@ msgstr ""
 msgid "same time"
 msgstr ""
 
-#: lib/frank_ferreira_web/live/blog_live.ex:59
+#: lib/frank_ferreira_web/live/blog_live.ex:61
 #, elixir-autogen, elixir-format
 msgid "Date"
 msgstr ""
 
-#: lib/frank_ferreira_web/live/blog_live.ex:16
+#: lib/frank_ferreira_web/live/blog_live.ex:18
 #, elixir-autogen, elixir-format
 msgid "Listing all posts"
 msgstr ""
 
-#: lib/frank_ferreira_web/live/blog_live.ex:72
+#: lib/frank_ferreira_web/live/blog_live.ex:74
 #, elixir-autogen, elixir-format
 msgid "Read more"
 msgstr ""
 
-#: lib/frank_ferreira_web/live/blog_live.ex:22
+#: lib/frank_ferreira_web/live/blog_live.ex:24
 #, elixir-autogen, elixir-format
 msgid "Sign up for our newsletter"
 msgstr ""
 
-#: lib/frank_ferreira_web/live/blog_live.ex:132
+#: lib/frank_ferreira_web/live/blog_live.ex:134
 #, elixir-autogen, elixir-format
 msgid "Subscribe"
 msgstr ""
 
-#: lib/frank_ferreira_web/live/blog_live.ex:19
+#: lib/frank_ferreira_web/live/blog_live.ex:21
 #, elixir-autogen, elixir-format
 msgid "Subscribe to receive updates."
 msgstr ""
@@ -329,7 +330,7 @@ msgstr ""
 msgid "This is my version of the Github Clone, so why i made this? I dont know"
 msgstr ""
 
-#: lib/frank_ferreira_web/live/blog_live.ex:123
+#: lib/frank_ferreira_web/live/blog_live.ex:125
 #, elixir-autogen, elixir-format
 msgid "Subscribe via email"
 msgstr ""
@@ -704,4 +705,109 @@ msgstr ""
 #: lib/frank_ferreira_web/live/timeline_live.ex:71
 #, elixir-autogen, elixir-format
 msgid "Yes, my first code was made in Delphi"
+msgstr ""
+
+#: lib/frank_ferreira_web/live/blog_live/show.ex:122
+#, elixir-autogen, elixir-format
+msgid "April"
+msgstr ""
+
+#: lib/frank_ferreira_web/live/blog_live/show.ex:126
+#, elixir-autogen, elixir-format
+msgid "August"
+msgstr ""
+
+#: lib/frank_ferreira_web/live/blog_live/show.ex:130
+#, elixir-autogen, elixir-format
+msgid "December"
+msgstr ""
+
+#: lib/frank_ferreira_web/live/blog_live/show.ex:120
+#, elixir-autogen, elixir-format
+msgid "February"
+msgstr ""
+
+#: lib/frank_ferreira_web/live/blog_live/show.ex:112
+#, elixir-autogen, elixir-format
+msgid "Friday"
+msgstr ""
+
+#: lib/frank_ferreira_web/live/blog_live/show.ex:131
+#, elixir-autogen, elixir-format
+msgid "Invalid month"
+msgstr ""
+
+#: lib/frank_ferreira_web/live/blog_live/show.ex:114
+#, elixir-autogen, elixir-format
+msgid "Invalid weekday"
+msgstr ""
+
+#: lib/frank_ferreira_web/live/blog_live/show.ex:119
+#, elixir-autogen, elixir-format
+msgid "January"
+msgstr ""
+
+#: lib/frank_ferreira_web/live/blog_live/show.ex:125
+#, elixir-autogen, elixir-format
+msgid "July"
+msgstr ""
+
+#: lib/frank_ferreira_web/live/blog_live/show.ex:124
+#, elixir-autogen, elixir-format
+msgid "June"
+msgstr ""
+
+#: lib/frank_ferreira_web/live/blog_live/show.ex:121
+#, elixir-autogen, elixir-format
+msgid "March"
+msgstr ""
+
+#: lib/frank_ferreira_web/live/blog_live/show.ex:108
+#, elixir-autogen, elixir-format
+msgid "Monday"
+msgstr ""
+
+#: lib/frank_ferreira_web/live/blog_live/show.ex:129
+#, elixir-autogen, elixir-format
+msgid "November"
+msgstr ""
+
+#: lib/frank_ferreira_web/live/blog_live/show.ex:128
+#, elixir-autogen, elixir-format
+msgid "October"
+msgstr ""
+
+#: lib/frank_ferreira_web/live/blog_live/show.ex:113
+#, elixir-autogen, elixir-format
+msgid "Saturday"
+msgstr ""
+
+#: lib/frank_ferreira_web/live/blog_live/show.ex:127
+#, elixir-autogen, elixir-format
+msgid "September"
+msgstr ""
+
+#: lib/frank_ferreira_web/live/blog_live/show.ex:107
+#, elixir-autogen, elixir-format
+msgid "Sunday"
+msgstr ""
+
+#: lib/frank_ferreira_web/live/blog_live/show.ex:111
+#, elixir-autogen, elixir-format
+msgid "Thursday"
+msgstr ""
+
+#: lib/frank_ferreira_web/live/blog_live/show.ex:109
+#, elixir-autogen, elixir-format
+msgid "Tuesday"
+msgstr ""
+
+#: lib/frank_ferreira_web/live/blog_live/show.ex:110
+#, elixir-autogen, elixir-format
+msgid "Wednesday"
+msgstr ""
+
+#: lib/frank_ferreira_web/live/blog_live/show.ex:31
+#, elixir-autogen, elixir-format
+msgid "Go back"
 msgstr ""

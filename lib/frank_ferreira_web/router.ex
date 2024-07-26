@@ -23,6 +23,7 @@ defmodule FrankFerreiraWeb.Router do
     live "/about", AboutLive
     live "/blog", BlogLive
     live "/blog/:id", BlogLive.Show
+    live "/blog/:locale/:id", BlogLive.Show
     live "/timeline", TimelineLive
     live "/uses", UsesLive
     live "/contact", ContactLive

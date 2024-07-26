@@ -2,8 +2,10 @@ defmodule FrankFerreiraWeb.BlogLive do
   use FrankFerreiraWeb, :live_view
   alias FrankFerreira.Blog
 
-  def mount(_params, _session, socket) do
-    posts = Blog.all_posts()
+  def mount(_params, session, socket) do
+    locale = Map.get(session, "locale", socket.assigns[:locale] || "en")
+    posts = Blog.published_posts(locale)
+
     socket = assign(socket, posts: posts)
     {:ok, socket}
   end
@@ -27,8 +29,8 @@ defmodule FrankFerreiraWeb.BlogLive do
         <div class="hidden absolute top-3 bottom-0 right-full mr-7 md:mr-[3.25rem] w-px bg-slate-200 dark:bg-slate-800 sm:block" />
         <div class="space-y-16">
           <%= for post <- @posts do %>
-            <a href={~p"/blog/#{post.id}"}>
-              <article key="#{post.id}" class="relative group">
+            <a href={~p"/blog/#{post.language}/#{post.id}"}>
+              <article key={post.id} class="relative group">
                 <div class="absolute -inset-y-2.5 -inset-x-4 md:-inset-y-4 md:-inset-x-6 sm:rounded-2xl group-hover:bg-slate-50/70 dark:group-hover:bg-slate-800/50" />
                 <svg
                   viewBox="0 0 9 9"
@@ -65,7 +67,7 @@ defmodule FrankFerreiraWeb.BlogLive do
                   </dl>
                 </div>
                 <a
-                  href={~p"/blog/#{post.id}"}
+                  href={~p"/blog/#{post.language}/#{post.id}"}
                   class="flex items-center text-sm text-sky-500 font-medium"
                 >
                   <span class="relative">
@@ -137,6 +139,23 @@ defmodule FrankFerreiraWeb.BlogLive do
   end
 
   def formatted_date(%Date{day: day, month: month, year: year} = _date) do
-    Timex.month_name(month) <> " #{day}, #{year}"
+    month_name =
+      case Timex.month_name(month) do
+        "January" -> gettext("January")
+        "February" -> gettext("February")
+        "March" -> gettext("March")
+        "April" -> gettext("April")
+        "May" -> gettext("May")
+        "June" -> gettext("June")
+        "July" -> gettext("July")
+        "August" -> gettext("August")
+        "September" -> gettext("September")
+        "October" -> gettext("October")
+        "November" -> gettext("November")
+        "December" -> gettext("December")
+        _ -> gettext("Invalid month")
+      end
+
+    month_name <> " #{day}, #{year}"
   end
 end

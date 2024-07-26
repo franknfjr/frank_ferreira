@@ -28,7 +28,7 @@ defmodule FrankFerreiraWeb.BlogLive.Show do
                 strokeLinejoin="round"
               />
             </svg>
-            Go back
+            <%= gettext("Go back") %>
           </a>
         </div>
       </div>
@@ -70,7 +70,7 @@ defmodule FrankFerreiraWeb.BlogLive.Show do
                 </ul>
               </div>
               <div class="mt-12 prose prose-slate dark:prose-dark">
-                <%= raw(@post.body) %>
+                <%= {:safe, @post.body} %>
               </div>
             </article>
           </main>
@@ -90,83 +90,48 @@ defmodule FrankFerreiraWeb.BlogLive.Show do
         </div>
       </div>
     </div>
-    <%!-- <main role="main" class="container mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-20">
-      <header class="max-w-[55rem] 2xl:max-w-3xl mx-auto mb-14 sm:mb-16">
-        <h1 class="relative w-full font-heading text-navy-900 leading-tight sm:leading-tight lg:leading-tight 2xl:leading-tight text-3xl sm:text-4xl lg:text-[2.75rem]">
-          <%= @post.title %>
-        </h1>
-      </header>
-      <article class="xl:grid grid-cols-auto-span-auto items-start sm:text-lg leading-relaxed">
-        <section class="relative max-w-[55rem] 2xl:max-w-3xl mx-auto">
-          <%= raw(@post.body) %>
-        </section>
-        <!--Next & Prev Links-->
-        <div class="font-sans flex justify-between content-center px-4 pb-12 text-sm font-medium">
-          <div class="text-left">
-            <span class="text-navy-900 mb-1">← Previous Post</span>
-            <br />
-            <p>
-              <a href="#" class="line-clamp-2 text-violet-500 hover:text-violet-700 transition-colors">
-                Blog title
-              </a>
-            </p>
-          </div>
-          <div class="text-right">
-            <span class="text-navy-900 mb-1">Next Post  →</span>
-            <br />
-            <p>
-              <a href="#" class="line-clamp-2 text-violet-500 hover:text-violet-700 transition-colors">
-                Blog title
-              </a>
-            </p>
-          </div>
-        </div>
-      </article>
-    </main> --%>
     """
   end
 
-  def handle_params(%{"id" => id}, _, socket) do
+  def handle_params(%{"id" => id, "locale" => locale}, _, socket) do
     {:noreply,
      socket
-     |> assign(:post, Blog.get_post_by_id!(id))}
+     |> assign(:post, Blog.get_post_by_id!(id, locale))}
   end
-
-  # @split_pattern [" ", "\n", "\r", "\t"]
-  # @words_per_minute 200
-
-  # defp time(string, opts \\ []) do
-  #   words_per_minute = Keyword.get(opts, :words_per_minute, @words_per_minute)
-  #   split_pattern = Keyword.get(opts, :split_pattern, @split_pattern)
-
-  #   words =
-  #     string
-  #     |> String.split(split_pattern, trim: true)
-  #     |> length
-
-  #   minutes =
-  #     Float.ceil(words / words_per_minute)
-  #     |> trunc
-
-  #   minutes
-  # end
 
   defp formatted_date(%Date{day: day, month: month, year: year} = date) do
     weekday_number = date |> Timex.to_datetime() |> Timex.weekday()
 
     weekday =
       case weekday_number do
-        1 -> "Sunday"
-        2 -> "Monday"
-        3 -> "Tuesday"
-        4 -> "Wednesday"
-        5 -> "Thursday"
-        6 -> "Friday"
-        7 -> "Saturday"
-        _ -> "Invalid weekday"
+        1 -> gettext("Sunday")
+        2 -> gettext("Monday")
+        3 -> gettext("Tuesday")
+        4 -> gettext("Wednesday")
+        5 -> gettext("Thursday")
+        6 -> gettext("Friday")
+        7 -> gettext("Saturday")
+        _ -> gettext("Invalid weekday")
       end
 
-    weekday <> ", " <> Timex.month_name(month) <> " #{day}, #{year}"
+    month_name =
+      case Timex.month_name(month) do
+        "January" -> gettext("January")
+        "February" -> gettext("February")
+        "March" -> gettext("March")
+        "April" -> gettext("April")
+        "May" -> gettext("May")
+        "June" -> gettext("June")
+        "July" -> gettext("July")
+        "August" -> gettext("August")
+        "September" -> gettext("September")
+        "October" -> gettext("October")
+        "November" -> gettext("November")
+        "December" -> gettext("December")
+        _ -> gettext("Invalid month")
+      end
+
+    weekday <> ", " <> month_name <> " #{day}, #{year}"
   end
 
   defp news_latter(assigns) do

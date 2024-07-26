@@ -26,12 +26,16 @@ defmodule FrankFerreira.Blog do
   def all_posts, do: @posts
   def all_tags, do: @tags
 
-  def published_posts, do: Enum.filter(all_posts(), &(&1.published == true))
+  def published_posts(locale),
+    do: Enum.filter(all_posts(), &(&1.published == true and &1.language == locale))
 
-  def recent_posts(num \\ 5), do: Enum.take(published_posts(), num)
+  def recent_posts(locale, num \\ 5) do
+    published_posts(locale)
+    |> Enum.take(num)
+  end
 
-  def get_post_by_id!(id) do
-    Enum.find(all_posts(), &(&1.id == id)) ||
+  def get_post_by_id!(id, locale) do
+    Enum.find(all_posts(), &(&1.id == id and &1.language == locale)) ||
       raise NotFoundError, "post with id=#{id} not found"
   end
 

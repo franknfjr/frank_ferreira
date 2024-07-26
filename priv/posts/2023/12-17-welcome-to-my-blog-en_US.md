@@ -3,7 +3,7 @@
   author: "Frank Ferreira",
   tags: ~w(#hello #world),
   description: "Welcome to my first blog post!",
-  published: false,
+  published: true,
   updated_at: nil,
   twitter: "franknfjr"
 }
@@ -11,7 +11,7 @@
 
 ## Hello World!
 
-Hi everyone, welcome! My name is Frank, and this is Frank Ferreira's blog. Here, I'll be writing about my career, things I'm learning, and critical thoughts on technology.
+Hi en_US everyone, welcome! My name is Frank, and this is Frank Ferreira's blog. Here, I'll be writing about my career, things I'm learning, and critical thoughts on technology.
 
 I'm using the Elixir language and the Phoenix framework for this application. Almost all modules are built with LiveView, and the blog itself is created with the Nimble Publisher library.
 
