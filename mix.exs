@@ -52,7 +52,8 @@ defmodule FrankFerreira.MixProject do
       {:makeup_erlang, ">= 0.0.0"},
       {:html_entities, "~> 0.5"},
       {:mdex, "~> 0.1"},
-      {:phoenix_live_dashboard, "~> 0.7"}
+      {:phoenix_live_dashboard, "~> 0.7"},
+      {:httpoison, "~> 2.2"}
     ]
   end
 
