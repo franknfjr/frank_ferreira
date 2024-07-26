@@ -19,6 +19,7 @@ defmodule FrankFerreiraWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+    get "/rss.xml", RobotController, :rss
     live "/about", AboutLive
     live "/blog", BlogLive
     live "/blog/:id", BlogLive.Show
@@ -26,6 +27,7 @@ defmodule FrankFerreiraWeb.Router do
     live "/uses", UsesLive
     live "/contact", ContactLive
     live "/projects", ProjectsLive
+    live "/markdown", MarkdownLive
   end
 
   # Other scopes may use custom stacks.
