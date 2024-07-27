@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@github/markdown-toolbar-element": "^2.2.3",
+    "@github/paste-markdown": "^1.5.3"
+  }
+}
