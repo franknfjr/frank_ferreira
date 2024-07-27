@@ -35,3 +35,5 @@ frank_ferreira-*.tar
 npm-debug.log
 /assets/node_modules/
 
+# Ignorar todos os arquivos .DS_Store
+.DS_Store
