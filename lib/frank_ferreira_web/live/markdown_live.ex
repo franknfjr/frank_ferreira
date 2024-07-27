@@ -16,7 +16,7 @@ defmodule FrankFerreiraWeb.MarkdownLive do
 
   def render(assigns) do
     ~H"""
-    <.form phx-change="validate" class="w-full max-w-4xl mx-auto p-4">
+    <.form for={@content_id} phx-change="validate" class="w-full max-w-4xl mx-auto p-4">
       <div class="mb-4">
         <div class="flex justify-between items-center border-b border-gray-300 pb-2 mb-2">
           <div>
