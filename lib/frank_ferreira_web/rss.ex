@@ -13,16 +13,15 @@ defmodule FrankFerreiraWeb.RSS do
   end
 
   def open(output, rss, opts) do
-    locale = Map.get(rss, :language)
+    locale = Map.get(rss, :language, "en")
 
     todayer = Keyword.get(opts, :todayer, &Date.utc_today/0)
     year = todayer.().year
 
     locale =
-      cond do
-        locale == "br" -> "pt-BR"
-        locale == "en" -> "en-US"
-        true -> "en-US"
+      case locale do
+        "br" -> "pt-BR"
+        "en" -> "en-US"
       end
 
     [
@@ -32,7 +31,7 @@ defmodule FrankFerreiraWeb.RSS do
       """,
       "<channel>\n",
       """
-      <atom:link href="#{url(@endpoint, ~p"#{@locale}/rss.xml")}" rel="self" type="application/rss+xml" />
+      <atom:link href="#{url(@endpoint, ~p"/#{locale}/rss.xml")}" rel="self" type="application/rss+xml" />
       """,
       "<title>#{cdata(rss.title)}</title>\n",
       "<language>#{locale}</language>\n",
