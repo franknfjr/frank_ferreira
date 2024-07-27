@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc><%= url(@conn, ~p"/blog") %></loc>
+        <changefreq>daily</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <%= for post <- @posts do %>
+    <url>
+        <loc><%= url(@conn, ~p"/blog/#{post}") %></loc>
+        <lastmod><%= post.created_at %></lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1</priority>
+    </url>
+    <% end %>
+</urlset>

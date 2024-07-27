@@ -13,8 +13,17 @@ defmodule FrankFerreiraWeb.RSS do
   end
 
   def open(output, rss, opts) do
+    locale = Map.get(rss, :language)
+
     todayer = Keyword.get(opts, :todayer, &Date.utc_today/0)
     year = todayer.().year
+
+    locale =
+      cond do
+        locale == "br" -> "pt-BR"
+        locale == "en" -> "en-US"
+        true -> "en-US"
+      end
 
     [
       """
@@ -26,7 +35,7 @@ defmodule FrankFerreiraWeb.RSS do
       <atom:link href="#{url(@endpoint, ~p"/rss.xml")}" rel="self" type="application/rss+xml" />
       """,
       "<title>#{cdata(rss.title)}</title>\n",
-      "<language>#{rss.language}</language>\n",
+      "<language>#{locale}</language>\n",
       "<description>#{cdata(rss.description)}</description>\n",
       "<pubDate>#{post_date(rss.posts)}</pubDate>\n",
       "<link>#{url(@endpoint, ~p"/")}</link>\n",
@@ -61,8 +70,8 @@ defmodule FrankFerreiraWeb.RSS do
       "<title>#{cdata(post.title)}</title>\n",
       "<dc:creator>#{author}</dc:creator>\n",
       "<description>#{cdata(post.description)}</description>\n",
-      "<link>#{url(@endpoint, ~p"/blog/#{post}")}</link>\n",
-      "<guid isPermaLink=\"true\">#{url(@endpoint, ~p"/blog/#{post}")}</guid>\n",
+      "<link>#{url(@endpoint, ~p"/blog/#{post.language}/#{post}")}</link>\n",
+      "<guid isPermaLink=\"true\">#{url(@endpoint, ~p"/blog/#{post.language}/#{post}")}</guid>\n",
       "<pubDate>#{post_date(post)}</pubDate>\n",
       "<content:encoded>#{cdata(post.body)}</content:encoded>\n",
       "</item>\n"

@@ -16,11 +16,18 @@ defmodule FrankFerreiraWeb.Router do
     plug :accepts, ["json"]
   end
 
+  scope "/", FrankFerreiraWeb, log: false do
+    get "/:locale/sitemap.xml", RobotController, :sitemap
+    get "/robots.txt", RobotController, :robots
+    get "/:locale/rss.xml", RobotController, :rss
+    get "/site.webmanifest", RobotController, :site_webmanifest
+    get "/:locale/browserconfig.xml", RobotController, :browserconfig
+  end
+
   scope "/", FrankFerreiraWeb do
     pipe_through :browser
 
     get "/", PageController, :home
-    get "/rss.xml", RobotController, :rss
     live "/about", AboutLive
     live "/blog", BlogLive
     live "/blog/:id", BlogLive.Show

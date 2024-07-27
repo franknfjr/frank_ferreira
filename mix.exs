@@ -53,7 +53,8 @@ defmodule FrankFerreira.MixProject do
       {:html_entities, "~> 0.5"},
       {:mdex, "~> 0.1"},
       {:phoenix_live_dashboard, "~> 0.7"},
-      {:httpoison, "~> 2.2"}
+      {:httpoison, "~> 2.2"},
+      {:phoenix_seo, "~> 0.1"}
     ]
   end
 
