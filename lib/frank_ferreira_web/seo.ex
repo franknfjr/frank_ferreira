@@ -5,22 +5,37 @@ defmodule FrankFerreiraWeb.SEO do
   use SEO,
     site: &__MODULE__.site_config/1,
     open_graph: SEO.OpenGraph.build(locale: "en_US"),
-    twitter:
-      SEO.Twitter.build(
-        site: "@franknfjr",
-        creator: "@franknfjr"
-      )
+    twitter: &__MODULE__.twitter_config/1
 
+  @doc """
+  Configures the site.
+  """
   def site_config(_conn) do
     SEO.Site.build(
       title_suffix: " · FrankFerreira",
-      default_title: "Frank Ferreira's Blog",
-      description: "A blog about development",
+      default_title: "Frank Ferreira Blog",
+      description:
+        "Personal website and blog of Frank Ferreira, a software developer and computer science student.",
       theme_color: "#663399",
       windows_tile_color: "#663399",
       mask_icon_color: "#663399",
       mask_icon_url: static_url(@endpoint, "/images/safari-pinned-tab.svg"),
       manifest_url: url(@endpoint, ~p"/site.webmanifest")
+    )
+  end
+
+  @doc """
+  Configures the Twitter card.
+  """
+  def twitter_config(_conn) do
+    SEO.Twitter.build(
+      site: "@franknfjr",
+      creator: "@franknfjr",
+      title: url(@endpoint, ~p"/"),
+      card: :summary_large_image,
+      image: static_url(@endpoint, "/images/avatar.png"),
+      description:
+        "Personal website and blog of Frank Ferreira, a software developer and computer science student."
     )
   end
 end
