@@ -12,15 +12,14 @@
     />
     <link rel="icon" href={~p"/f-32.png"} />
     <link phx-track-static rel="stylesheet" href={~p"/assets/app.css"} />
-    <%= if Application.get_env(:frank_ferreira, :app_env) == :prod do %>
-      <script
-        defer
-        data-exclude="/admin/*"
-        data-domain="frankferreira.dev"
-        src="/js/plausible_script.js"
-      >
-      </script>
-    <% end %>
+    <script
+      defer
+      data-exclude="/admin/*"
+      data-domain="frankferreira.dev"
+      src="/js/plausible_script.js"
+    >
+    </script>
+
     <script defer phx-track-static type="text/javascript" src={~p"/assets/app.js"}>
     </script>
     <script type="text/javascript">
