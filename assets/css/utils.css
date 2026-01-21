@@ -13,32 +13,28 @@
 
 /* Blog Details */
 @layer base {
-  /* h1 {
-    @apply my-4 pt-2 font-sans text-4xl font-semibold text-gray-900 dark:text-white;
-  } */
-
   h2 {
-    @apply my-3 pt-2 font-sans text-3xl font-semibold text-gray-900 dark:text-white;
+    @apply my-3 pt-2 text-2xl font-medium text-light-text dark:text-dark-text;
   }
 
   h3 {
-    @apply my-2 pt-2 font-sans text-xl font-semibold text-gray-900 dark:text-white;
+    @apply my-2 pt-2 text-lg font-medium text-light-text dark:text-dark-text;
   }
 
   h4 {
-    @apply my-2 py-2 font-sans text-lg font-semibold text-gray-900 dark:text-white;
+    @apply my-2 py-2 text-base font-medium text-light-text dark:text-dark-text;
   }
 
   strong {
-    @apply font-bold text-slate-800 dark:text-white;
+    @apply font-semibold text-light-text dark:text-dark-text;
   }
 
   li {
-    @apply leading-8 text-slate-700 dark:text-white;
+    @apply leading-7 text-light-muted dark:text-dark-muted;
   }
 
   p {
-    @apply py-2 leading-loose text-slate-600 dark:text-white;
+    @apply py-2 leading-relaxed text-light-muted dark:text-dark-muted;
   }
 
   p > img {

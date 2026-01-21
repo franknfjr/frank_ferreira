@@ -15,8 +15,26 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        brand: "#FD4F00",
-        primary: "#311b65",
+        brand: "#3b82f6",
+        primary: "#0a0a0a",
+        dark: {
+          bg: "#0a0a0a",
+          surface: "#141414",
+          border: "#1f1f1f",
+          text: "#fafafa",
+          muted: "#a1a1a1",
+        },
+        light: {
+          bg: "#fafafa",
+          surface: "#ffffff",
+          border: "#e5e5e5",
+          text: "#0a0a0a",
+          muted: "#525252",
+        },
+        accent: {
+          DEFAULT: "#3b82f6",
+          dark: "#2563eb",
+        },
       },
       fontFamily: {
         sans: ["Inter var", ...defaultTheme.fontFamily.sans],
