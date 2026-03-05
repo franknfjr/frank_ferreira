@@ -6,6 +6,6 @@ defmodule FrankFerreiraWeb.PageControllerTest do
     content = html_response(conn, 200)
     assert content =~ "About"
     assert content =~ "Blog"
-    assert content =~ "Timeline"
+    assert content =~ "Projects"
   end
 end
