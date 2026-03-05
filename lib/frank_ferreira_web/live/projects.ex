@@ -4,6 +4,25 @@ defmodule FrankFerreiraWeb.ProjectsLive do
   def mount(_params, _session, socket) do
     projects = [
       %{
+        id: "bruna-caroline",
+        name: "Bruna Caroline",
+        description:
+          gettext(
+            "Professional website for psychologist Bruna Caroline with online and in-person psychotherapy services."
+          ),
+        full_description:
+          gettext(
+            "Professional website developed for psychologist Bruna Caroline, offering online and in-person psychotherapy services. A modern, responsive single-page application built with React and Vite, deployed on Vercel."
+          ),
+        url: "https://brunacaroline.com.br",
+        github: nil,
+        tech: [
+          %{name: "React", logo: "react.dev"},
+          %{name: "Vite", logo: "vite.dev"},
+          %{name: "JavaScript", logo: "javascript.com"}
+        ]
+      },
+      %{
         id: "mario-artur",
         name: "Mario Artur",
         description:

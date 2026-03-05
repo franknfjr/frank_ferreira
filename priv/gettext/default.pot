@@ -11,8 +11,8 @@
 msgid ""
 msgstr ""
 
-#: lib/frank_ferreira_web/components/layouts/header.html.heex:16
-#: lib/frank_ferreira_web/components/layouts/header.html.heex:59
+#: lib/frank_ferreira_web/components/layouts/header.html.heex:22
+#: lib/frank_ferreira_web/components/layouts/header.html.heex:113
 #: lib/frank_ferreira_web/live/about_live.ex:30
 #, elixir-autogen, elixir-format
 msgid "About"
@@ -23,15 +23,15 @@ msgstr ""
 msgid "Actions"
 msgstr ""
 
-#: lib/frank_ferreira_web/components/layouts/header.html.heex:19
-#: lib/frank_ferreira_web/components/layouts/header.html.heex:60
+#: lib/frank_ferreira_web/components/layouts/header.html.heex:28
+#: lib/frank_ferreira_web/components/layouts/header.html.heex:116
 #, elixir-autogen, elixir-format
 msgid "Blog"
 msgstr ""
 
-#: lib/frank_ferreira_web/components/layouts/header.html.heex:22
-#: lib/frank_ferreira_web/components/layouts/header.html.heex:61
-#: lib/frank_ferreira_web/live/projects.ex:96
+#: lib/frank_ferreira_web/components/layouts/header.html.heex:34
+#: lib/frank_ferreira_web/components/layouts/header.html.heex:119
+#: lib/frank_ferreira_web/live/projects.ex:179
 #, elixir-autogen, elixir-format
 msgid "Projects"
 msgstr ""
@@ -42,8 +42,8 @@ msgstr ""
 msgid "close"
 msgstr ""
 
-#: lib/frank_ferreira_web/components/layouts/header.html.heex:13
-#: lib/frank_ferreira_web/components/layouts/header.html.heex:58
+#: lib/frank_ferreira_web/components/layouts/header.html.heex:16
+#: lib/frank_ferreira_web/components/layouts/header.html.heex:110
 #, elixir-autogen, elixir-format
 msgid "Home"
 msgstr ""
@@ -103,12 +103,12 @@ msgstr ""
 msgid "We can't find the internet"
 msgstr ""
 
-#: lib/frank_ferreira_web/live/about_live.ex:71
+#: lib/frank_ferreira_web/live/about_live.ex:89
 #, elixir-autogen, elixir-format
 msgid "Ananindeua"
 msgstr ""
 
-#: lib/frank_ferreira_web/live/about_live.ex:71
+#: lib/frank_ferreira_web/live/about_live.ex:89
 #, elixir-autogen, elixir-format
 msgid "Brazil"
 msgstr ""
@@ -118,18 +118,18 @@ msgstr ""
 msgid "Hello! I'm an enthusiastic programmer dedicated to exploring and refining my skills in the realm of software development. Throughout my journey, I've found my path in the Elixir ecosystem, where I've been involved in challenging projects that have allowed me to grow as a developer."
 msgstr ""
 
-#: lib/frank_ferreira_web/live/blog_live.ex:66
+#: lib/frank_ferreira_web/live/blog_live.ex:76
 #: lib/frank_ferreira_web/live/blog_live/show.ex:123
 #, elixir-autogen, elixir-format
 msgid "May"
 msgstr ""
 
-#: lib/frank_ferreira_web/live/about_live.ex:41
+#: lib/frank_ferreira_web/live/about_live.ex:43
 #, elixir-autogen, elixir-format
 msgid "My passion for solving complex problems and crafting efficient solutions drives me to constantly pursue excellence in my work. I'm always eager to learn new technologies and innovative approaches to further enhance my expertise and make meaningful contributions to the projects I'm engaged in."
 msgstr ""
 
-#: lib/frank_ferreira_web/live/about_live.ex:45
+#: lib/frank_ferreira_web/live/about_live.ex:49
 #, elixir-autogen, elixir-format
 msgid "Whether exploring new concepts, collaborating with teams, or tackling challenges, I am committed to evolving as a professional and making a positive impact on the software development community."
 msgstr ""
@@ -139,42 +139,42 @@ msgstr ""
 msgid "Read more"
 msgstr ""
 
-#: lib/frank_ferreira_web/live/projects.ex:44
+#: lib/frank_ferreira_web/live/projects.ex:95
 #, elixir-autogen, elixir-format
 msgid "Healthcare"
 msgstr ""
 
-#: lib/frank_ferreira_web/live/projects.ex:21
+#: lib/frank_ferreira_web/live/projects.ex:65
 #, elixir-autogen, elixir-format
 msgid "Introduction to Elixir and Phoenix"
 msgstr ""
 
-#: lib/frank_ferreira_web/live/projects.ex:8
+#: lib/frank_ferreira_web/live/projects.ex:46
 #, elixir-autogen, elixir-format
 msgid "IrriSusten"
 msgstr ""
 
-#: lib/frank_ferreira_web/live/projects.ex:23
+#: lib/frank_ferreira_web/live/projects.ex:69
 #, elixir-autogen, elixir-format
 msgid "Repository for the Elixir and Phoenix mini-course, provided by the Applied Computing Laboratory at UFRA, functioning as a central repository for educational materials tailored to students and tech enthusiasts keen on exploring the dynamic realms of Elixir and Phoenix development."
 msgstr ""
 
-#: lib/frank_ferreira_web/live/projects.ex:70
+#: lib/frank_ferreira_web/live/projects.ex:129
 #, elixir-autogen, elixir-format
 msgid "The Voter Intentions System is a digital platform designed to facilitate the collection and analysis of data related to voters' preferences in a specific political context."
 msgstr ""
 
-#: lib/frank_ferreira_web/live/projects.ex:10
+#: lib/frank_ferreira_web/live/projects.ex:52
 #, elixir-autogen, elixir-format
 msgid "The study introduces Irrisusten, an information system to manage plantation irrigation. It automates agricultural production control and reduces water wastage. It features web and mobile interfaces, utilizing physical components like Arduino Uno, sensors, relays, and Bluetooth modules."
 msgstr ""
 
-#: lib/frank_ferreira_web/live/projects.ex:68
+#: lib/frank_ferreira_web/live/projects.ex:126
 #, elixir-autogen, elixir-format
 msgid "Voter Intentions System"
 msgstr ""
 
-#: lib/frank_ferreira_web/live/projects.ex:35
+#: lib/frank_ferreira_web/live/projects.ex:84
 #, elixir-autogen, elixir-format
 msgid "The Markdown in Elixir project converts Markdown files to HTML and Livebook using the Elixir language, leveraging its efficiency and scalability. It provides a flexible solution for developers to format text quickly and effectively in various online and data development contexts."
 msgstr ""
@@ -456,25 +456,25 @@ msgstr ""
 msgid "Yes, my first code was made in Delphi"
 msgstr ""
 
-#: lib/frank_ferreira_web/live/blog_live.ex:65
+#: lib/frank_ferreira_web/live/blog_live.ex:75
 #: lib/frank_ferreira_web/live/blog_live/show.ex:122
 #, elixir-autogen, elixir-format
 msgid "April"
 msgstr ""
 
-#: lib/frank_ferreira_web/live/blog_live.ex:69
+#: lib/frank_ferreira_web/live/blog_live.ex:79
 #: lib/frank_ferreira_web/live/blog_live/show.ex:126
 #, elixir-autogen, elixir-format
 msgid "August"
 msgstr ""
 
-#: lib/frank_ferreira_web/live/blog_live.ex:73
+#: lib/frank_ferreira_web/live/blog_live.ex:83
 #: lib/frank_ferreira_web/live/blog_live/show.ex:130
 #, elixir-autogen, elixir-format
 msgid "December"
 msgstr ""
 
-#: lib/frank_ferreira_web/live/blog_live.ex:63
+#: lib/frank_ferreira_web/live/blog_live.ex:73
 #: lib/frank_ferreira_web/live/blog_live/show.ex:120
 #, elixir-autogen, elixir-format
 msgid "February"
@@ -485,7 +485,7 @@ msgstr ""
 msgid "Friday"
 msgstr ""
 
-#: lib/frank_ferreira_web/live/blog_live.ex:74
+#: lib/frank_ferreira_web/live/blog_live.ex:84
 #: lib/frank_ferreira_web/live/blog_live/show.ex:131
 #, elixir-autogen, elixir-format
 msgid "Invalid month"
@@ -496,25 +496,25 @@ msgstr ""
 msgid "Invalid weekday"
 msgstr ""
 
-#: lib/frank_ferreira_web/live/blog_live.ex:62
+#: lib/frank_ferreira_web/live/blog_live.ex:72
 #: lib/frank_ferreira_web/live/blog_live/show.ex:119
 #, elixir-autogen, elixir-format
 msgid "January"
 msgstr ""
 
-#: lib/frank_ferreira_web/live/blog_live.ex:68
+#: lib/frank_ferreira_web/live/blog_live.ex:78
 #: lib/frank_ferreira_web/live/blog_live/show.ex:125
 #, elixir-autogen, elixir-format
 msgid "July"
 msgstr ""
 
-#: lib/frank_ferreira_web/live/blog_live.ex:67
+#: lib/frank_ferreira_web/live/blog_live.ex:77
 #: lib/frank_ferreira_web/live/blog_live/show.ex:124
 #, elixir-autogen, elixir-format
 msgid "June"
 msgstr ""
 
-#: lib/frank_ferreira_web/live/blog_live.ex:64
+#: lib/frank_ferreira_web/live/blog_live.ex:74
 #: lib/frank_ferreira_web/live/blog_live/show.ex:121
 #, elixir-autogen, elixir-format
 msgid "March"
@@ -525,13 +525,13 @@ msgstr ""
 msgid "Monday"
 msgstr ""
 
-#: lib/frank_ferreira_web/live/blog_live.ex:72
+#: lib/frank_ferreira_web/live/blog_live.ex:82
 #: lib/frank_ferreira_web/live/blog_live/show.ex:129
 #, elixir-autogen, elixir-format
 msgid "November"
 msgstr ""
 
-#: lib/frank_ferreira_web/live/blog_live.ex:71
+#: lib/frank_ferreira_web/live/blog_live.ex:81
 #: lib/frank_ferreira_web/live/blog_live/show.ex:128
 #, elixir-autogen, elixir-format
 msgid "October"
@@ -542,7 +542,7 @@ msgstr ""
 msgid "Saturday"
 msgstr ""
 
-#: lib/frank_ferreira_web/live/blog_live.ex:70
+#: lib/frank_ferreira_web/live/blog_live.ex:80
 #: lib/frank_ferreira_web/live/blog_live/show.ex:127
 #, elixir-autogen, elixir-format
 msgid "September"
@@ -578,22 +578,22 @@ msgstr ""
 msgid "Building software in Brazil. Passionate about creating tools that make life easier."
 msgstr ""
 
-#: lib/frank_ferreira_web/live/about_live.ex:51
+#: lib/frank_ferreira_web/live/about_live.ex:57
 #, elixir-autogen, elixir-format
 msgid "Connect"
 msgstr ""
 
-#: lib/frank_ferreira_web/live/projects.ex:34
+#: lib/frank_ferreira_web/live/projects.ex:82
 #, elixir-autogen, elixir-format
 msgid "Converts Markdown files to HTML and Livebook using Elixir."
 msgstr ""
 
-#: lib/frank_ferreira_web/live/projects.ex:45
+#: lib/frank_ferreira_web/live/projects.ex:97
 #, elixir-autogen, elixir-format
 msgid "Dashboard for patient appointments, medications, and hospital indicators."
 msgstr ""
 
-#: lib/frank_ferreira_web/live/projects.ex:22
+#: lib/frank_ferreira_web/live/projects.ex:67
 #, elixir-autogen, elixir-format
 msgid "Educational repository for Elixir and Phoenix mini-course at UFRA."
 msgstr ""
@@ -603,47 +603,47 @@ msgstr ""
 msgid "Hey, I'm Frank"
 msgstr ""
 
-#: lib/frank_ferreira_web/live/projects.ex:9
+#: lib/frank_ferreira_web/live/projects.ex:48
 #, elixir-autogen, elixir-format
 msgid "Information system to manage plantation irrigation with web and mobile interfaces."
 msgstr ""
 
-#: lib/frank_ferreira_web/live/projects.ex:58
+#: lib/frank_ferreira_web/live/projects.ex:113
 #, elixir-autogen, elixir-format
 msgid "Internal content delivery network for file management."
 msgstr ""
 
-#: lib/frank_ferreira_web/live/about_live.ex:68
+#: lib/frank_ferreira_web/live/about_live.ex:86
 #, elixir-autogen, elixir-format
 msgid "Location"
 msgstr ""
 
-#: lib/frank_ferreira_web/live/projects.ex:69
+#: lib/frank_ferreira_web/live/projects.ex:127
 #, elixir-autogen, elixir-format
 msgid "Platform for collecting and analyzing voter preference data."
 msgstr ""
 
-#: lib/frank_ferreira_web/live/projects.ex:229
+#: lib/frank_ferreira_web/live/projects.ex:389
 #, elixir-autogen, elixir-format
 msgid "Private project - no public links available"
 msgstr ""
 
-#: lib/frank_ferreira_web/live/projects.ex:183
+#: lib/frank_ferreira_web/live/projects.ex:319
 #, elixir-autogen, elixir-format
 msgid "Tech Stack"
 msgstr ""
 
-#: lib/frank_ferreira_web/live/projects.ex:46
+#: lib/frank_ferreira_web/live/projects.ex:99
 #, elixir-autogen, elixir-format
 msgid "The 'Healthcare' app provides a comprehensive overview of patient appointments, medications, phone calls, surgeries, financial transactions, and other relevant data, offering healthcare professionals a detailed insight into daily hospital indicators for better management and decision-making."
 msgstr ""
 
-#: lib/frank_ferreira_web/live/projects.ex:59
+#: lib/frank_ferreira_web/live/projects.ex:115
 #, elixir-autogen, elixir-format
 msgid "The CDN (Content Delivery Network) system developed in Elixir was initially designed for internal file management. Using the Elixir language, the system offered an efficient and scalable solution to manage content distribution, optimizing access and file delivery across a network."
 msgstr ""
 
-#: lib/frank_ferreira_web/live/projects.ex:99
+#: lib/frank_ferreira_web/live/projects.ex:182
 #, elixir-autogen, elixir-format
 msgid "Things I've built and contributed to."
 msgstr ""
@@ -653,7 +653,32 @@ msgstr ""
 msgid "Thoughts on software, technology, and life."
 msgstr ""
 
-#: lib/frank_ferreira_web/live/projects.ex:224
+#: lib/frank_ferreira_web/live/projects.ex:384
 #, elixir-autogen, elixir-format
 msgid "View Project"
+msgstr ""
+
+#: lib/frank_ferreira_web/live/projects.ex:206
+#, elixir-autogen, elixir-format
+msgid "Clear"
+msgstr ""
+
+#: lib/frank_ferreira_web/live/projects.ex:33
+#, elixir-autogen, elixir-format
+msgid "Landing page developed for football player Mario Artur (Lateral / Meio Campista). A modern, responsive single-page application built with React and Vite, featuring the player's profile, career highlights, and contact information."
+msgstr ""
+
+#: lib/frank_ferreira_web/live/projects.ex:29
+#, elixir-autogen, elixir-format
+msgid "Landing page for football player Mario Artur with player profile and career info."
+msgstr ""
+
+#: lib/frank_ferreira_web/live/projects.ex:14
+#, elixir-autogen, elixir-format
+msgid "Professional website developed for psychologist Bruna Caroline, offering online and in-person psychotherapy services. A modern, responsive single-page application built with React and Vite, deployed on Vercel."
+msgstr ""
+
+#: lib/frank_ferreira_web/live/projects.ex:10
+#, elixir-autogen, elixir-format
+msgid "Professional website for psychologist Bruna Caroline with online and in-person psychotherapy services."
 msgstr ""
