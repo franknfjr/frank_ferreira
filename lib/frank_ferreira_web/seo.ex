@@ -16,9 +16,9 @@ defmodule FrankFerreiraWeb.SEO do
       default_title: "Frank Ferreira Blog",
       description:
         "Personal website and blog of Frank Ferreira, a software developer and computer science student.",
-      theme_color: "#663399",
-      windows_tile_color: "#663399",
-      mask_icon_color: "#663399",
+      theme_color: "#3b82f6",
+      windows_tile_color: "#3b82f6",
+      mask_icon_color: "#3b82f6",
       mask_icon_url: static_url(@endpoint, "/images/safari-pinned-tab.svg"),
       manifest_url: url(@endpoint, ~p"/site.webmanifest")
     )
@@ -94,11 +94,13 @@ defimpl SEO.Twitter.Build, for: FrankFerreira.Blog.Post do
 end
 
 defimpl SEO.Site.Build, for: FrankFerreira.Blog.Post do
-  def build(post, _conn) do
+  use FrankFerreiraWeb, :verified_routes
+
+  def build(post, conn) do
     SEO.Site.build(
       title: SEO.Utils.truncate(post.title, 70),
       description: post.description,
-      canonical_url: post.canonical_url
+      canonical_url: url(conn, ~p"/blog/#{post.language}/#{post}")
     )
   end
 end

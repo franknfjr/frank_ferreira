@@ -15,9 +15,14 @@ defmodule FrankFerreiraWeb.RobotController do
   plug :put_layout, false
 
   def robots(conn, _params) do
+    host = FrankFerreiraWeb.Endpoint.url()
+
     text(conn, """
     User-agent: *
     Disallow: /admin
+
+    Sitemap: #{host}/en/sitemap.xml
+    Sitemap: #{host}/br/sitemap.xml
     """)
   end
 
@@ -42,7 +47,7 @@ defmodule FrankFerreiraWeb.RobotController do
             type: "image/png"
           }
         end,
-      theme_color: "#663399",
+      theme_color: "#3b82f6",
       display: "minimal-ui",
       background_color: "#ffffff"
     })

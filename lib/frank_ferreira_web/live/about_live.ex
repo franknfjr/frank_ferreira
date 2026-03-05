@@ -34,15 +34,21 @@ defmodule FrankFerreiraWeb.AboutLive do
 
       <div class="space-y-4">
         <p class="text-light-muted dark:text-dark-muted leading-relaxed">
-          <%= gettext("Hello! I'm an enthusiastic programmer dedicated to exploring and refining my skills in the realm of software development. Throughout my journey, I've found my path in the Elixir ecosystem, where I've been involved in challenging projects that have allowed me to grow as a developer.") %>
+          <%= gettext(
+            "Hello! I'm an enthusiastic programmer dedicated to exploring and refining my skills in the realm of software development. Throughout my journey, I've found my path in the Elixir ecosystem, where I've been involved in challenging projects that have allowed me to grow as a developer."
+          ) %>
         </p>
 
         <p class="text-light-muted dark:text-dark-muted leading-relaxed">
-          <%= gettext("My passion for solving complex problems and crafting efficient solutions drives me to constantly pursue excellence in my work. I'm always eager to learn new technologies and innovative approaches to further enhance my expertise and make meaningful contributions to the projects I'm engaged in.") %>
+          <%= gettext(
+            "My passion for solving complex problems and crafting efficient solutions drives me to constantly pursue excellence in my work. I'm always eager to learn new technologies and innovative approaches to further enhance my expertise and make meaningful contributions to the projects I'm engaged in."
+          ) %>
         </p>
 
         <p class="text-light-muted dark:text-dark-muted leading-relaxed">
-          <%= gettext("Whether exploring new concepts, collaborating with teams, or tackling challenges, I am committed to evolving as a professional and making a positive impact on the software development community.") %>
+          <%= gettext(
+            "Whether exploring new concepts, collaborating with teams, or tackling challenges, I am committed to evolving as a professional and making a positive impact on the software development community."
+          ) %>
         </p>
       </div>
 
@@ -51,13 +57,25 @@ defmodule FrankFerreiraWeb.AboutLive do
           <%= gettext("Connect") %>
         </h2>
         <div class="space-y-2">
-          <a href="https://twitter.com/franknfjr" target="_blank" class="block text-light-muted dark:text-dark-muted hover:text-light-text dark:hover:text-dark-text transition-colors">
+          <a
+            href="https://twitter.com/franknfjr"
+            target="_blank"
+            class="block text-light-muted dark:text-dark-muted hover:text-light-text dark:hover:text-dark-text transition-colors"
+          >
             Twitter → @franknfjr
           </a>
-          <a href="https://github.com/franknfjr" target="_blank" class="block text-light-muted dark:text-dark-muted hover:text-light-text dark:hover:text-dark-text transition-colors">
+          <a
+            href="https://github.com/franknfjr"
+            target="_blank"
+            class="block text-light-muted dark:text-dark-muted hover:text-light-text dark:hover:text-dark-text transition-colors"
+          >
             GitHub → franknfjr
           </a>
-          <a href="https://linkedin.com/in/franknferreira" target="_blank" class="block text-light-muted dark:text-dark-muted hover:text-light-text dark:hover:text-dark-text transition-colors">
+          <a
+            href="https://linkedin.com/in/franknferreira"
+            target="_blank"
+            class="block text-light-muted dark:text-dark-muted hover:text-light-text dark:hover:text-dark-text transition-colors"
+          >
             LinkedIn → franknferreira
           </a>
         </div>
@@ -88,5 +106,4 @@ defmodule FrankFerreiraWeb.AboutLive do
 
     assign(socket, date: now_me, time_zone: time_zone, zone_abbr: zone_you)
   end
-
 end

@@ -6,8 +6,14 @@ defmodule FrankFerreiraWeb.ProjectsLive do
       %{
         id: "mario-artur",
         name: "Mario Artur",
-        description: gettext("Landing page for football player Mario Artur with player profile and career info."),
-        full_description: gettext("Landing page developed for football player Mario Artur (Lateral / Meio Campista). A modern, responsive single-page application built with React and Vite, featuring the player's profile, career highlights, and contact information."),
+        description:
+          gettext(
+            "Landing page for football player Mario Artur with player profile and career info."
+          ),
+        full_description:
+          gettext(
+            "Landing page developed for football player Mario Artur (Lateral / Meio Campista). A modern, responsive single-page application built with React and Vite, featuring the player's profile, career highlights, and contact information."
+          ),
         url: "https://marioartur.com",
         github: nil,
         tech: [
@@ -19,8 +25,14 @@ defmodule FrankFerreiraWeb.ProjectsLive do
       %{
         id: "irrisusten",
         name: gettext("IrriSusten"),
-        description: gettext("Information system to manage plantation irrigation with web and mobile interfaces."),
-        full_description: gettext("The study introduces Irrisusten, an information system to manage plantation irrigation. It automates agricultural production control and reduces water wastage. It features web and mobile interfaces, utilizing physical components like Arduino Uno, sensors, relays, and Bluetooth modules."),
+        description:
+          gettext(
+            "Information system to manage plantation irrigation with web and mobile interfaces."
+          ),
+        full_description:
+          gettext(
+            "The study introduces Irrisusten, an information system to manage plantation irrigation. It automates agricultural production control and reduces water wastage. It features web and mobile interfaces, utilizing physical components like Arduino Uno, sensors, relays, and Bluetooth modules."
+          ),
         url: "https://sol.sbc.org.br/index.php/wcama/article/view/2941",
         github: nil,
         tech: [
@@ -32,8 +44,12 @@ defmodule FrankFerreiraWeb.ProjectsLive do
       %{
         id: "elixir-phoenix",
         name: gettext("Introduction to Elixir and Phoenix"),
-        description: gettext("Educational repository for Elixir and Phoenix mini-course at UFRA."),
-        full_description: gettext("Repository for the Elixir and Phoenix mini-course, provided by the Applied Computing Laboratory at UFRA, functioning as a central repository for educational materials tailored to students and tech enthusiasts keen on exploring the dynamic realms of Elixir and Phoenix development."),
+        description:
+          gettext("Educational repository for Elixir and Phoenix mini-course at UFRA."),
+        full_description:
+          gettext(
+            "Repository for the Elixir and Phoenix mini-course, provided by the Applied Computing Laboratory at UFRA, functioning as a central repository for educational materials tailored to students and tech enthusiasts keen on exploring the dynamic realms of Elixir and Phoenix development."
+          ),
         url: "https://github.com/franknfjr/elixir-phoenix",
         github: "https://github.com/franknfjr/elixir-phoenix",
         tech: [
@@ -45,7 +61,10 @@ defmodule FrankFerreiraWeb.ProjectsLive do
         id: "mdown-ex",
         name: "Mdown_ex",
         description: gettext("Converts Markdown files to HTML and Livebook using Elixir."),
-        full_description: gettext("The Markdown in Elixir project converts Markdown files to HTML and Livebook using the Elixir language, leveraging its efficiency and scalability. It provides a flexible solution for developers to format text quickly and effectively in various online and data development contexts."),
+        full_description:
+          gettext(
+            "The Markdown in Elixir project converts Markdown files to HTML and Livebook using the Elixir language, leveraging its efficiency and scalability. It provides a flexible solution for developers to format text quickly and effectively in various online and data development contexts."
+          ),
         url: "https://github.com/franknfjr/md2livemd",
         github: "https://github.com/franknfjr/md2livemd",
         tech: [
@@ -55,8 +74,12 @@ defmodule FrankFerreiraWeb.ProjectsLive do
       %{
         id: "healthcare",
         name: gettext("Healthcare"),
-        description: gettext("Dashboard for patient appointments, medications, and hospital indicators."),
-        full_description: gettext("The 'Healthcare' app provides a comprehensive overview of patient appointments, medications, phone calls, surgeries, financial transactions, and other relevant data, offering healthcare professionals a detailed insight into daily hospital indicators for better management and decision-making."),
+        description:
+          gettext("Dashboard for patient appointments, medications, and hospital indicators."),
+        full_description:
+          gettext(
+            "The 'Healthcare' app provides a comprehensive overview of patient appointments, medications, phone calls, surgeries, financial transactions, and other relevant data, offering healthcare professionals a detailed insight into daily hospital indicators for better management and decision-making."
+          ),
         url: nil,
         github: nil,
         tech: [
@@ -69,7 +92,10 @@ defmodule FrankFerreiraWeb.ProjectsLive do
         id: "cdn",
         name: "CDN",
         description: gettext("Internal content delivery network for file management."),
-        full_description: gettext("The CDN (Content Delivery Network) system developed in Elixir was initially designed for internal file management. Using the Elixir language, the system offered an efficient and scalable solution to manage content distribution, optimizing access and file delivery across a network."),
+        full_description:
+          gettext(
+            "The CDN (Content Delivery Network) system developed in Elixir was initially designed for internal file management. Using the Elixir language, the system offered an efficient and scalable solution to manage content distribution, optimizing access and file delivery across a network."
+          ),
         url: nil,
         github: nil,
         tech: [
@@ -80,7 +106,10 @@ defmodule FrankFerreiraWeb.ProjectsLive do
         id: "voter-system",
         name: gettext("Voter Intentions System"),
         description: gettext("Platform for collecting and analyzing voter preference data."),
-        full_description: gettext("The Voter Intentions System is a digital platform designed to facilitate the collection and analysis of data related to voters' preferences in a specific political context."),
+        full_description:
+          gettext(
+            "The Voter Intentions System is a digital platform designed to facilitate the collection and analysis of data related to voters' preferences in a specific political context."
+          ),
         url: nil,
         github: nil,
         tech: [
@@ -161,7 +190,10 @@ defmodule FrankFerreiraWeb.ProjectsLive do
       </div>
 
       <div class="grid gap-6">
-        <% filtered_projects = if @selected_tag, do: Enum.filter(@projects, fn p -> Enum.any?(p.tech, & &1.name == @selected_tag) end), else: @projects %>
+        <% filtered_projects =
+          if @selected_tag,
+            do: Enum.filter(@projects, fn p -> Enum.any?(p.tech, &(&1.name == @selected_tag)) end),
+            else: @projects %>
         <%= for project <- filtered_projects do %>
           <div
             phx-click="open_modal"
@@ -180,10 +212,20 @@ defmodule FrankFerreiraWeb.ProjectsLive do
                   <%= for tech <- project.tech do %>
                     <div class="flex items-center gap-1.5 text-sm text-light-muted dark:text-dark-muted">
                       <%= if tech.logo do %>
-                        <img src={"https://img.logo.dev/#{tech.logo}?token=pk_SV36z4BVSz63N08ZgRSe3A&format=png&size=32"} alt={tech.name} class="w-4 h-4 rounded-sm" />
+                        <img
+                          src={"https://img.logo.dev/#{tech.logo}?token=pk_SV36z4BVSz63N08ZgRSe3A&format=png&size=32"}
+                          alt={tech.name}
+                          class="w-4 h-4 rounded-sm"
+                        />
                       <% else %>
-                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                          <circle cx="12" cy="12" r="10"/>
+                        <svg
+                          class="w-4 h-4"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <circle cx="12" cy="12" r="10" />
                         </svg>
                       <% end %>
                       <span><%= tech.name %></span>
@@ -192,8 +234,18 @@ defmodule FrankFerreiraWeb.ProjectsLive do
                 </div>
               </div>
               <div class="ml-4 text-light-muted dark:text-dark-muted group-hover:text-accent transition-colors">
-                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+                  />
                 </svg>
               </div>
             </div>
@@ -209,10 +261,7 @@ defmodule FrankFerreiraWeb.ProjectsLive do
           phx-key="Escape"
         >
           <%!-- Backdrop --%>
-          <div
-            class="absolute inset-0 bg-black/60 backdrop-blur-sm"
-            phx-click="close_modal"
-          />
+          <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" phx-click="close_modal" />
 
           <%!-- Modal Content --%>
           <div class="relative w-full max-w-lg bg-light-surface dark:bg-dark-surface border border-light-border dark:border-dark-border rounded-2xl shadow-2xl overflow-hidden animate-modal-in">
@@ -226,7 +275,13 @@ defmodule FrankFerreiraWeb.ProjectsLive do
                   phx-click="close_modal"
                   class="p-1 text-light-muted dark:text-dark-muted hover:text-light-text dark:hover:text-dark-text transition-colors"
                 >
-                  <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <svg
+                    class="w-6 h-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                  >
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 </button>
@@ -248,10 +303,20 @@ defmodule FrankFerreiraWeb.ProjectsLive do
                   <%= for tech <- @selected_project.tech do %>
                     <div class="flex items-center gap-2 px-3 py-1.5 bg-light-bg dark:bg-dark-bg rounded-lg text-sm text-light-muted dark:text-dark-muted">
                       <%= if tech.logo do %>
-                        <img src={"https://img.logo.dev/#{tech.logo}?token=pk_SV36z4BVSz63N08ZgRSe3A&format=png&size=32"} alt={tech.name} class="w-5 h-5 rounded-sm" />
+                        <img
+                          src={"https://img.logo.dev/#{tech.logo}?token=pk_SV36z4BVSz63N08ZgRSe3A&format=png&size=32"}
+                          alt={tech.name}
+                          class="w-5 h-5 rounded-sm"
+                        />
                       <% else %>
-                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                          <circle cx="12" cy="12" r="10"/>
+                        <svg
+                          class="w-5 h-5"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        >
+                          <circle cx="12" cy="12" r="10" />
                         </svg>
                       <% end %>
                       <span><%= tech.name %></span>
@@ -269,7 +334,11 @@ defmodule FrankFerreiraWeb.ProjectsLive do
                     class="inline-flex items-center gap-2 px-4 py-2 bg-dark-bg dark:bg-light-bg text-dark-text dark:text-light-text rounded-lg text-sm font-medium hover:opacity-80 transition-opacity"
                   >
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+                      <path
+                        fill-rule="evenodd"
+                        d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                        clip-rule="evenodd"
+                      />
                     </svg>
                     GitHub
                   </a>
@@ -280,8 +349,18 @@ defmodule FrankFerreiraWeb.ProjectsLive do
                     target="_blank"
                     class="inline-flex items-center gap-2 px-4 py-2 bg-accent text-white rounded-lg text-sm font-medium hover:opacity-80 transition-opacity"
                   >
-                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                    <svg
+                      class="w-5 h-5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+                      />
                     </svg>
                     <%= gettext("View Project") %>
                   </a>
@@ -315,5 +394,4 @@ defmodule FrankFerreiraWeb.ProjectsLive do
     </style>
     """
   end
-
 end

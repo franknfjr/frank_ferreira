@@ -17,6 +17,15 @@ defmodule FrankFerreiraWeb.Components.LanguageSelect do
     assigns =
       assigns
       |> assign_new(:current_path, fn -> "/" end)
+      |> assign(:locale_path, fn assigns, locale ->
+        path = assigns.current_path
+        # If on a blog post page (/blog/xx/slug), redirect to /blog when changing locale
+        if Regex.match?(~r"^/blog/(br|en)/[^/]+", path) do
+          "/blog?locale=#{locale}"
+        else
+          "#{path}?locale=#{locale}"
+        end
+      end)
 
     ~H"""
     <.dropdown>
@@ -42,10 +51,15 @@ defmodule FrankFerreiraWeb.Components.LanguageSelect do
       </:trigger_element>
 
       <%= for language <- @language_options do %>
-        <.dropdown_menu_item link_type="a" patch={@current_path <> "?locale=#{language.locale}"}>
+        <% target_path = @locale_path.(assigns, language.locale) %>
+        <a
+          href={target_path}
+          class="dropdown_menu-item flex items-center px-3 py-2 hover:bg-light-surface dark:hover:bg-dark-surface rounded-lg transition-colors cursor-pointer"
+          onclick={"window.location.href='#{target_path}'; return true;"}
+        >
           <div class="mr-2 text-2xl leading-none"><%= language.flag %></div>
-          <div><%= language.label %></div>
-        </.dropdown_menu_item>
+          <div class="text-sm text-light-text dark:text-dark-text"><%= language.label %></div>
+        </a>
       <% end %>
     </.dropdown>
     """

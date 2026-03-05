@@ -9,32 +9,70 @@
 
       <%!-- Desktop Nav --%>
       <div class="hidden sm:flex items-center gap-6">
-        <a href="/" class="text-sm text-light-muted dark:text-dark-muted hover:text-light-text dark:hover:text-dark-text transition-colors">
+        <a
+          href="/"
+          class="text-sm text-light-muted dark:text-dark-muted hover:text-light-text dark:hover:text-dark-text transition-colors"
+        >
           <%= gettext("Home") %>
         </a>
-        <a href="/about" class="text-sm text-light-muted dark:text-dark-muted hover:text-light-text dark:hover:text-dark-text transition-colors">
+        <a
+          href="/about"
+          class="text-sm text-light-muted dark:text-dark-muted hover:text-light-text dark:hover:text-dark-text transition-colors"
+        >
           <%= gettext("About") %>
         </a>
-        <a href="/blog" class="text-sm text-light-muted dark:text-dark-muted hover:text-light-text dark:hover:text-dark-text transition-colors">
+        <a
+          href="/blog"
+          class="text-sm text-light-muted dark:text-dark-muted hover:text-light-text dark:hover:text-dark-text transition-colors"
+        >
           <%= gettext("Blog") %>
         </a>
-        <a href="/projects" class="text-sm text-light-muted dark:text-dark-muted hover:text-light-text dark:hover:text-dark-text transition-colors">
+        <a
+          href="/projects"
+          class="text-sm text-light-muted dark:text-dark-muted hover:text-light-text dark:hover:text-dark-text transition-colors"
+        >
           <%= gettext("Projects") %>
         </a>
       </div>
 
       <%!-- Right side: theme toggle + language --%>
       <div class="flex items-center gap-4">
-        <button phx-click={JS.dispatch("toogle-darkmode")} class="p-2 text-light-muted dark:text-dark-muted hover:text-light-text dark:hover:text-dark-text transition-colors">
-          <svg class="w-5 h-5 hidden dark:block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+        <button
+          phx-click={JS.dispatch("toogle-darkmode")}
+          class="p-2 text-light-muted dark:text-dark-muted hover:text-light-text dark:hover:text-dark-text transition-colors"
+        >
+          <svg
+            class="w-5 h-5 hidden dark:block"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
+            />
           </svg>
-          <svg class="w-5 h-5 block dark:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+          <svg
+            class="w-5 h-5 block dark:hidden"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"
+            />
           </svg>
         </button>
 
         <.language_select
+          current_path={@conn.request_path}
           current_locale={Gettext.get_locale(FrankFerreiraWeb.Gettext)}
           language_options={FrankFerreira.config(:language_options)}
         />
@@ -44,8 +82,18 @@
           phx-click={JS.toggle(to: "#mobile-menu", in: "fade-in", out: "fade-out")}
           class="sm:hidden p-2 text-light-muted dark:text-dark-muted"
         >
-          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+            />
           </svg>
         </button>
       </div>
@@ -53,12 +101,23 @@
   </nav>
 
   <%!-- Mobile menu --%>
-  <div id="mobile-menu" class="hidden sm:hidden border-t border-light-border dark:border-dark-border">
+  <div
+    id="mobile-menu"
+    class="hidden sm:hidden border-t border-light-border dark:border-dark-border"
+  >
     <div class="px-4 py-4 space-y-3">
-      <a href="/" class="block text-sm text-light-muted dark:text-dark-muted"><%= gettext("Home") %></a>
-      <a href="/about" class="block text-sm text-light-muted dark:text-dark-muted"><%= gettext("About") %></a>
-      <a href="/blog" class="block text-sm text-light-muted dark:text-dark-muted"><%= gettext("Blog") %></a>
-      <a href="/projects" class="block text-sm text-light-muted dark:text-dark-muted"><%= gettext("Projects") %></a>
+      <a href="/" class="block text-sm text-light-muted dark:text-dark-muted">
+        <%= gettext("Home") %>
+      </a>
+      <a href="/about" class="block text-sm text-light-muted dark:text-dark-muted">
+        <%= gettext("About") %>
+      </a>
+      <a href="/blog" class="block text-sm text-light-muted dark:text-dark-muted">
+        <%= gettext("Blog") %>
+      </a>
+      <a href="/projects" class="block text-sm text-light-muted dark:text-dark-muted">
+        <%= gettext("Projects") %>
+      </a>
     </div>
   </div>
 </header>
