@@ -10,7 +10,7 @@ kill_signal = "SIGTERM"
 [build]
 
 [env]
-  PHX_HOST = "frank-ferreira.fly.dev"
+  PHX_HOST = "frankferreira.dev"
   PORT = "8080"
 
 [http_service]

@@ -8,7 +8,11 @@ import Config
 config :frank_ferreira, FrankFerreiraWeb.Endpoint,
   cache_static_manifest: "priv/static/cache_manifest.json",
   check_origin: [
-    "//*.frankferreira.dev"
+    "//*.frankferreira.dev",
+    "//frankferreira.dev",
+    "//*.frankferreira.com.br",
+    "//frankferreira.com.br",
+    "//*.fly.dev"
   ]
 
 # Do not print debug messages in production
