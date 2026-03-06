@@ -685,10 +685,10 @@ msgstr "Site profissional para a psicóloga Bruna Caroline com serviços de psic
 
 #: lib/frank_ferreira_web/live/projects.ex:15
 #, elixir-autogen, elixir-format
-msgid "E-commerce platform developed for Circuito das Plantas, a plant shop offering a wide variety of plants and gardening products. A modern, responsive application built with React and Vite, featuring product catalog, shopping cart, and online ordering."
-msgstr "Plataforma de e-commerce desenvolvida para o Circuito das Plantas, uma loja de plantas que oferece uma grande variedade de plantas e produtos de jardinagem. Uma aplicação moderna e responsiva construída com React e Vite, com catálogo de produtos, carrinho de compras e pedidos online."
+msgid "Product catalog and showcase developed for Circuito das Plantas, a plant shop offering a wide variety of plants, seedlings, and gardening products. A modern, responsive application built with React and Vite, featuring a product catalog and showcase for requesting products."
+msgstr "Catálogo de produtos e vitrine desenvolvido para o Circuito das Plantas, uma loja de plantas que oferece uma grande variedade de plantas, mudas e produtos de jardinagem. Uma aplicação moderna e responsiva construída com React e Vite, com catálogo de produtos e vitrine para solicitação de produtos."
 
 #: lib/frank_ferreira_web/live/projects.ex:11
 #, elixir-autogen, elixir-format
-msgid "E-commerce platform for plant sales with product catalog and online ordering."
-msgstr "Plataforma de e-commerce para venda de plantas com catálogo de produtos e pedidos online."
+msgid "Product catalog and showcase for requesting plants, seedlings, and gardening products."
+msgstr "Catálogo de produtos e vitrine para solicitação de plantas, mudas e produtos de jardinagem."

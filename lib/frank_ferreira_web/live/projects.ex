@@ -8,10 +8,12 @@ defmodule FrankFerreiraWeb.ProjectsLive do
         name: "Circuito das Plantas",
         image: "/images/circuitodasplantas.png",
         description:
-          gettext("E-commerce platform for plant sales with product catalog and online ordering."),
+          gettext(
+            "Product catalog and showcase for requesting plants, seedlings, and gardening products."
+          ),
         full_description:
           gettext(
-            "E-commerce platform developed for Circuito das Plantas, a plant shop offering a wide variety of plants and gardening products. A modern, responsive application built with React and Vite, featuring product catalog, shopping cart, and online ordering."
+            "Product catalog and showcase developed for Circuito das Plantas, a plant shop offering a wide variety of plants, seedlings, and gardening products. A modern, responsive application built with React and Vite, featuring a product catalog and showcase for requesting products."
           ),
         url: "https://circuitodasplantas.com.br",
         github: nil,
