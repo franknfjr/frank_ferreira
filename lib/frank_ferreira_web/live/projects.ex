@@ -247,16 +247,32 @@ defmodule FrankFerreiraWeb.ProjectsLive do
             phx-value-id={project.id}
             class="group cursor-pointer p-6 rounded-xl bg-light-surface dark:bg-dark-surface border border-light-border dark:border-dark-border hover:border-accent/50 dark:hover:border-accent/50 transition-all duration-300 hover:shadow-lg hover:shadow-accent/5"
           >
-            <div class="flex items-start justify-between">
-              <%= if project.image do %>
-                <div class="mr-4 flex-shrink-0">
+            <div class="flex items-center justify-between">
+              <div class="mr-4 flex-shrink-0">
+                <%= if project.image do %>
                   <img
                     src={project.image}
                     alt={project.name}
                     class="w-12 h-12 rounded-lg object-contain"
                   />
-                </div>
-              <% end %>
+                <% else %>
+                  <div class="w-12 h-12 rounded-lg bg-light-bg dark:bg-dark-bg border border-light-border dark:border-dark-border flex items-center justify-center">
+                    <svg
+                      class="w-6 h-6 text-light-muted dark:text-dark-muted"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"
+                      />
+                    </svg>
+                  </div>
+                <% end %>
+              </div>
               <div class="flex-1">
                 <h2 class="text-xl font-medium text-light-text dark:text-dark-text group-hover:text-accent transition-colors mb-2">
                   <%= project.name %>
@@ -331,6 +347,22 @@ defmodule FrankFerreiraWeb.ProjectsLive do
                       alt={@selected_project.name}
                       class="w-10 h-10 rounded-lg object-contain"
                     />
+                  <% else %>
+                    <div class="w-10 h-10 rounded-lg bg-light-bg dark:bg-dark-bg border border-light-border dark:border-dark-border flex items-center justify-center">
+                      <svg
+                        class="w-5 h-5 text-light-muted dark:text-dark-muted"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"
+                        />
+                      </svg>
+                    </div>
                   <% end %>
                   <h2 class="text-2xl font-medium text-light-text dark:text-dark-text">
                     <%= @selected_project.name %>
