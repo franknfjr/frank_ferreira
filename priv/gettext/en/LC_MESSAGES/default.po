@@ -31,7 +31,7 @@ msgstr ""
 
 #: lib/frank_ferreira_web/components/layouts/header.html.heex:34
 #: lib/frank_ferreira_web/components/layouts/header.html.heex:119
-#: lib/frank_ferreira_web/live/projects.ex:227
+#: lib/frank_ferreira_web/live/projects.ex:247
 #, elixir-autogen, elixir-format
 msgid "Projects"
 msgstr ""
@@ -139,42 +139,42 @@ msgstr ""
 msgid "Read more"
 msgstr ""
 
-#: lib/frank_ferreira_web/live/projects.ex:140
+#: lib/frank_ferreira_web/live/projects.ex:160
 #, elixir-autogen, elixir-format
 msgid "Healthcare"
 msgstr ""
 
-#: lib/frank_ferreira_web/live/projects.ex:108
+#: lib/frank_ferreira_web/live/projects.ex:128
 #, elixir-autogen, elixir-format
 msgid "Introduction to Elixir and Phoenix"
 msgstr ""
 
-#: lib/frank_ferreira_web/live/projects.ex:88
+#: lib/frank_ferreira_web/live/projects.ex:108
 #, elixir-autogen, elixir-format
 msgid "IrriSusten"
 msgstr ""
 
-#: lib/frank_ferreira_web/live/projects.ex:113
+#: lib/frank_ferreira_web/live/projects.ex:133
 #, elixir-autogen, elixir-format
 msgid "Repository for the Elixir and Phoenix mini-course, provided by the Applied Computing Laboratory at UFRA, functioning as a central repository for educational materials tailored to students and tech enthusiasts keen on exploring the dynamic realms of Elixir and Phoenix development."
 msgstr ""
 
-#: lib/frank_ferreira_web/live/projects.ex:177
+#: lib/frank_ferreira_web/live/projects.ex:197
 #, elixir-autogen, elixir-format
 msgid "The Voter Intentions System is a digital platform designed to facilitate the collection and analysis of data related to voters' preferences in a specific political context."
 msgstr ""
 
-#: lib/frank_ferreira_web/live/projects.ex:95
+#: lib/frank_ferreira_web/live/projects.ex:115
 #, elixir-autogen, elixir-format
 msgid "The study introduces Irrisusten, an information system to manage plantation irrigation. It automates agricultural production control and reduces water wastage. It features web and mobile interfaces, utilizing physical components like Arduino Uno, sensors, relays, and Bluetooth modules."
 msgstr ""
 
-#: lib/frank_ferreira_web/live/projects.ex:173
+#: lib/frank_ferreira_web/live/projects.ex:193
 #, elixir-autogen, elixir-format
 msgid "Voter Intentions System"
 msgstr ""
 
-#: lib/frank_ferreira_web/live/projects.ex:129
+#: lib/frank_ferreira_web/live/projects.ex:149
 #, elixir-autogen, elixir-format
 msgid "The Markdown in Elixir project converts Markdown files to HTML and Livebook using the Elixir language, leveraging its efficiency and scalability. It provides a flexible solution for developers to format text quickly and effectively in various online and data development contexts."
 msgstr ""
@@ -583,17 +583,17 @@ msgstr ""
 msgid "Connect"
 msgstr ""
 
-#: lib/frank_ferreira_web/live/projects.ex:127
+#: lib/frank_ferreira_web/live/projects.ex:147
 #, elixir-autogen, elixir-format
 msgid "Converts Markdown files to HTML and Livebook using Elixir."
 msgstr ""
 
-#: lib/frank_ferreira_web/live/projects.ex:143
+#: lib/frank_ferreira_web/live/projects.ex:163
 #, elixir-autogen, elixir-format
 msgid "Dashboard for patient appointments, medications, and hospital indicators."
 msgstr ""
 
-#: lib/frank_ferreira_web/live/projects.ex:111
+#: lib/frank_ferreira_web/live/projects.ex:131
 #, elixir-autogen, elixir-format
 msgid "Educational repository for Elixir and Phoenix mini-course at UFRA."
 msgstr ""
@@ -603,12 +603,12 @@ msgstr ""
 msgid "Hey, I'm Frank"
 msgstr ""
 
-#: lib/frank_ferreira_web/live/projects.ex:91
+#: lib/frank_ferreira_web/live/projects.ex:111
 #, elixir-autogen, elixir-format
 msgid "Information system to manage plantation irrigation with web and mobile interfaces."
 msgstr ""
 
-#: lib/frank_ferreira_web/live/projects.ex:160
+#: lib/frank_ferreira_web/live/projects.ex:180
 #, elixir-autogen, elixir-format
 msgid "Internal content delivery network for file management."
 msgstr ""
@@ -618,32 +618,32 @@ msgstr ""
 msgid "Location"
 msgstr ""
 
-#: lib/frank_ferreira_web/live/projects.ex:175
+#: lib/frank_ferreira_web/live/projects.ex:195
 #, elixir-autogen, elixir-format
 msgid "Platform for collecting and analyzing voter preference data."
 msgstr ""
 
-#: lib/frank_ferreira_web/live/projects.ex:487
+#: lib/frank_ferreira_web/live/projects.ex:507
 #, elixir-autogen, elixir-format
 msgid "Private project - no public links available"
 msgstr ""
 
-#: lib/frank_ferreira_web/live/projects.ex:417
+#: lib/frank_ferreira_web/live/projects.ex:437
 #, elixir-autogen, elixir-format
 msgid "Tech Stack"
 msgstr ""
 
-#: lib/frank_ferreira_web/live/projects.ex:145
+#: lib/frank_ferreira_web/live/projects.ex:165
 #, elixir-autogen, elixir-format, fuzzy
 msgid "The 'Healthcare' app provides a comprehensive overview of patient appointments, medications, phone calls, surgeries, financial transactions, and other relevant data, offering healthcare professionals a detailed insight into daily hospital indicators for better management and decision-making."
 msgstr ""
 
-#: lib/frank_ferreira_web/live/projects.ex:162
+#: lib/frank_ferreira_web/live/projects.ex:182
 #, elixir-autogen, elixir-format, fuzzy
 msgid "The CDN (Content Delivery Network) system developed in Elixir was initially designed for internal file management. Using the Elixir language, the system offered an efficient and scalable solution to manage content distribution, optimizing access and file delivery across a network."
 msgstr ""
 
-#: lib/frank_ferreira_web/live/projects.ex:230
+#: lib/frank_ferreira_web/live/projects.ex:250
 #, elixir-autogen, elixir-format
 msgid "Things I've built and contributed to."
 msgstr ""
@@ -653,52 +653,62 @@ msgstr ""
 msgid "Thoughts on software, technology, and life."
 msgstr ""
 
-#: lib/frank_ferreira_web/live/projects.ex:482
+#: lib/frank_ferreira_web/live/projects.ex:502
 #, elixir-autogen, elixir-format
 msgid "View Project"
 msgstr ""
 
-#: lib/frank_ferreira_web/live/projects.ex:254
+#: lib/frank_ferreira_web/live/projects.ex:274
 #, elixir-autogen, elixir-format
 msgid "Clear"
 msgstr ""
 
-#: lib/frank_ferreira_web/live/projects.ex:75
+#: lib/frank_ferreira_web/live/projects.ex:95
 #, elixir-autogen, elixir-format
 msgid "Landing page developed for football player Mario Artur (Lateral / Meio Campista). A modern, responsive single-page application built with React and Vite, featuring the player's profile, career highlights, and contact information."
 msgstr ""
 
-#: lib/frank_ferreira_web/live/projects.ex:71
+#: lib/frank_ferreira_web/live/projects.ex:91
 #, elixir-autogen, elixir-format
 msgid "Landing page for football player Mario Artur with player profile and career info."
 msgstr ""
 
-#: lib/frank_ferreira_web/live/projects.ex:55
+#: lib/frank_ferreira_web/live/projects.ex:75
 #, elixir-autogen, elixir-format
 msgid "Professional website developed for psychologist Bruna Caroline, offering online and in-person psychotherapy services. A modern, responsive single-page application built with React and Vite, deployed on Vercel."
 msgstr ""
 
-#: lib/frank_ferreira_web/live/projects.ex:51
+#: lib/frank_ferreira_web/live/projects.ex:71
 #, elixir-autogen, elixir-format
 msgid "Professional website for psychologist Bruna Caroline with online and in-person psychotherapy services."
 msgstr ""
 
-#: lib/frank_ferreira_web/live/projects.ex:35
+#: lib/frank_ferreira_web/live/projects.ex:55
 #, elixir-autogen, elixir-format
 msgid "Product catalog and showcase developed for Circuito das Plantas, a plant shop offering a wide variety of plants, seedlings, and gardening products. A modern, responsive application built with React and Vite, featuring a product catalog and showcase for requesting products."
 msgstr ""
 
-#: lib/frank_ferreira_web/live/projects.ex:31
+#: lib/frank_ferreira_web/live/projects.ex:51
 #, elixir-autogen, elixir-format
 msgid "Product catalog and showcase for requesting plants, seedlings, and gardening products."
 msgstr ""
 
-#: lib/frank_ferreira_web/live/projects.ex:15
+#: lib/frank_ferreira_web/live/projects.ex:35
 #, elixir-autogen, elixir-format
 msgid "School management platform developed for Agenda Letiva, providing tools for managing student assessments, grades, and academic scheduling. Built with Elixir, Phoenix, and LiveView, offering a real-time, responsive interface for educators and administrators."
 msgstr ""
 
-#: lib/frank_ferreira_web/live/projects.ex:11
+#: lib/frank_ferreira_web/live/projects.ex:31
 #, elixir-autogen, elixir-format
 msgid "School management platform for student assessments, grades, and academic scheduling."
+msgstr ""
+
+#: lib/frank_ferreira_web/live/projects.ex:11
+#, elixir-autogen, elixir-format
+msgid "Mobile task management app with custom categories, filters, and confetti celebrations."
+msgstr ""
+
+#: lib/frank_ferreira_web/live/projects.ex:15
+#, elixir-autogen, elixir-format
+msgid "Tarefinhas is a mobile task management app for Android, designed to organize tasks in a simple and fun way. Built with React Native and Expo, it features custom categories, task filtering, and confetti celebrations for completed tasks."
 msgstr ""

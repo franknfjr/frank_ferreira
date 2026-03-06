@@ -4,6 +4,26 @@ defmodule FrankFerreiraWeb.ProjectsLive do
   def mount(_params, _session, socket) do
     projects = [
       %{
+        id: "tarefinhas",
+        name: "Tarefinhas",
+        image: "/images/tarefinhas.png",
+        description:
+          gettext(
+            "Mobile task management app with custom categories, filters, and confetti celebrations."
+          ),
+        full_description:
+          gettext(
+            "Tarefinhas is a mobile task management app for Android, designed to organize tasks in a simple and fun way. Built with React Native and Expo, it features custom categories, task filtering, and confetti celebrations for completed tasks."
+          ),
+        url: "https://tarefinhas.frankferreira.com.br",
+        github: nil,
+        tech: [
+          %{name: "React Native", logo: "reactnative.dev"},
+          %{name: "Expo", logo: "expo.dev"},
+          %{name: "TypeScript", logo: "typescriptlang.org"}
+        ]
+      },
+      %{
         id: "agenda-letiva",
         name: "Agenda Letiva",
         image: "/images/agendaletiva.png",
