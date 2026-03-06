@@ -20,7 +20,7 @@ defmodule FrankFerreiraWeb.ProjectsLive do
         tech: [
           %{name: "HTML", logo: "w3.org"},
           %{name: "CSS", logo: "w3.org"},
-          %{name: "JavaScript", logo: "javascript.com"}
+          %{name: "JavaScript", logo: "javascript.dev.br"}
         ]
       },
       %{
@@ -80,7 +80,7 @@ defmodule FrankFerreiraWeb.ProjectsLive do
         tech: [
           %{name: "React", logo: "react.dev"},
           %{name: "Vite", logo: "vite.dev"},
-          %{name: "JavaScript", logo: "javascript.com"}
+          %{name: "JavaScript", logo: "javascript.dev.br"}
         ]
       },
       %{
@@ -100,7 +100,7 @@ defmodule FrankFerreiraWeb.ProjectsLive do
         tech: [
           %{name: "React", logo: "react.dev"},
           %{name: "Vite", logo: "vite.dev"},
-          %{name: "JavaScript", logo: "javascript.com"}
+          %{name: "JavaScript", logo: "javascript.dev.br"}
         ]
       },
       %{
@@ -120,7 +120,7 @@ defmodule FrankFerreiraWeb.ProjectsLive do
         tech: [
           %{name: "React", logo: "react.dev"},
           %{name: "Vite", logo: "vite.dev"},
-          %{name: "JavaScript", logo: "javascript.com"}
+          %{name: "JavaScript", logo: "javascript.dev.br"}
         ]
       },
       %{
