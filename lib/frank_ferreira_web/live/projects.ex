@@ -4,6 +4,26 @@ defmodule FrankFerreiraWeb.ProjectsLive do
   def mount(_params, _session, socket) do
     projects = [
       %{
+        id: "agenda-letiva",
+        name: "Agenda Letiva",
+        image: "/images/agendaletiva.png",
+        description:
+          gettext(
+            "School management platform for student assessments, grades, and academic scheduling."
+          ),
+        full_description:
+          gettext(
+            "School management platform developed for Agenda Letiva, providing tools for managing student assessments, grades, and academic scheduling. Built with Elixir, Phoenix, and LiveView, offering a real-time, responsive interface for educators and administrators."
+          ),
+        url: "https://agendaletiva.com.br",
+        github: nil,
+        tech: [
+          %{name: "Elixir", logo: "elixir-lang.org"},
+          %{name: "Phoenix", logo: "phoenixframework.org"},
+          %{name: "LiveView", logo: "phoenixframework.org"}
+        ]
+      },
+      %{
         id: "circuito-das-plantas",
         name: "Circuito das Plantas",
         image: "/images/circuitodasplantas.png",
