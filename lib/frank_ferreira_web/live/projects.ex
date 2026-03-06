@@ -4,6 +4,26 @@ defmodule FrankFerreiraWeb.ProjectsLive do
   def mount(_params, _session, socket) do
     projects = [
       %{
+        id: "entregador-das-galaxias",
+        name: "Entregador das Galaxias",
+        image: "/images/entregadordasgalaxias.png",
+        description:
+          gettext(
+            "Educational space delivery game built as a fun challenge for kids with trending themes in Brazil."
+          ),
+        full_description:
+          gettext(
+            "Entregador das Galaxias is an educational browser game created as a challenge for my niece Sofia, combining trending themes in Brazil 2026 in a playful and non-violent format. Built with pure HTML, CSS, and JavaScript, it features a space delivery adventure designed to be fun and relevant for kids."
+          ),
+        url: "https://entregadordasgalaxias.frankferreira.com.br",
+        github: nil,
+        tech: [
+          %{name: "HTML", logo: "w3.org"},
+          %{name: "CSS", logo: "w3.org"},
+          %{name: "JavaScript", logo: "javascript.com"}
+        ]
+      },
+      %{
         id: "tarefinhas",
         name: "Tarefinhas",
         image: "/images/tarefinhas.png",
