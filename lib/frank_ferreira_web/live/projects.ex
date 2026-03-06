@@ -4,8 +4,27 @@ defmodule FrankFerreiraWeb.ProjectsLive do
   def mount(_params, _session, socket) do
     projects = [
       %{
+        id: "circuito-das-plantas",
+        name: "Circuito das Plantas",
+        image: "/images/circuitodasplantas.png",
+        description:
+          gettext("E-commerce platform for plant sales with product catalog and online ordering."),
+        full_description:
+          gettext(
+            "E-commerce platform developed for Circuito das Plantas, a plant shop offering a wide variety of plants and gardening products. A modern, responsive application built with React and Vite, featuring product catalog, shopping cart, and online ordering."
+          ),
+        url: "https://circuitodasplantas.com.br",
+        github: nil,
+        tech: [
+          %{name: "React", logo: "react.dev"},
+          %{name: "Vite", logo: "vite.dev"},
+          %{name: "JavaScript", logo: "javascript.com"}
+        ]
+      },
+      %{
         id: "bruna-caroline",
         name: "Bruna Caroline",
+        image: nil,
         description:
           gettext(
             "Professional website for psychologist Bruna Caroline with online and in-person psychotherapy services."
@@ -25,6 +44,7 @@ defmodule FrankFerreiraWeb.ProjectsLive do
       %{
         id: "mario-artur",
         name: "Mario Artur",
+        image: "/images/marioartur.png",
         description:
           gettext(
             "Landing page for football player Mario Artur with player profile and career info."
@@ -44,6 +64,7 @@ defmodule FrankFerreiraWeb.ProjectsLive do
       %{
         id: "irrisusten",
         name: gettext("IrriSusten"),
+        image: nil,
         description:
           gettext(
             "Information system to manage plantation irrigation with web and mobile interfaces."
@@ -63,6 +84,7 @@ defmodule FrankFerreiraWeb.ProjectsLive do
       %{
         id: "elixir-phoenix",
         name: gettext("Introduction to Elixir and Phoenix"),
+        image: nil,
         description:
           gettext("Educational repository for Elixir and Phoenix mini-course at UFRA."),
         full_description:
@@ -79,6 +101,7 @@ defmodule FrankFerreiraWeb.ProjectsLive do
       %{
         id: "mdown-ex",
         name: "Mdown_ex",
+        image: nil,
         description: gettext("Converts Markdown files to HTML and Livebook using Elixir."),
         full_description:
           gettext(
@@ -93,6 +116,7 @@ defmodule FrankFerreiraWeb.ProjectsLive do
       %{
         id: "healthcare",
         name: gettext("Healthcare"),
+        image: nil,
         description:
           gettext("Dashboard for patient appointments, medications, and hospital indicators."),
         full_description:
@@ -110,6 +134,7 @@ defmodule FrankFerreiraWeb.ProjectsLive do
       %{
         id: "cdn",
         name: "CDN",
+        image: nil,
         description: gettext("Internal content delivery network for file management."),
         full_description:
           gettext(
@@ -124,6 +149,7 @@ defmodule FrankFerreiraWeb.ProjectsLive do
       %{
         id: "voter-system",
         name: gettext("Voter Intentions System"),
+        image: nil,
         description: gettext("Platform for collecting and analyzing voter preference data."),
         full_description:
           gettext(
@@ -220,6 +246,15 @@ defmodule FrankFerreiraWeb.ProjectsLive do
             class="group cursor-pointer p-6 rounded-xl bg-light-surface dark:bg-dark-surface border border-light-border dark:border-dark-border hover:border-accent/50 dark:hover:border-accent/50 transition-all duration-300 hover:shadow-lg hover:shadow-accent/5"
           >
             <div class="flex items-start justify-between">
+              <%= if project.image do %>
+                <div class="mr-4 flex-shrink-0">
+                  <img
+                    src={project.image}
+                    alt={project.name}
+                    class="w-12 h-12 rounded-lg object-contain"
+                  />
+                </div>
+              <% end %>
               <div class="flex-1">
                 <h2 class="text-xl font-medium text-light-text dark:text-dark-text group-hover:text-accent transition-colors mb-2">
                   <%= project.name %>
@@ -287,9 +322,18 @@ defmodule FrankFerreiraWeb.ProjectsLive do
             <%!-- Header --%>
             <div class="p-6 border-b border-light-border dark:border-dark-border">
               <div class="flex items-start justify-between">
-                <h2 class="text-2xl font-medium text-light-text dark:text-dark-text">
-                  <%= @selected_project.name %>
-                </h2>
+                <div class="flex items-center gap-3">
+                  <%= if @selected_project.image do %>
+                    <img
+                      src={@selected_project.image}
+                      alt={@selected_project.name}
+                      class="w-10 h-10 rounded-lg object-contain"
+                    />
+                  <% end %>
+                  <h2 class="text-2xl font-medium text-light-text dark:text-dark-text">
+                    <%= @selected_project.name %>
+                  </h2>
+                </div>
                 <button
                   phx-click="close_modal"
                   class="p-1 text-light-muted dark:text-dark-muted hover:text-light-text dark:hover:text-dark-text transition-colors"
