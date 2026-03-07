@@ -57,6 +57,10 @@ defmodule FrankFerreiraWeb.BlogLive.Show do
           <%= {:safe, @post.body} %>
         </div>
       </article>
+
+      <section class="mt-16 pt-8 border-t border-light-border dark:border-dark-border">
+        <div id="utterances-container" phx-hook="Utterances" phx-update="ignore"></div>
+      </section>
     </main>
     """
   end
