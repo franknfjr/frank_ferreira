@@ -4,26 +4,9 @@ defmodule FrankFerreiraWeb.ProjectsLive do
   def mount(_params, _session, socket) do
     projects = [
       %{
-        id: "voce-decide",
-        name: "VoceDecide",
-        image: nil,
-        description:
-          gettext("Real-time interactive voting app for live presentations and talks."),
-        full_description:
-          gettext(
-            "VoceDecide is a real-time interactive voting application designed for live presentations and talks. Built with Elixir, Phoenix, and LiveView, it allows the audience to vote and decide what happens next during a presentation."
-          ),
-        url: "https://voce-decide.fly.dev",
-        github: "https://github.com/franknfjr/voce_decide",
-        tech: [
-          %{name: "Elixir", logo: "elixir-lang.org"},
-          %{name: "Phoenix", logo: "phoenixframework.org"},
-          %{name: "LiveView", logo: "phoenixframework.org"}
-        ]
-      },
-      %{
         id: "entregador-das-galaxias",
         name: "Entregador das Galaxias",
+        date: ~D[2026-03-06],
         image: "/images/entregadordasgalaxias.png",
         description:
           gettext(
@@ -42,48 +25,9 @@ defmodule FrankFerreiraWeb.ProjectsLive do
         ]
       },
       %{
-        id: "tarefinhas",
-        name: "Tarefinhas",
-        image: "/images/tarefinhas.png",
-        description:
-          gettext(
-            "Mobile task management app with custom categories, filters, and confetti celebrations."
-          ),
-        full_description:
-          gettext(
-            "Tarefinhas is a mobile task management app for Android, designed to organize tasks in a simple and fun way. Built with React Native and Expo, it features custom categories, task filtering, and confetti celebrations for completed tasks."
-          ),
-        url: "https://tarefinhas.frankferreira.com.br",
-        github: nil,
-        tech: [
-          %{name: "React Native", logo: "reactnative.dev"},
-          %{name: "Expo", logo: "expo.dev"},
-          %{name: "TypeScript", logo: "typescriptlang.org"}
-        ]
-      },
-      %{
-        id: "agenda-letiva",
-        name: "Agenda Letiva",
-        image: "/images/agendaletiva.png",
-        description:
-          gettext(
-            "School management platform for student assessments, grades, and academic scheduling."
-          ),
-        full_description:
-          gettext(
-            "School management platform developed for Agenda Letiva, providing tools for managing student assessments, grades, and academic scheduling. Built with Elixir, Phoenix, and LiveView, offering a real-time, responsive interface for educators and administrators."
-          ),
-        url: "https://agendaletiva.com.br",
-        github: nil,
-        tech: [
-          %{name: "Elixir", logo: "elixir-lang.org"},
-          %{name: "Phoenix", logo: "phoenixframework.org"},
-          %{name: "LiveView", logo: "phoenixframework.org"}
-        ]
-      },
-      %{
         id: "circuito-das-plantas",
         name: "Circuito das Plantas",
+        date: ~D[2026-03-06],
         image: "/images/circuitodasplantas.png",
         description:
           gettext(
@@ -104,6 +48,7 @@ defmodule FrankFerreiraWeb.ProjectsLive do
       %{
         id: "bruna-caroline",
         name: "Bruna Caroline",
+        date: ~D[2026-03-05],
         image: nil,
         description:
           gettext(
@@ -124,6 +69,7 @@ defmodule FrankFerreiraWeb.ProjectsLive do
       %{
         id: "mario-artur",
         name: "Mario Artur",
+        date: ~D[2026-03-04],
         image: "/images/marioartur.png",
         description:
           gettext(
@@ -142,37 +88,78 @@ defmodule FrankFerreiraWeb.ProjectsLive do
         ]
       },
       %{
-        id: "irrisusten",
-        name: gettext("IrriSusten"),
-        image: nil,
+        id: "tarefinhas",
+        name: "Tarefinhas",
+        date: ~D[2026-02-14],
+        image: "/images/tarefinhas.png",
         description:
           gettext(
-            "Information system to manage plantation irrigation with web and mobile interfaces."
+            "Mobile task management app with custom categories, filters, and confetti celebrations."
           ),
         full_description:
           gettext(
-            "The study introduces Irrisusten, an information system to manage plantation irrigation. It automates agricultural production control and reduces water wastage. It features web and mobile interfaces, utilizing physical components like Arduino Uno, sensors, relays, and Bluetooth modules."
+            "Tarefinhas is a mobile task management app for Android, designed to organize tasks in a simple and fun way. Built with React Native and Expo, it features custom categories, task filtering, and confetti celebrations for completed tasks."
           ),
-        url: "https://sol.sbc.org.br/index.php/wcama/article/view/2941",
-        github: "https://github.com/franknfjr/irrisusten",
+        url: "https://tarefinhas.frankferreira.com.br",
+        github: nil,
         tech: [
-          %{name: "Arduino", logo: "arduino.cc"},
-          %{name: "Sensors", logo: "sensortechcanada.com"},
-          %{name: "Bluetooth", logo: "bluetooth.com"}
+          %{name: "React Native", logo: "reactnative.dev"},
+          %{name: "Expo", logo: "expo.dev"},
+          %{name: "TypeScript", logo: "typescriptlang.org"}
         ]
       },
       %{
-        id: "elixir-phoenix",
-        name: gettext("Introduction to Elixir and Phoenix"),
-        image: nil,
+        id: "agenda-letiva",
+        name: "Agenda Letiva",
+        date: ~D[2025-12-01],
+        image: "/images/agendaletiva.png",
         description:
-          gettext("Educational repository for Elixir and Phoenix mini-course at UFRA."),
+          gettext(
+            "School management platform for student assessments, grades, and academic scheduling."
+          ),
         full_description:
           gettext(
-            "Repository for the Elixir and Phoenix mini-course, provided by the Applied Computing Laboratory at UFRA, functioning as a central repository for educational materials tailored to students and tech enthusiasts keen on exploring the dynamic realms of Elixir and Phoenix development."
+            "School management platform developed for Agenda Letiva, providing tools for managing student assessments, grades, and academic scheduling. Built with Elixir, Phoenix, and LiveView, offering a real-time, responsive interface for educators and administrators."
           ),
-        url: "https://github.com/franknfjr/elixir-phoenix",
-        github: "https://github.com/franknfjr/elixir-phoenix",
+        url: "https://agendaletiva.com.br",
+        github: nil,
+        tech: [
+          %{name: "Elixir", logo: "elixir-lang.org"},
+          %{name: "Phoenix", logo: "phoenixframework.org"},
+          %{name: "LiveView", logo: "phoenixframework.org"}
+        ]
+      },
+      %{
+        id: "voce-decide",
+        name: "VoceDecide",
+        date: ~D[2024-12-03],
+        image: nil,
+        description:
+          gettext("Real-time interactive voting app for live presentations and talks."),
+        full_description:
+          gettext(
+            "VoceDecide is a real-time interactive voting application designed for live presentations and talks. Built with Elixir, Phoenix, and LiveView, it allows the audience to vote and decide what happens next during a presentation."
+          ),
+        url: "https://voce-decide.fly.dev",
+        github: "https://github.com/franknfjr/voce_decide",
+        tech: [
+          %{name: "Elixir", logo: "elixir-lang.org"},
+          %{name: "Phoenix", logo: "phoenixframework.org"},
+          %{name: "LiveView", logo: "phoenixframework.org"}
+        ]
+      },
+      %{
+        id: "voter-system",
+        name: gettext("Voter Intentions System"),
+        date: ~D[2024-08-07],
+        image: nil,
+        description: gettext("Platform for collecting and analyzing voter preference data."),
+        full_description:
+          gettext(
+            "The Voter Intentions System is a digital platform designed to facilitate the collection and analysis of data related to voters' preferences in a specific political context."
+          ),
+        url: nil,
+        github: "https://github.com/franknfjr/eleitor",
         tech: [
           %{name: "Elixir", logo: "elixir-lang.org"},
           %{name: "Phoenix", logo: "phoenixframework.org"}
@@ -181,6 +168,7 @@ defmodule FrankFerreiraWeb.ProjectsLive do
       %{
         id: "mdown-ex",
         name: "Mdown_ex",
+        date: ~D[2023-09-15],
         image: nil,
         description: gettext("Converts Markdown files to HTML and Livebook using Elixir."),
         full_description:
@@ -196,6 +184,7 @@ defmodule FrankFerreiraWeb.ProjectsLive do
       %{
         id: "healthcare",
         name: gettext("Healthcare"),
+        date: ~D[2019-12-01],
         image: nil,
         description:
           gettext("Dashboard for patient appointments, medications, and hospital indicators."),
@@ -214,6 +203,7 @@ defmodule FrankFerreiraWeb.ProjectsLive do
       %{
         id: "cdn",
         name: "CDN",
+        date: ~D[2019-08-01],
         image: nil,
         description: gettext("Internal content delivery network for file management."),
         full_description:
@@ -227,19 +217,42 @@ defmodule FrankFerreiraWeb.ProjectsLive do
         ]
       },
       %{
-        id: "voter-system",
-        name: gettext("Voter Intentions System"),
+        id: "elixir-phoenix",
+        name: gettext("Introduction to Elixir and Phoenix"),
+        date: ~D[2018-06-25],
         image: nil,
-        description: gettext("Platform for collecting and analyzing voter preference data."),
+        description:
+          gettext("Educational repository for Elixir and Phoenix mini-course at UFRA."),
         full_description:
           gettext(
-            "The Voter Intentions System is a digital platform designed to facilitate the collection and analysis of data related to voters' preferences in a specific political context."
+            "Repository for the Elixir and Phoenix mini-course, provided by the Applied Computing Laboratory at UFRA, functioning as a central repository for educational materials tailored to students and tech enthusiasts keen on exploring the dynamic realms of Elixir and Phoenix development."
           ),
-        url: nil,
-        github: nil,
+        url: "https://github.com/franknfjr/elixir-phoenix",
+        github: "https://github.com/franknfjr/elixir-phoenix",
         tech: [
           %{name: "Elixir", logo: "elixir-lang.org"},
           %{name: "Phoenix", logo: "phoenixframework.org"}
+        ]
+      },
+      %{
+        id: "irrisusten",
+        name: gettext("IrriSusten"),
+        date: ~D[2018-04-29],
+        image: nil,
+        description:
+          gettext(
+            "Information system to manage plantation irrigation with web and mobile interfaces."
+          ),
+        full_description:
+          gettext(
+            "The study introduces Irrisusten, an information system to manage plantation irrigation. It automates agricultural production control and reduces water wastage. It features web and mobile interfaces, utilizing physical components like Arduino Uno, sensors, relays, and Bluetooth modules."
+          ),
+        url: "https://sol.sbc.org.br/index.php/wcama/article/view/2941",
+        github: "https://github.com/franknfjr/irrisusten",
+        tech: [
+          %{name: "Arduino", logo: "arduino.cc"},
+          %{name: "Sensors", logo: "sensortechcanada.com"},
+          %{name: "Bluetooth", logo: "bluetooth.com"}
         ]
       }
     ]
@@ -352,9 +365,14 @@ defmodule FrankFerreiraWeb.ProjectsLive do
                 <% end %>
               </div>
               <div class="flex-1">
-                <h2 class="text-xl font-medium text-light-text dark:text-dark-text group-hover:text-accent transition-colors mb-2">
-                  <%= project.name %>
-                </h2>
+                <div class="flex items-center gap-2 mb-2">
+                  <h2 class="text-xl font-medium text-light-text dark:text-dark-text group-hover:text-accent transition-colors">
+                    <%= project.name %>
+                  </h2>
+                  <span class="text-xs text-light-muted dark:text-dark-muted">
+                    <%= Calendar.strftime(project.date, "%b %Y") %>
+                  </span>
+                </div>
                 <p class="text-light-muted dark:text-dark-muted leading-relaxed mb-4">
                   <%= project.description %>
                 </p>
