@@ -17,7 +17,9 @@ defmodule FrankFerreiraWeb do
   those modules here.
   """
 
-  def static_paths, do: ~w(assets fonts images favicon.ico robots.txt f-16.png f-24.svg f-32.png)
+  def static_paths,
+    do:
+      ~w(assets fonts images favicon.ico favicon-16x16.png favicon-32x32.png apple-touch-icon.png android-chrome-192x192.png android-chrome-512x512.png site.webmanifest robots.txt)
 
   def router do
     quote do

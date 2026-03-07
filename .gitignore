@@ -37,3 +37,4 @@ npm-debug.log
 
 # Ignorar todos os arquivos .DS_Store
 .DS_Store
+priv/static/.DS_Store
