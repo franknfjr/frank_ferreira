@@ -29,6 +29,11 @@ defmodule FrankFerreiraWeb.SEO do
   """
   def open_graph_config(_conn) do
     SEO.OpenGraph.build(
+      title: "Frank Ferreira",
+      description:
+        "Personal website and blog of Frank Ferreira, a software developer and computer science student.",
+      site_name: "Frank Ferreira",
+      url: url(@endpoint, ~p"/"),
       locale: "en_US",
       image:
         SEO.OpenGraph.Image.build(
@@ -61,6 +66,7 @@ defimpl SEO.OpenGraph.Build, for: FrankFerreira.Blog.Post do
     SEO.OpenGraph.build(
       title: SEO.Utils.truncate(post.title, 70),
       description: post.description,
+      site_name: "Frank Ferreira",
       type: :article,
       type_detail:
         SEO.OpenGraph.Article.build(
