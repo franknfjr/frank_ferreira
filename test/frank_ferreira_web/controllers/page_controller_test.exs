@@ -4,8 +4,6 @@ defmodule FrankFerreiraWeb.PageControllerTest do
   test "GET /", %{conn: conn} do
     conn = get(conn, ~p"/")
     content = html_response(conn, 200)
-    assert content =~ "About"
     assert content =~ "Blog"
-    assert content =~ "Projects"
   end
 end

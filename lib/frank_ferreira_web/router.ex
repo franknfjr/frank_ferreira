@@ -27,7 +27,7 @@ defmodule FrankFerreiraWeb.Router do
   scope "/", FrankFerreiraWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    live "/", BlogLive
     live "/about", AboutLive
     live "/blog", BlogLive
     live "/blog/:id", BlogLive.Show
