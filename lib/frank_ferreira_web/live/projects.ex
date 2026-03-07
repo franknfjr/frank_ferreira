@@ -14,7 +14,7 @@ defmodule FrankFerreiraWeb.ProjectsLive do
             "VoceDecide is a real-time interactive voting application designed for live presentations and talks. Built with Elixir, Phoenix, and LiveView, it allows the audience to vote and decide what happens next during a presentation."
           ),
         url: "https://voce-decide.fly.dev",
-        github: nil,
+        github: "https://github.com/franknfjr/voce_decide",
         tech: [
           %{name: "Elixir", logo: "elixir-lang.org"},
           %{name: "Phoenix", logo: "phoenixframework.org"},
@@ -34,7 +34,7 @@ defmodule FrankFerreiraWeb.ProjectsLive do
             "Entregador das Galaxias is an educational browser game created as a challenge for my niece Sofia, combining trending themes in Brazil 2026 in a playful and non-violent format. Built with pure HTML, CSS, and JavaScript, it features a space delivery adventure designed to be fun and relevant for kids."
           ),
         url: "https://entregadordasgalaxias.frankferreira.com.br",
-        github: nil,
+        github: "https://github.com/franknfjr/entregador-das-galaxias",
         tech: [
           %{name: "HTML", logo: "w3.org"},
           %{name: "CSS", logo: "w3.org"},
