@@ -30,6 +30,9 @@ let Hooks = {};
 Hooks.ParseHTML = ParseHTML;
 Hooks.Utterances = {
   mounted() {
+    this.el.style.opacity = "0";
+    this.el.style.transition = "opacity 0.3s ease";
+
     const theme = document.documentElement.classList.contains("dark")
       ? "github-dark"
       : "github-light";
@@ -41,6 +44,15 @@ Hooks.Utterances = {
     script.setAttribute("crossorigin", "anonymous");
     script.async = true;
     this.el.appendChild(script);
+
+    const observer = new MutationObserver(() => {
+      const iframe = this.el.querySelector(".utterances");
+      if (iframe) {
+        this.el.style.opacity = "1";
+        observer.disconnect();
+      }
+    });
+    observer.observe(this.el, { childList: true, subtree: true });
   },
 };
 
