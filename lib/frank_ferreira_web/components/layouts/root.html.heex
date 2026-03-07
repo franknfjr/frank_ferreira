@@ -41,9 +41,11 @@
       }
     </script>
   </head>
-  <body class="antialiased bg-light-bg text-light-text dark:bg-dark-bg dark:text-dark-text">
+  <body class="antialiased bg-light-bg text-light-text dark:bg-dark-bg dark:text-dark-text min-h-screen flex flex-col">
     <%= FrankFerreiraWeb.Layouts.header(assigns) %>
-    <%= @inner_content %>
+    <div class="flex-1">
+      <%= @inner_content %>
+    </div>
     <%= FrankFerreiraWeb.Layouts.footer(assigns) %>
   </body>
 </html>
