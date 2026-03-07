@@ -154,7 +154,7 @@ defmodule FrankFerreiraWeb.ProjectsLive do
             "The study introduces Irrisusten, an information system to manage plantation irrigation. It automates agricultural production control and reduces water wastage. It features web and mobile interfaces, utilizing physical components like Arduino Uno, sensors, relays, and Bluetooth modules."
           ),
         url: "https://sol.sbc.org.br/index.php/wcama/article/view/2941",
-        github: nil,
+        github: "https://github.com/franknfjr/irrisusten",
         tech: [
           %{name: "Arduino", logo: "arduino.cc"},
           %{name: "Sensors", logo: "sensortechcanada.com"},
