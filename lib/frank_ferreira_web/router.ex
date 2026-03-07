@@ -10,6 +10,7 @@ defmodule FrankFerreiraWeb.Router do
     plug :protect_from_forgery
     plug :put_secure_browser_headers
     plug FrankFerreiraWeb.SetLocalePlug, gettext: FrankFerreiraWeb.Gettext
+    plug FrankFerreiraWeb.SEOPlug
   end
 
   pipeline :api do
