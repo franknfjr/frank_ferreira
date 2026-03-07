@@ -423,12 +423,12 @@ defmodule FrankFerreiraWeb.ProjectsLive do
                     <img
                       src={@selected_project.image}
                       alt={@selected_project.name}
-                      class="w-10 h-10 rounded-lg object-contain"
+                      class="w-16 h-16 rounded-xl object-contain"
                     />
                   <% else %>
-                    <div class="w-10 h-10 rounded-lg bg-light-bg dark:bg-dark-bg border border-light-border dark:border-dark-border flex items-center justify-center">
+                    <div class="w-16 h-16 rounded-xl bg-light-bg dark:bg-dark-bg border border-light-border dark:border-dark-border flex items-center justify-center">
                       <svg
-                        class="w-5 h-5 text-light-muted dark:text-dark-muted"
+                        class="w-8 h-8 text-light-muted dark:text-dark-muted"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke-width="1.5"
