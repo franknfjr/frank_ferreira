@@ -9,6 +9,8 @@
 }
 ---
 
+![Welcome to my blog!](/images/blog/welcome-to-my-blog.png)
+
 ## Hello World!
 
 Hi en_US everyone, welcome! My name is Frank, and this is Frank Ferreira's blog. Here, I'll be writing about my career, things I'm learning, and critical thoughts on technology.

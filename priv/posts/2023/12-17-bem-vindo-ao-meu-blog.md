@@ -9,6 +9,8 @@
 }
 ---
 
+![Bem vindo ao meu Blog!](/images/blog/welcome-to-my-blog.png)
+
 ## Olá Mundo!
 
 Olá a todos, sejam bem-vindos! Meu nome é Frank, e este é o blog do Frank Ferreira. Aqui, vou escrever sobre minha carreira, coisas que estou aprendendo e pensamentos críticos sobre tecnologia.
