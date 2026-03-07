@@ -13,7 +13,8 @@ defmodule FrankFerreira.Blog.Post do
     :published,
     :twitter,
     :language,
-    :read_minutes
+    :read_minutes,
+    :cover_image
   ]
   defstruct [
     :id,
@@ -27,7 +28,8 @@ defmodule FrankFerreira.Blog.Post do
     :published,
     :twitter,
     :language,
-    :read_minutes
+    :read_minutes,
+    :cover_image
   ]
 
   def build(filename, attrs, body) do
@@ -35,6 +37,12 @@ defmodule FrankFerreira.Blog.Post do
 
     word_count = Floki.text(document) |> String.split(" ") |> Enum.count()
     read_minutes = ceil(word_count / @words_per_minute)
+
+    cover_image =
+      case Floki.find(document, "img") do
+        [{_, attrs, _} | _] -> List.keyfind(attrs, "src", 0, {"src", nil}) |> elem(1)
+        _ -> nil
+      end
 
     [year, month_day_id] = filename |> Path.rootname() |> Path.split() |> Enum.take(-2)
     [month, day, id] = String.split(month_day_id, "-", parts: 3)
@@ -52,7 +60,7 @@ defmodule FrankFerreira.Blog.Post do
 
     struct!(
       __MODULE__,
-      [id: id, created_at: created_at, body: body, language: language, read_minutes: read_minutes] ++
+      [id: id, created_at: created_at, body: body, language: language, read_minutes: read_minutes, cover_image: cover_image] ++
         Map.to_list(attrs)
     )
   end

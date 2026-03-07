@@ -29,6 +29,13 @@ defmodule FrankFerreiraWeb.BlogLive do
                 <p class="text-light-muted dark:text-dark-muted leading-relaxed mb-3">
                   <%= post.description %>
                 </p>
+                <%= if post.cover_image do %>
+                  <img
+                    src={post.cover_image}
+                    alt={post.title}
+                    class="w-full rounded-lg mb-3"
+                  />
+                <% end %>
                 <div class="flex flex-wrap gap-2">
                   <%= for tag <- post.tags do %>
                     <span class="text-xs text-accent/80">#<%= tag %></span>
