@@ -4,6 +4,24 @@ defmodule FrankFerreiraWeb.ProjectsLive do
   def mount(_params, _session, socket) do
     projects = [
       %{
+        id: "voce-decide",
+        name: "VoceDecide",
+        image: nil,
+        description:
+          gettext("Real-time interactive voting app for live presentations and talks."),
+        full_description:
+          gettext(
+            "VoceDecide is a real-time interactive voting application designed for live presentations and talks. Built with Elixir, Phoenix, and LiveView, it allows the audience to vote and decide what happens next during a presentation."
+          ),
+        url: "https://voce-decide.fly.dev",
+        github: nil,
+        tech: [
+          %{name: "Elixir", logo: "elixir-lang.org"},
+          %{name: "Phoenix", logo: "phoenixframework.org"},
+          %{name: "LiveView", logo: "phoenixframework.org"}
+        ]
+      },
+      %{
         id: "entregador-das-galaxias",
         name: "Entregador das Galaxias",
         image: "/images/entregadordasgalaxias.png",
