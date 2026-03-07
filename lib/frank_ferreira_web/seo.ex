@@ -37,8 +37,10 @@ defmodule FrankFerreiraWeb.SEO do
       locale: "en_US",
       image:
         SEO.OpenGraph.Image.build(
-          url: static_url(@endpoint, "/images/avatar.png"),
-          alt: "Frank Ferreira"
+          url: static_url(@endpoint, "/images/og-default.png"),
+          alt: "Frank Ferreira",
+          width: 1200,
+          height: 630
         )
     )
   end
@@ -52,7 +54,7 @@ defmodule FrankFerreiraWeb.SEO do
       creator: "@franknfjr",
       title: url(@endpoint, ~p"/"),
       card: :summary_large_image,
-      image: static_url(@endpoint, "/images/avatar.png"),
+      image: static_url(@endpoint, "/images/og-default.png"),
       description:
         "Personal website and blog of Frank Ferreira, a software developer and computer science student."
     )
