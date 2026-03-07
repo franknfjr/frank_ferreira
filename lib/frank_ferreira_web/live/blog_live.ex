@@ -30,11 +30,7 @@ defmodule FrankFerreiraWeb.BlogLive do
                   <%= post.description %>
                 </p>
                 <%= if post.cover_image do %>
-                  <img
-                    src={post.cover_image}
-                    alt={post.title}
-                    class="w-full rounded-lg mb-3"
-                  />
+                  <img src={post.cover_image} alt={post.title} class="w-full rounded-lg mb-3" />
                 <% end %>
                 <div class="flex flex-wrap gap-2">
                   <%= for tag <- post.tags do %>

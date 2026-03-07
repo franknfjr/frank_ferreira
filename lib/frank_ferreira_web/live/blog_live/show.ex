@@ -105,5 +105,4 @@ defmodule FrankFerreiraWeb.BlogLive.Show do
 
     weekday <> ", " <> month_name <> " #{day}, #{year}"
   end
-
 end

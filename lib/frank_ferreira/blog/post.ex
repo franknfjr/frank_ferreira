@@ -60,7 +60,14 @@ defmodule FrankFerreira.Blog.Post do
 
     struct!(
       __MODULE__,
-      [id: id, created_at: created_at, body: body, language: language, read_minutes: read_minutes, cover_image: cover_image] ++
+      [
+        id: id,
+        created_at: created_at,
+        body: body,
+        language: language,
+        read_minutes: read_minutes,
+        cover_image: cover_image
+      ] ++
         Map.to_list(attrs)
     )
   end
