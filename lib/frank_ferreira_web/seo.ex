@@ -93,13 +93,17 @@ defimpl SEO.OpenGraph.Build, for: FrankFerreira.Blog.Post do
       exists? ->
         SEO.OpenGraph.Image.build(
           url: static_url(conn, file),
-          alt: post.title
+          alt: post.title,
+          width: 1200,
+          height: 630
         )
 
       post.cover_image ->
         SEO.OpenGraph.Image.build(
           url: cover_image_url(post.cover_image, conn),
-          alt: post.title
+          alt: post.title,
+          width: 1200,
+          height: 630
         )
 
       true ->
