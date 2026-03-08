@@ -58,7 +58,7 @@ defmodule FrankFerreiraWeb.RobotController do
 
     rss =
       RSS.generate(%RSS{
-        title: generic.title,
+        title: generic.default_title || "Frank Ferreira Blog",
         author: "Frank Ferreira",
         description: generic.description,
         posts: Blog.published_posts(locale),
