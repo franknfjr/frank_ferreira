@@ -19,11 +19,18 @@ defmodule FrankFerreiraWeb.Components.LanguageSelect do
       |> assign_new(:current_path, fn -> "/" end)
       |> assign(:locale_path, fn assigns, locale ->
         path = assigns.current_path
-        # If on a blog post page (/blog/xx/slug), redirect to /blog when changing locale
-        if Regex.match?(~r"^/blog/(br|en)/[^/]+", path) do
-          "/blog?locale=#{locale}"
-        else
-          "#{path}?locale=#{locale}"
+
+        case Regex.run(~r"^/blog/(br|en)/(.+)$", path) do
+          [_, from_locale, slug] ->
+            to_locale = if locale == "br", do: "br", else: "en"
+
+            case FrankFerreira.Blog.get_post_translation(slug, from_locale, to_locale) do
+              nil -> "/blog?locale=#{locale}"
+              post -> "/blog/#{post.language}/#{post.id}?locale=#{locale}"
+            end
+
+          _ ->
+            "#{path}?locale=#{locale}"
         end
       end)
 

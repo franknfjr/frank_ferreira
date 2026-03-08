@@ -39,6 +39,16 @@ defmodule FrankFerreira.Blog do
       raise NotFoundError, "post with id=#{id} not found"
   end
 
+  def get_post_translation(id, from_locale, to_locale) do
+    case Enum.find(all_posts(), &(&1.id == id and &1.language == from_locale)) do
+      nil ->
+        nil
+
+      post ->
+        Enum.find(all_posts(), &(&1.created_at == post.created_at and &1.language == to_locale))
+    end
+  end
+
   def get_posts_by_tag!(tag) do
     case Enum.filter(all_posts(), &(tag in &1.tags)) do
       [] -> raise NotFoundError, "posts with tag=#{tag} not found"
