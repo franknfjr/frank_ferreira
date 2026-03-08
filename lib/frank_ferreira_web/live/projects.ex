@@ -365,14 +365,9 @@ defmodule FrankFerreiraWeb.ProjectsLive do
                 <% end %>
               </div>
               <div class="flex-1">
-                <div class="flex items-center gap-2 mb-2">
-                  <h2 class="text-xl font-medium text-light-text dark:text-dark-text group-hover:text-accent transition-colors">
-                    <%= project.name %>
-                  </h2>
-                  <span class="text-xs text-light-muted dark:text-dark-muted">
-                    <%= Calendar.strftime(project.date, "%b %Y") %>
-                  </span>
-                </div>
+                <h2 class="text-xl font-medium text-light-text dark:text-dark-text group-hover:text-accent transition-colors mb-2">
+                  <%= project.name %>
+                </h2>
                 <p class="text-light-muted dark:text-dark-muted leading-relaxed mb-4">
                   <%= project.description %>
                 </p>
