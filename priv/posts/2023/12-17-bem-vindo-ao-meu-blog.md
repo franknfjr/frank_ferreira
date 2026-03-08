@@ -1,7 +1,7 @@
 %{
   title: "Bem vindo ao meu Blog!",
   author: "Frank Ferreira",
-  tags: ~w(hello world elixir phoenix),
+  tags: ~w(hello world),
   description: "De um Pentium no Natal a Elixir em produção — como tudo começou e por que resolvi criar este blog.",
   published: true,
   updated_at: nil,
