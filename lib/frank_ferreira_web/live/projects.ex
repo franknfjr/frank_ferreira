@@ -386,7 +386,12 @@ defmodule FrankFerreiraWeb.ProjectsLive do
                     <div class="flex items-center gap-1.5 text-sm text-light-muted dark:text-dark-muted">
                       <%= if tech.logo do %>
                         <img
-                          src={if String.starts_with?(tech.logo, "/"), do: tech.logo, else: "https://img.logo.dev/#{tech.logo}?token=pk_SV36z4BVSz63N08ZgRSe3A&format=png&size=32"}
+                          src={
+                            if String.starts_with?(tech.logo, "/"),
+                              do: tech.logo,
+                              else:
+                                "https://img.logo.dev/#{tech.logo}?token=pk_SV36z4BVSz63N08ZgRSe3A&format=png&size=32"
+                          }
                           alt={tech.name}
                           class="w-4 h-4 rounded-sm"
                         />
@@ -512,7 +517,12 @@ defmodule FrankFerreiraWeb.ProjectsLive do
                     <div class="flex items-center gap-2 px-3 py-1.5 bg-light-bg dark:bg-dark-bg rounded-lg text-sm text-light-muted dark:text-dark-muted">
                       <%= if tech.logo do %>
                         <img
-                          src={if String.starts_with?(tech.logo, "/"), do: tech.logo, else: "https://img.logo.dev/#{tech.logo}?token=pk_SV36z4BVSz63N08ZgRSe3A&format=png&size=32"}
+                          src={
+                            if String.starts_with?(tech.logo, "/"),
+                              do: tech.logo,
+                              else:
+                                "https://img.logo.dev/#{tech.logo}?token=pk_SV36z4BVSz63N08ZgRSe3A&format=png&size=32"
+                          }
                           alt={tech.name}
                           class="w-5 h-5 rounded-sm"
                         />
