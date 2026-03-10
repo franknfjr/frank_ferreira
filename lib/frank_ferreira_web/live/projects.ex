@@ -375,7 +375,7 @@ defmodule FrankFerreiraWeb.ProjectsLive do
                   <%= if project.github do %>
                     <div class="flex items-center gap-1.5 text-sm text-green-600 dark:text-green-400">
                       <img
-                        src="https://img.logo.dev/opensource.org?token=pk_SV36z4BVSz63N08ZgRSe3A&format=png&size=32"
+                        src="/images/opensource-logo.svg"
                         alt="Open Source"
                         class="w-4 h-4 rounded-sm"
                       />
@@ -501,7 +501,7 @@ defmodule FrankFerreiraWeb.ProjectsLive do
                   <%= if @selected_project.github do %>
                     <div class="flex items-center gap-2 px-3 py-1.5 bg-green-50 dark:bg-green-900/20 rounded-lg text-sm text-green-600 dark:text-green-400">
                       <img
-                        src="https://img.logo.dev/opensource.org?token=pk_SV36z4BVSz63N08ZgRSe3A&format=png&size=32"
+                        src="/images/opensource-logo.svg"
                         alt="Open Source"
                         class="w-5 h-5 rounded-sm"
                       />
