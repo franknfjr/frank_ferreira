@@ -19,8 +19,8 @@ defmodule FrankFerreiraWeb.ProjectsLive do
         url: "https://entregadordasgalaxias.frankferreira.com.br",
         github: "https://github.com/franknfjr/entregador-das-galaxias",
         tech: [
-          %{name: "HTML", logo: "w3.org"},
-          %{name: "CSS", logo: "w3.org"},
+          %{name: "HTML", logo: "/images/html5-logo.svg"},
+          %{name: "CSS", logo: "/images/css3-logo.svg"},
           %{name: "JavaScript", logo: "javascript.dev.br"}
         ]
       },
@@ -375,7 +375,7 @@ defmodule FrankFerreiraWeb.ProjectsLive do
                   <%= if project.github do %>
                     <div class="flex items-center gap-1.5 text-sm text-green-600 dark:text-green-400">
                       <img
-                        src="/images/opensource-logo.svg"
+                        src="https://img.logo.dev/opensource.org?token=pk_SV36z4BVSz63N08ZgRSe3A&format=png&size=32"
                         alt="Open Source"
                         class="w-4 h-4 rounded-sm"
                       />
@@ -386,7 +386,7 @@ defmodule FrankFerreiraWeb.ProjectsLive do
                     <div class="flex items-center gap-1.5 text-sm text-light-muted dark:text-dark-muted">
                       <%= if tech.logo do %>
                         <img
-                          src={"https://img.logo.dev/#{tech.logo}?token=pk_SV36z4BVSz63N08ZgRSe3A&format=png&size=32"}
+                          src={if String.starts_with?(tech.logo, "/"), do: tech.logo, else: "https://img.logo.dev/#{tech.logo}?token=pk_SV36z4BVSz63N08ZgRSe3A&format=png&size=32"}
                           alt={tech.name}
                           class="w-4 h-4 rounded-sm"
                         />
@@ -501,7 +501,7 @@ defmodule FrankFerreiraWeb.ProjectsLive do
                   <%= if @selected_project.github do %>
                     <div class="flex items-center gap-2 px-3 py-1.5 bg-green-50 dark:bg-green-900/20 rounded-lg text-sm text-green-600 dark:text-green-400">
                       <img
-                        src="/images/opensource-logo.svg"
+                        src="https://img.logo.dev/opensource.org?token=pk_SV36z4BVSz63N08ZgRSe3A&format=png&size=32"
                         alt="Open Source"
                         class="w-5 h-5 rounded-sm"
                       />
@@ -512,7 +512,7 @@ defmodule FrankFerreiraWeb.ProjectsLive do
                     <div class="flex items-center gap-2 px-3 py-1.5 bg-light-bg dark:bg-dark-bg rounded-lg text-sm text-light-muted dark:text-dark-muted">
                       <%= if tech.logo do %>
                         <img
-                          src={"https://img.logo.dev/#{tech.logo}?token=pk_SV36z4BVSz63N08ZgRSe3A&format=png&size=32"}
+                          src={if String.starts_with?(tech.logo, "/"), do: tech.logo, else: "https://img.logo.dev/#{tech.logo}?token=pk_SV36z4BVSz63N08ZgRSe3A&format=png&size=32"}
                           alt={tech.name}
                           class="w-5 h-5 rounded-sm"
                         />
