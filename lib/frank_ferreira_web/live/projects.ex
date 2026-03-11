@@ -159,7 +159,7 @@ defmodule FrankFerreiraWeb.ProjectsLive do
             "The Voter Intentions System is a digital platform designed to facilitate the collection and analysis of data related to voters' preferences in a specific political context."
           ),
         url: nil,
-        github: "https://github.com/franknfjr/eleitor",
+        github: nil,
         tech: [
           %{name: "Elixir", logo: "elixir-lang.org"},
           %{name: "Phoenix", logo: "phoenixframework.org"}
