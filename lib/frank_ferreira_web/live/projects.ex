@@ -4,6 +4,27 @@ defmodule FrankFerreiraWeb.ProjectsLive do
   def mount(_params, _session, socket) do
     projects = [
       %{
+        id: "hugo-andre-personal",
+        name: "Hugo André Personal",
+        date: ~D[2026-03-20],
+        image: nil,
+        description:
+          gettext(
+            "Personal trainer website for body transformation programs for women 40+."
+          ),
+        full_description:
+          gettext(
+            "Professional website developed for Hugo André Personal, a personal trainer with 15+ years of experience specializing in body transformation for women 40+. Features training programs, workout details, and WhatsApp integration for client contact. Built with React and Vite, deployed on Vercel."
+          ),
+        url: "https://hugoandrepersonal.com.br",
+        github: nil,
+        tech: [
+          %{name: "React", logo: "react.dev"},
+          %{name: "Vite", logo: "vite.dev"},
+          %{name: "JavaScript", logo: "javascript.dev.br"}
+        ]
+      },
+      %{
         id: "entregador-das-galaxias",
         name: "Entregador das Galaxias",
         date: ~D[2026-03-06],
