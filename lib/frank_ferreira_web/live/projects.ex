@@ -7,7 +7,7 @@ defmodule FrankFerreiraWeb.ProjectsLive do
         id: "hugo-andre-personal",
         name: "Hugo André Personal",
         date: ~D[2026-03-20],
-        image: nil,
+        image: "/images/hugoandrepersonal.png",
         description:
           gettext("Personal trainer website for body transformation programs for women 40+."),
         full_description:
