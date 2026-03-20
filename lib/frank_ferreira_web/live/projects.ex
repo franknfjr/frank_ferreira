@@ -9,9 +9,7 @@ defmodule FrankFerreiraWeb.ProjectsLive do
         date: ~D[2026-03-20],
         image: nil,
         description:
-          gettext(
-            "Personal trainer website for body transformation programs for women 40+."
-          ),
+          gettext("Personal trainer website for body transformation programs for women 40+."),
         full_description:
           gettext(
             "Professional website developed for Hugo André Personal, a personal trainer with 15+ years of experience specializing in body transformation for women 40+. Features training programs, workout details, and WhatsApp integration for client contact. Built with React and Vite, deployed on Vercel."
