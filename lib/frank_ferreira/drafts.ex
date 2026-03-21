@@ -5,6 +5,8 @@ defmodule FrankFerreira.Drafts do
   def drafts_dir, do: @drafts_dir
 
   def list do
+    File.mkdir_p!(@drafts_dir)
+
     @drafts_dir
     |> File.ls!()
     |> Enum.filter(&String.ends_with?(&1, ".md"))
