@@ -134,7 +134,9 @@ defmodule FrankFerreiraWeb.BlogEditorLive do
 
     uploaded =
       consume_uploaded_entries(socket, :image, fn %{path: path}, entry ->
-        filename = "#{Drafts.generate_id(Path.rootname(entry.client_name))}.#{ext(entry.client_name)}"
+        filename =
+          "#{Drafts.generate_id(Path.rootname(entry.client_name))}.#{ext(entry.client_name)}"
+
         dest = Path.join(@upload_dir, filename)
         File.cp!(path, dest)
 
@@ -196,7 +198,10 @@ defmodule FrankFerreiraWeb.BlogEditorLive do
               <%= draft.title %>
             </.link>
             <p class="text-sm text-light-muted dark:text-dark-muted mt-1">
-              <%= draft.language %> · Updated <%= Calendar.strftime(draft.updated_at, "%Y-%m-%d %H:%M") %>
+              <%= draft.language %> · Updated <%= Calendar.strftime(
+                draft.updated_at,
+                "%Y-%m-%d %H:%M"
+              ) %>
             </p>
           </div>
           <button
@@ -230,10 +235,7 @@ defmodule FrankFerreiraWeb.BlogEditorLive do
           navigate={~p"/admin/posts"}
           class="group inline-flex items-center text-sm font-medium text-light-muted dark:text-dark-muted hover:text-light-text dark:hover:text-dark-text transition-colors"
         >
-          <svg
-            viewBox="0 -9 3 24"
-            class="overflow-visible mr-2 w-auto h-4"
-          >
+          <svg viewBox="0 -9 3 24" class="overflow-visible mr-2 w-auto h-4">
             <path
               d="M3 0L0 3L3 6"
               fill="none"
@@ -386,7 +388,10 @@ defmodule FrankFerreiraWeb.BlogEditorLive do
                 <h1 class="text-3xl font-bold text-light-text dark:text-dark-text">
                   <%= @frontmatter["title"] %>
                 </h1>
-                <p :if={@frontmatter["description"] != ""} class="mt-2 text-light-muted dark:text-dark-muted">
+                <p
+                  :if={@frontmatter["description"] != ""}
+                  class="mt-2 text-light-muted dark:text-dark-muted"
+                >
                   <%= @frontmatter["description"] %>
                 </p>
                 <div :if={@frontmatter["tags"] != ""} class="flex flex-wrap justify-center gap-2 mt-3">
@@ -460,7 +465,10 @@ defmodule FrankFerreiraWeb.BlogEditorLive do
           <h4 class="text-xs font-medium text-light-muted dark:text-dark-muted uppercase tracking-wide">
             Uploaded Images
           </h4>
-          <div :for={img <- @uploaded_images} class="flex items-center gap-3 p-2 rounded-lg bg-light-bg dark:bg-dark-bg">
+          <div
+            :for={img <- @uploaded_images}
+            class="flex items-center gap-3 p-2 rounded-lg bg-light-bg dark:bg-dark-bg"
+          >
             <img src={img.path} class="h-10 w-10 rounded object-cover" />
             <div class="flex-1 min-w-0">
               <p class="text-sm text-light-text dark:text-dark-text truncate"><%= img.filename %></p>
