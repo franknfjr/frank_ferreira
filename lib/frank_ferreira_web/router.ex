@@ -43,6 +43,10 @@ defmodule FrankFerreiraWeb.Router do
     pipe_through [:browser, :check_auth]
     live "/markdown", MarkdownLive
 
+    live "/posts", BlogEditorLive, :index
+    live "/posts/new", BlogEditorLive, :new
+    live "/posts/:id/edit", BlogEditorLive, :edit
+
     live_dashboard "/dashboard", metrics: FrankFerreiraWeb.Telemetry
   end
 
