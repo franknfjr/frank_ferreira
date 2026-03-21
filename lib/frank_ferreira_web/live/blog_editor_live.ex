@@ -13,8 +13,17 @@ defmodule FrankFerreiraWeb.BlogEditorLive do
     "twitter" => "franknfjr"
   }
 
+  @upload_dir Path.join([:code.priv_dir(:frank_ferreira), "static", "images", "blog"])
+
   def mount(_params, _session, socket) do
-    {:ok, assign(socket, page_title: "Blog Editor")}
+    {:ok,
+     socket
+     |> assign(page_title: "Blog Editor", uploaded_images: [])
+     |> allow_upload(:image,
+       accept: ~w(.png .jpg .jpeg .gif .webp),
+       max_entries: 5,
+       max_file_size: 10_000_000
+     )}
   end
 
   def handle_params(params, _uri, socket) do
@@ -38,7 +47,6 @@ defmodule FrankFerreiraWeb.BlogEditorLive do
       frontmatter: Map.put(@default_frontmatter, "date", today),
       body: "",
       show_preview: false,
-      flash_msg: nil,
       page_title: "New Post"
     )
   end
@@ -51,7 +59,6 @@ defmodule FrankFerreiraWeb.BlogEditorLive do
           frontmatter: Map.merge(@default_frontmatter, draft.frontmatter),
           body: draft.body,
           show_preview: false,
-          flash_msg: nil,
           page_title: "Edit: #{draft.frontmatter["title"] || id}"
         )
 
@@ -120,6 +127,43 @@ defmodule FrankFerreiraWeb.BlogEditorLive do
 
   def handle_event("toggle_preview", _params, socket) do
     {:noreply, assign(socket, show_preview: !socket.assigns.show_preview)}
+  end
+
+  def handle_event("upload_image", _params, socket) do
+    File.mkdir_p!(@upload_dir)
+
+    uploaded =
+      consume_uploaded_entries(socket, :image, fn %{path: path}, entry ->
+        filename = "#{Drafts.generate_id(Path.rootname(entry.client_name))}.#{ext(entry.client_name)}"
+        dest = Path.join(@upload_dir, filename)
+        File.cp!(path, dest)
+
+        size = File.stat!(dest).size
+        dimensions = get_dimensions(dest)
+
+        {:ok,
+         %{
+           filename: filename,
+           path: "/images/blog/#{filename}",
+           size: format_size(size),
+           dimensions: dimensions,
+           markdown: "![#{Path.rootname(entry.client_name)}](/images/blog/#{filename})"
+         }}
+      end)
+
+    {:noreply,
+     socket
+     |> update(:uploaded_images, &(uploaded ++ &1))
+     |> put_flash(:info, "#{length(uploaded)} image(s) uploaded!")}
+  end
+
+  def handle_event("cancel_upload", %{"ref" => ref}, socket) do
+    {:noreply, cancel_upload(socket, :image, ref)}
+  end
+
+  def handle_event("insert_image", %{"markdown" => markdown}, socket) do
+    body = socket.assigns.body <> "\n\n" <> markdown
+    {:noreply, assign(socket, body: body)}
   end
 
   def render(%{live_action: :index} = assigns) do
@@ -361,6 +405,83 @@ defmodule FrankFerreiraWeb.BlogEditorLive do
           </div>
         </div>
       </form>
+
+      <%!-- Image Upload Section --%>
+      <div class="mt-6 p-4 rounded-xl bg-light-surface dark:bg-dark-surface border border-light-border dark:border-dark-border">
+        <h3 class="text-sm font-medium text-light-text dark:text-dark-text mb-3">Image Upload</h3>
+
+        <form id="upload-form" phx-submit="upload_image" phx-change="validate">
+          <div class="flex items-center gap-4">
+            <label class="flex-1 flex items-center justify-center px-4 py-6 rounded-lg border-2 border-dashed border-light-border dark:border-dark-border hover:border-accent cursor-pointer transition-colors">
+              <div class="text-center">
+                <p class="text-sm text-light-muted dark:text-dark-muted">
+                  Drop images here or click to select
+                </p>
+                <p class="text-xs text-light-muted/60 dark:text-dark-muted/60 mt-1">
+                  PNG, JPG, GIF, WebP — max 10MB
+                </p>
+              </div>
+              <.live_file_input upload={@uploads.image} class="hidden" />
+            </label>
+            <button
+              type="submit"
+              disabled={@uploads.image.entries == []}
+              class="px-4 py-2 text-sm bg-accent text-white rounded-lg hover:bg-accent/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              Upload
+            </button>
+          </div>
+
+          <%!-- Upload entries (pending) --%>
+          <div :for={entry <- @uploads.image.entries} class="mt-3 flex items-center gap-3">
+            <.live_img_preview entry={entry} class="h-12 w-12 rounded object-cover" />
+            <div class="flex-1">
+              <p class="text-sm text-light-text dark:text-dark-text"><%= entry.client_name %></p>
+              <div class="w-full bg-light-border dark:bg-dark-border rounded-full h-1.5 mt-1">
+                <div class="bg-accent h-1.5 rounded-full" style={"width: #{entry.progress}%"}></div>
+              </div>
+            </div>
+            <button
+              type="button"
+              phx-click="cancel_upload"
+              phx-value-ref={entry.ref}
+              class="text-red-500 hover:text-red-700 text-xs"
+            >
+              Cancel
+            </button>
+            <p :for={err <- upload_errors(@uploads.image, entry)} class="text-red-500 text-xs">
+              <%= upload_error_message(err) %>
+            </p>
+          </div>
+        </form>
+
+        <%!-- Uploaded images list --%>
+        <div :if={@uploaded_images != []} class="mt-4 space-y-2">
+          <h4 class="text-xs font-medium text-light-muted dark:text-dark-muted uppercase tracking-wide">
+            Uploaded Images
+          </h4>
+          <div :for={img <- @uploaded_images} class="flex items-center gap-3 p-2 rounded-lg bg-light-bg dark:bg-dark-bg">
+            <img src={img.path} class="h-10 w-10 rounded object-cover" />
+            <div class="flex-1 min-w-0">
+              <p class="text-sm text-light-text dark:text-dark-text truncate"><%= img.filename %></p>
+              <p class="text-xs text-light-muted dark:text-dark-muted">
+                <%= img.size %> · <%= img.dimensions %>
+              </p>
+            </div>
+            <button
+              type="button"
+              phx-click="insert_image"
+              phx-value-markdown={img.markdown}
+              class="px-3 py-1 text-xs bg-accent/10 text-accent rounded-lg hover:bg-accent/20 transition-colors"
+            >
+              Insert
+            </button>
+            <code class="text-xs text-light-muted dark:text-dark-muted hidden md:block max-w-[200px] truncate">
+              <%= img.markdown %>
+            </code>
+          </div>
+        </div>
+      </div>
     </main>
     """
   end
@@ -391,4 +512,30 @@ defmodule FrankFerreiraWeb.BlogEditorLive do
       ]
     )
   end
+
+  defp ext(filename) do
+    filename |> Path.extname() |> String.trim_leading(".")
+  end
+
+  defp format_size(bytes) when bytes < 1024, do: "#{bytes} B"
+  defp format_size(bytes) when bytes < 1_048_576, do: "#{Float.round(bytes / 1024, 1)} KB"
+  defp format_size(bytes), do: "#{Float.round(bytes / 1_048_576, 1)} MB"
+
+  defp get_dimensions(path) do
+    case System.cmd("file", [path], stderr_to_stdout: true) do
+      {output, 0} ->
+        case Regex.run(~r/(\d+)\s*x\s*(\d+)/, output) do
+          [_, w, h] -> "#{w}x#{h}"
+          _ -> "unknown"
+        end
+
+      _ ->
+        "unknown"
+    end
+  end
+
+  defp upload_error_message(:too_large), do: "File too large (max 10MB)"
+  defp upload_error_message(:not_accepted), do: "Invalid file type"
+  defp upload_error_message(:too_many_files), do: "Too many files (max 5)"
+  defp upload_error_message(_), do: "Upload error"
 end
