@@ -66,9 +66,12 @@ defmodule FrankFerreiraWeb.BlogLive.Show do
   end
 
   def handle_params(%{"id" => id, "locale" => locale}, _, socket) do
-    {:noreply,
-     socket
-     |> assign(:post, Blog.get_post_by_id!(id, locale))}
+    {:noreply, assign(socket, :post, Blog.get_post_by_id!(id, locale))}
+  end
+
+  def handle_params(%{"id" => id}, _, socket) do
+    locale = socket.assigns[:locale] || "en"
+    {:noreply, assign(socket, :post, Blog.get_post_by_id!(id, locale))}
   end
 
   defp formatted_date(%Date{day: day, month: month, year: year} = date) do
