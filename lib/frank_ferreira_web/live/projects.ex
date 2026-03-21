@@ -257,7 +257,7 @@ defmodule FrankFerreiraWeb.ProjectsLive do
         id: "irrisusten",
         name: gettext("IrriSusten"),
         date: ~D[2018-04-29],
-        image: nil,
+        image: "/images/irrisusten.png",
         description:
           gettext(
             "Information system to manage plantation irrigation with web and mobile interfaces."
@@ -276,12 +276,15 @@ defmodule FrankFerreiraWeb.ProjectsLive do
       }
     ]
 
+    has_open_source = Enum.any?(projects, & &1.github)
+
     all_tags =
       projects
       |> Enum.flat_map(& &1.tech)
       |> Enum.map(& &1.name)
       |> Enum.uniq()
       |> Enum.sort()
+      |> then(fn tags -> if has_open_source, do: ["Open Source" | tags], else: tags end)
 
     {:ok,
      assign(socket,
@@ -348,9 +351,15 @@ defmodule FrankFerreiraWeb.ProjectsLive do
 
       <div class="grid gap-6">
         <% filtered_projects =
-          if @selected_tag,
-            do: Enum.filter(@projects, fn p -> Enum.any?(p.tech, &(&1.name == @selected_tag)) end),
-            else: @projects %>
+          if @selected_tag do
+            if @selected_tag == "Open Source" do
+              Enum.filter(@projects, & &1.github)
+            else
+              Enum.filter(@projects, fn p -> Enum.any?(p.tech, &(&1.name == @selected_tag)) end)
+            end
+          else
+            @projects
+          end %>
         <%= for project <- filtered_projects do %>
           <div
             phx-click="open_modal"
