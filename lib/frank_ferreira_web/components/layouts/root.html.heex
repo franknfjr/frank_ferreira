@@ -17,6 +17,12 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500;1,6..72,600&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="alternate"
       type="application/rss+xml"
@@ -56,11 +62,11 @@
       }
     </script>
   </head>
-  <body class="antialiased bg-light-bg text-light-text dark:bg-dark-bg dark:text-dark-text min-h-screen flex flex-col">
+  <body class="antialiased min-h-screen flex flex-col">
     <%= FrankFerreiraWeb.Layouts.header(assigns) %>
-    <div class="flex-1">
+    <main class="flex-1">
       <%= @inner_content %>
-    </div>
+    </main>
     <%= FrankFerreiraWeb.Layouts.footer(assigns) %>
   </body>
 </html>

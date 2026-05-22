@@ -315,315 +315,195 @@ defmodule FrankFerreiraWeb.ProjectsLive do
 
   def render(assigns) do
     ~H"""
-    <main class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-24">
-      <h1 class="text-4xl font-medium tracking-tight text-light-text dark:text-dark-text mb-4">
-        <%= gettext("Projects") %>
-      </h1>
-      <p class="text-light-muted dark:text-dark-muted mb-8">
-        <%= gettext("Things I've built and contributed to.") %>
-      </p>
+    <div class="ff-page">
+      <section class="ff-section" style="border-bottom: 1px solid var(--rule);">
+        <div class="ff-eyebrow">№ 03 — <%= gettext("Index of works") %></div>
+        <div class="ff-grid-projects-hdr" style="margin-top: 8px;">
+          <h1 class="ff-hero-title" style="font-size: clamp(48px, 9vw, 84px);">
+            <%= gettext("Projects") %>
+          </h1>
+          <div style="display:flex; gap: 28px; flex-wrap: wrap;">
+            <% has_oss = Enum.count(@projects, & &1.github) %>
+            <%= for {n, l} <- [{length(@projects), gettext("shipped")}, {has_oss, gettext("open source")}, {2018, gettext("since")}] do %>
+              <div class="ff-stat">
+                <div class="num"><%= n %></div>
+                <div class="lbl"><%= l %></div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <p style="font-size:17px; line-height:1.55; color: var(--ink-2); max-width: 560px; margin-top:18px;">
+          <%= gettext(
+            "Things I've built and contributed to — client work, weekend experiments, and the occasional gift for my niece."
+          ) %>
+        </p>
+      </section>
 
-      <%!-- Tag Filters --%>
-      <div class="flex flex-wrap gap-2 mb-8">
+      <section style="padding: 16px 24px; border-bottom: 1px solid var(--rule); display:flex; gap:8px; flex-wrap: wrap; align-items: center;">
+        <span class="ff-mono" style="font-size:11px; color: var(--ink-3); margin-right:6px;">
+          <%= gettext("filter") %> →
+        </span>
+        <button
+          phx-click="clear_filter"
+          class={"ff-chip" <> if @selected_tag in [nil, ""], do: " is-active", else: ""}
+          style="border:0;cursor:pointer;"
+        >
+          <%= gettext("all") %>
+        </button>
         <%= for tag <- @all_tags do %>
           <button
             phx-click="filter_tag"
             phx-value-tag={tag}
-            class={"px-3 py-1.5 rounded-lg text-sm font-medium border transition-all duration-200 " <>
-              if @selected_tag == tag do
-                "bg-accent text-white border-accent"
-              else
-                "bg-light-surface dark:bg-dark-surface border-light-border dark:border-dark-border text-light-muted dark:text-dark-muted hover:border-accent/50 hover:text-accent"
-              end}
+            class={"ff-chip" <> if @selected_tag == tag, do: " is-active", else: ""}
+            style="border:0;cursor:pointer;"
           >
             <%= tag %>
           </button>
         <% end %>
-        <%= if @selected_tag do %>
-          <button
-            phx-click="clear_filter"
-            class="px-3 py-1.5 rounded-lg text-sm font-medium text-light-muted dark:text-dark-muted hover:text-light-text dark:hover:text-dark-text transition-colors"
-          >
-            <%= gettext("Clear") %>
-          </button>
-        <% end %>
-      </div>
+        <span style="flex:1"></span>
+        <span class="ff-mono" style="font-size:11px; color: var(--ink-3);">
+          <%= gettext("view") %>: <span style="color:var(--ink);"><%= gettext("index") %></span>
+        </span>
+      </section>
 
-      <div class="grid gap-6">
-        <% filtered_projects =
-          if @selected_tag do
-            if @selected_tag == "Open Source" do
-              Enum.filter(@projects, & &1.github)
-            else
-              Enum.filter(@projects, fn p -> Enum.any?(p.tech, &(&1.name == @selected_tag)) end)
-            end
+      <% filtered =
+        if @selected_tag do
+          if @selected_tag == "Open Source" do
+            Enum.filter(@projects, & &1.github)
           else
-            @projects
-          end %>
-        <%= for project <- filtered_projects do %>
-          <div
+            Enum.filter(@projects, fn p -> Enum.any?(p.tech, &(&1.name == @selected_tag)) end)
+          end
+        else
+          @projects
+        end %>
+
+      <section class="ff-section" style="padding-top: 8px;">
+        <%= for {project, i} <- Enum.with_index(filtered) do %>
+          <button
             phx-click="open_modal"
             phx-value-id={project.id}
-            class="group cursor-pointer p-6 rounded-xl bg-light-surface dark:bg-dark-surface border border-light-border dark:border-dark-border hover:border-accent/50 dark:hover:border-accent/50 transition-all duration-300 hover:shadow-lg hover:shadow-accent/5"
+            style="display:grid; grid-template-columns: 50px 90px 1fr auto; gap: 18px; padding: 20px 0; align-items: center; border-bottom: 1px solid var(--rule); background:transparent; border-left:0; border-right:0; border-top:0; width:100%; text-align: left; cursor:pointer; color: inherit; font: inherit;"
           >
-            <div class="flex items-center justify-between">
-              <div class="mr-4 flex-shrink-0">
-                <%= if project.image do %>
-                  <img
-                    src={project.image}
-                    alt={project.name}
-                    class="w-12 h-12 rounded-lg object-contain"
-                  />
-                <% else %>
-                  <div class="w-12 h-12 rounded-lg bg-light-bg dark:bg-dark-bg border border-light-border dark:border-dark-border flex items-center justify-center">
-                    <svg
-                      class="w-6 h-6 text-light-muted dark:text-dark-muted"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke-width="1.5"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"
-                      />
-                    </svg>
-                  </div>
+            <div class="ff-idx">№ <%= String.pad_leading("#{i + 1}", 2, "0") %></div>
+            <div style="height: 72px; width:90px; border-radius: 8px; background: var(--paper-2); border: 1px solid var(--rule); display:grid; place-items:center; overflow:hidden;">
+              <img
+                src={project.image || "/images/projects/no-preview.svg"}
+                alt=""
+                style="max-width:85%; max-height:80%; object-fit:contain;"
+              />
+            </div>
+            <div>
+              <div style="display:flex; align-items:center; gap:10px; flex-wrap: wrap;">
+                <div class="ff-serif" style="font-size: 22px; font-weight: 500; line-height: 1.2;">
+                  <%= project.name %>
+                </div>
+                <%= if i == 0 do %>
+                  <span class="ff-chip accent" style="font-size:10px;"><%= gettext("latest") %></span>
+                <% end %>
+                <%= if project.github do %>
+                  <span
+                    class="ff-chip"
+                    style="font-size:10px; color: var(--good); border-color: color-mix(in oklch, var(--good) 50%, transparent);"
+                  >
+                    <%= gettext("open source") %>
+                  </span>
                 <% end %>
               </div>
-              <div class="flex-1">
-                <h2 class="text-xl font-medium text-light-text dark:text-dark-text group-hover:text-accent transition-colors mb-2">
-                  <%= project.name %>
-                </h2>
-                <p class="text-light-muted dark:text-dark-muted leading-relaxed mb-4">
-                  <%= project.description %>
-                </p>
-                <div class="flex flex-wrap gap-3">
-                  <%= if project.github do %>
-                    <div class="flex items-center gap-1.5 text-sm text-green-600 dark:text-green-400">
-                      <img
-                        src="/images/opensource-logo.svg"
-                        alt="Open Source"
-                        class="w-4 h-4 rounded-sm"
-                      />
-                      <span>Open Source</span>
-                    </div>
-                  <% end %>
-                  <%= for tech <- project.tech do %>
-                    <div class="flex items-center gap-1.5 text-sm text-light-muted dark:text-dark-muted">
-                      <%= if tech.logo do %>
-                        <img
-                          src={
-                            if String.starts_with?(tech.logo, "/"),
-                              do: tech.logo,
-                              else:
-                                "https://img.logo.dev/#{tech.logo}?token=pk_SV36z4BVSz63N08ZgRSe3A&format=png&size=32"
-                          }
-                          alt={tech.name}
-                          class="w-4 h-4 rounded-sm"
-                        />
-                      <% else %>
-                        <svg
-                          class="w-4 h-4"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                        >
-                          <circle cx="12" cy="12" r="10" />
-                        </svg>
-                      <% end %>
-                      <span><%= tech.name %></span>
-                    </div>
-                  <% end %>
-                </div>
+              <div style="font-size: 14px; color: var(--ink-3); margin-top: 4px; max-width: 540px;">
+                <%= project.description %>
               </div>
-              <div class="ml-4 text-light-muted dark:text-dark-muted group-hover:text-accent transition-colors">
-                <svg
-                  class="w-5 h-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-                  />
-                </svg>
+              <div style="display:flex; flex-wrap: wrap; gap: 6px; margin-top: 10px;">
+                <%= for t <- project.tech do %>
+                  <span class="ff-chip" style="font-size:10px;"><%= t.name %></span>
+                <% end %>
               </div>
             </div>
-          </div>
+            <div class="ff-mono" style="font-size:11px; color: var(--ink-3); text-align: right;">
+              <div style="color: var(--ink);"><%= mono_date(project.date) %></div>
+              <div style="margin-top:4px; color: var(--accent);"><%= gettext("open") %> ↗</div>
+            </div>
+          </button>
         <% end %>
-      </div>
+      </section>
 
-      <%!-- Modal --%>
       <%= if @selected_project do %>
         <div
           class="fixed inset-0 z-50 flex items-center justify-center p-4"
           phx-window-keydown="close_modal"
           phx-key="Escape"
         >
-          <%!-- Backdrop --%>
-          <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" phx-click="close_modal" />
-
-          <%!-- Modal Content --%>
-          <div class="relative w-full max-w-lg bg-light-surface dark:bg-dark-surface border border-light-border dark:border-dark-border rounded-2xl shadow-2xl overflow-hidden animate-modal-in">
-            <%!-- Header --%>
-            <div class="p-6 border-b border-light-border dark:border-dark-border">
-              <div class="flex items-start justify-between">
-                <div class="flex items-center gap-3">
-                  <%= if @selected_project.image do %>
-                    <img
-                      src={@selected_project.image}
-                      alt={@selected_project.name}
-                      class="w-14 h-14 rounded-xl object-contain"
-                    />
-                  <% else %>
-                    <div class="w-14 h-14 rounded-xl bg-light-bg dark:bg-dark-bg border border-light-border dark:border-dark-border flex items-center justify-center">
-                      <svg
-                        class="w-7 h-7 text-light-muted dark:text-dark-muted"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke="currentColor"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"
-                        />
-                      </svg>
-                    </div>
-                  <% end %>
-                  <h2 class="text-2xl font-medium text-light-text dark:text-dark-text">
-                    <%= @selected_project.name %>
-                  </h2>
-                </div>
-                <button
-                  phx-click="close_modal"
-                  class="p-1 text-light-muted dark:text-dark-muted hover:text-light-text dark:hover:text-dark-text transition-colors"
+          <div
+            class="absolute inset-0"
+            style="background: rgba(20,17,13,.55); backdrop-filter: blur(4px);"
+            phx-click="close_modal"
+          >
+          </div>
+          <div
+            class="relative w-full max-w-lg ff-card"
+            style="border-radius: 14px; overflow: hidden; box-shadow: var(--shadow-2); animation: modal-in 0.2s ease-out;"
+          >
+            <div style="padding: 22px 24px; border-bottom: 1px solid var(--rule); display:flex; justify-content: space-between; align-items: flex-start; gap: 12px;">
+              <div style="display:flex; align-items:center; gap:12px;">
+                <img
+                  src={@selected_project.image || "/images/projects/no-preview.svg"}
+                  alt=""
+                  style="width: 56px; height:56px; border-radius:10px; object-fit:contain; background: var(--paper-3);"
+                />
+                <h2
+                  class="ff-serif"
+                  style="font-size: 26px; font-weight: 500; margin:0; letter-spacing:-0.01em;"
                 >
-                  <svg
-                    class="w-6 h-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                  >
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </button>
+                  <%= @selected_project.name %>
+                </h2>
               </div>
+              <button
+                phx-click="close_modal"
+                style="background:transparent;border:0;cursor:pointer;color: var(--ink-3); padding: 4px;"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  viewBox="0 0 24 24"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
             </div>
-
-            <%!-- Body --%>
-            <div class="p-6">
-              <p class="text-light-muted dark:text-dark-muted leading-relaxed mb-6">
+            <div style="padding: 22px 24px;">
+              <p style="color: var(--ink-2); line-height: 1.6; font-size: 15px;">
                 <%= @selected_project.full_description %>
               </p>
-
-              <%!-- Tech Stack --%>
-              <div class="mb-6">
-                <h3 class="text-sm font-medium text-light-text dark:text-dark-text mb-3">
-                  <%= gettext("Tech Stack") %>
-                </h3>
-                <div class="flex flex-wrap gap-3">
-                  <%= if @selected_project.github do %>
-                    <div class="flex items-center gap-2 px-3 py-1.5 bg-green-50 dark:bg-green-900/20 rounded-lg text-sm text-green-600 dark:text-green-400">
-                      <img
-                        src="/images/opensource-logo.svg"
-                        alt="Open Source"
-                        class="w-5 h-5 rounded-sm"
-                      />
-                      <span>Open Source</span>
-                    </div>
-                  <% end %>
-                  <%= for tech <- @selected_project.tech do %>
-                    <div class="flex items-center gap-2 px-3 py-1.5 bg-light-bg dark:bg-dark-bg rounded-lg text-sm text-light-muted dark:text-dark-muted">
-                      <%= if tech.logo do %>
-                        <img
-                          src={
-                            if String.starts_with?(tech.logo, "/"),
-                              do: tech.logo,
-                              else:
-                                "https://img.logo.dev/#{tech.logo}?token=pk_SV36z4BVSz63N08ZgRSe3A&format=png&size=32"
-                          }
-                          alt={tech.name}
-                          class="w-5 h-5 rounded-sm"
-                        />
-                      <% else %>
-                        <svg
-                          class="w-5 h-5"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                        >
-                          <circle cx="12" cy="12" r="10" />
-                        </svg>
-                      <% end %>
-                      <span><%= tech.name %></span>
-                    </div>
-                  <% end %>
-                </div>
+              <div style="margin-top: 18px; display:flex; flex-wrap: wrap; gap: 8px;">
+                <%= if @selected_project.github do %>
+                  <span class="ff-chip accent"><%= gettext("open source") %></span>
+                <% end %>
+                <%= for t <- @selected_project.tech do %>
+                  <span class="ff-chip"><%= t.name %></span>
+                <% end %>
               </div>
-
-              <%!-- Links --%>
-              <div class="flex flex-wrap gap-3">
+              <div style="margin-top: 22px; display:flex; flex-wrap: wrap; gap: 10px;">
                 <%= if @selected_project.github do %>
                   <a
                     href={@selected_project.github}
                     target="_blank"
-                    class="inline-flex items-center gap-2 px-4 py-2 bg-dark-bg dark:bg-light-bg text-dark-text dark:text-light-text rounded-lg text-sm font-medium hover:opacity-80 transition-opacity"
+                    rel="noopener"
+                    class="ff-btn ghost"
                   >
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path
-                        fill-rule="evenodd"
-                        d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                    GitHub
+                    GitHub ↗
                   </a>
                 <% end %>
                 <%= if @selected_project.url do %>
-                  <a
-                    href={@selected_project.url}
-                    target="_blank"
-                    class="inline-flex items-center gap-2 px-4 py-2 bg-accent text-white rounded-lg text-sm font-medium hover:opacity-80 transition-opacity"
-                  >
-                    <svg
-                      class="w-5 h-5"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke-width="1.5"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-                      />
-                    </svg>
-                    <%= gettext("View Project") %>
+                  <a href={@selected_project.url} target="_blank" rel="noopener" class="ff-btn accent">
+                    <%= gettext("View Project") %> ↗
                   </a>
                 <% end %>
                 <%= if is_nil(@selected_project.url) and is_nil(@selected_project.github) do %>
-                  <span class="inline-flex items-center gap-2 text-sm text-light-muted dark:text-dark-muted italic">
-                    <svg
-                      class="w-4 h-4 text-light-text dark:text-dark-text"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M12 1.5a5.25 5.25 0 00-5.25 5.25v3a3 3 0 00-3 3v6.75a3 3 0 003 3h10.5a3 3 0 003-3v-6.75a3 3 0 00-3-3v-3c0-2.9-2.35-5.25-5.25-5.25zm3.75 8.25v-3a3.75 3.75 0 10-7.5 0v3h7.5z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
+                  <span
+                    class="ff-mono"
+                    style="font-size:12px; color: var(--ink-3); font-style: italic;"
+                  >
                     <%= gettext("Private project - no public links available") %>
                   </span>
                 <% end %>
@@ -632,23 +512,18 @@ defmodule FrankFerreiraWeb.ProjectsLive do
           </div>
         </div>
       <% end %>
-    </main>
-
+    </div>
     <style>
       @keyframes modal-in {
-        from {
-          opacity: 0;
-          transform: scale(0.95) translateY(10px);
-        }
-        to {
-          opacity: 1;
-          transform: scale(1) translateY(0);
-        }
-      }
-      .animate-modal-in {
-        animation: modal-in 0.2s ease-out;
+        from { opacity: 0; transform: scale(0.96) translateY(8px); }
+        to   { opacity: 1; transform: scale(1) translateY(0); }
       }
     </style>
     """
+  end
+
+  defp mono_date(%Date{year: y, month: m, day: d}) do
+    yy = y |> Integer.to_string() |> String.slice(-2..-1)
+    "#{yy}·#{String.pad_leading("#{m}", 2, "0")}·#{String.pad_leading("#{d}", 2, "0")}"
   end
 end

@@ -28,6 +28,66 @@ import ParseHTML from "./parse-html";
 
 let Hooks = {};
 Hooks.ParseHTML = ParseHTML;
+Hooks.TocSpy = {
+  mounted() {
+    const links = Array.from(this.el.querySelectorAll(".ff-toc-link"));
+    if (!links.length) return;
+
+    const targets = links
+      .map((a) => document.getElementById(a.dataset.target))
+      .filter(Boolean);
+    if (!targets.length) return;
+
+    const setActive = (id) => {
+      links.forEach((a) =>
+        a.classList.toggle("is-active", a.dataset.target === id),
+      );
+      targets.forEach((h) =>
+        h.classList.toggle("is-current", h.id === id),
+      );
+    };
+
+    // Track which sections are currently above a line ~30% from the top.
+    // The last one that's crossed the line is the "current" section.
+    const visible = new Map();
+
+    this.observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) visible.set(e.target.id, e.target);
+          else visible.delete(e.target.id);
+        });
+
+        if (visible.size > 0) {
+          // Pick the one closest to the top of the viewport
+          const sorted = Array.from(visible.values()).sort(
+            (a, b) => a.getBoundingClientRect().top - b.getBoundingClientRect().top,
+          );
+          setActive(sorted[0].id);
+        } else {
+          // Nothing in the band — fall back to the heading just above the viewport top
+          let current = targets[0];
+          for (const h of targets) {
+            if (h.getBoundingClientRect().top < 120) current = h;
+          }
+          setActive(current.id);
+        }
+      },
+      { rootMargin: "-80px 0px -65% 0px", threshold: 0 },
+    );
+
+    targets.forEach((t) => this.observer.observe(t));
+
+    // Click handler: mark active immediately, don't wait for scroll
+    links.forEach((a) =>
+      a.addEventListener("click", () => setActive(a.dataset.target)),
+    );
+  },
+  destroyed() {
+    this.observer?.disconnect();
+  },
+};
+
 Hooks.Utterances = {
   mounted() {
     this.el.style.opacity = "0";
@@ -125,6 +185,11 @@ window.addEventListener("toogle-darkmode", (e) => {
 });
 
 initDarkMode();
+
+window.addEventListener("ff:copy", (e) => {
+  const url = (e.detail && e.detail.url) || window.location.href;
+  navigator.clipboard?.writeText(url);
+});
 
 console.log(
   `%c
