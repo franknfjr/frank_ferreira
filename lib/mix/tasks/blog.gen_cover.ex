@@ -55,7 +55,9 @@ defmodule Mix.Tasks.Blog.GenCover do
         aliases: [p: :prompt]
       )
 
-    target = List.first(rest) || Mix.raise("Usage: mix blog.gen_cover <post-id|markdown-path> [--prompt …]")
+    target =
+      List.first(rest) ||
+        Mix.raise("Usage: mix blog.gen_cover <post-id|markdown-path> [--prompt …]")
 
     api_key =
       System.get_env("GEMINI_API_KEY") ||
@@ -215,7 +217,9 @@ defmodule Mix.Tasks.Blog.GenCover do
         Mix.shell().info("✓ Resized to #{@target_w}×#{@target_h} via ImageMagick")
 
       true ->
-        Mix.shell().info("  ⚠ Neither sips nor ImageMagick available — install one to auto-resize.")
+        Mix.shell().info(
+          "  ⚠ Neither sips nor ImageMagick available — install one to auto-resize."
+        )
     end
   end
 

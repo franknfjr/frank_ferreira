@@ -21,7 +21,7 @@ defmodule FrankFerreiraWeb.AboutLive do
       <section class="ff-section ff-grid-about">
         <div>
           <div class="ff-eyebrow">№ 04 — <%= gettext("Colophon") %></div>
-          <h1 class="ff-hero-title" style="font-size: clamp(48px, 9vw, 80px); margin: 8px 0 24px;">
+          <h1 class="ff-hero-title" style="font-size: clamp(36px, 9vw, 80px); margin: 8px 0 24px;">
             <%= gettext("About") %> <em><%= gettext("me") %></em>.
           </h1>
 
@@ -69,7 +69,10 @@ defmodule FrankFerreiraWeb.AboutLive do
                gettext("A redesigned journal — built with Phoenix, LiveView, & Tailwind.")}
             ] %>
             <%= for {{y, t, d}, i} <- Enum.with_index(timeline) do %>
-              <div style={"display:grid; grid-template-columns: 70px 1fr; gap: 24px; padding: 18px 0; align-items: baseline; border-top: " <> (if i == 0, do: "1px solid var(--rule)", else: "none") <> "; border-bottom: 1px solid var(--rule);"}>
+              <div
+                class="ff-tl-row"
+                style={if i == 0, do: "border-top: 1px solid var(--rule);", else: ""}
+              >
                 <div class="ff-mono" style="font-size:12px; color: var(--accent);"><%= y %></div>
                 <div>
                   <div class="ff-serif" style="font-size:22px; font-weight: 500; line-height: 1.2;">
@@ -84,8 +87,8 @@ defmodule FrankFerreiraWeb.AboutLive do
           </div>
         </div>
 
-        <aside style="display:flex; flex-direction: column; gap: 22px;">
-          <div style="border-radius: 12px; overflow: hidden; aspect-ratio: 1 / 1; background: var(--paper-2); border: 1px solid var(--rule); max-width: 280px;">
+        <aside style="display:flex; flex-direction: column; gap: 22px; align-items: center;">
+          <div style="border-radius: 12px; overflow: hidden; aspect-ratio: 1 / 1; background: var(--paper-2); border: 1px solid var(--rule); width: 100%; max-width: 480px;">
             <img
               src="/images/avatar.png"
               alt="Frank Ferreira"
@@ -93,7 +96,7 @@ defmodule FrankFerreiraWeb.AboutLive do
             />
           </div>
 
-          <div class="ff-card" style="padding: 18px; max-width: 280px;">
+          <div class="ff-card" style="padding: 18px; width: 100%; max-width: 480px;">
             <div class="ff-eyebrow" style="margin-bottom: 10px;"><%= gettext("Quick facts") %></div>
             <dl class="ff-mono" style="font-size: 12px; line-height: 1.8; margin: 0;">
               <%= for {k, v, accent} <- [
@@ -113,7 +116,7 @@ defmodule FrankFerreiraWeb.AboutLive do
             </dl>
           </div>
 
-          <div class="ff-card" style="padding: 18px; max-width: 280px;">
+          <div class="ff-card" style="padding: 18px; width: 100%; max-width: 480px;">
             <div class="ff-eyebrow" style="margin-bottom: 10px;"><%= gettext("Find me") %></div>
             <div class="ff-mono" style="font-size:12px; line-height:2;">
               <%= for {label, handle, url} <- [
@@ -136,7 +139,8 @@ defmodule FrankFerreiraWeb.AboutLive do
             </div>
           </div>
 
-          <div style="padding: 18px; border: 1px dashed var(--accent); border-radius: 12px; background: var(--accent-soft); max-width: 280px;">
+          <%!--
+          <div style="padding: 18px; border: 1px dashed var(--accent); border-radius: 12px; background: var(--accent-soft); width: 100%; max-width: 480px;">
             <div class="ff-eyebrow" style="color: var(--accent); margin-bottom: 8px;">
               <%= gettext("Easter egg") %>
             </div>
@@ -146,6 +150,7 @@ defmodule FrankFerreiraWeb.AboutLive do
               <span class="ff-kbd">t</span> for tetris
             </div>
           </div>
+          --%>
         </aside>
       </section>
     </div>

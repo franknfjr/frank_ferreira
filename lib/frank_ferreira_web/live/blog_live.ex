@@ -23,26 +23,29 @@ defmodule FrankFerreiraWeb.BlogLive do
   def render(assigns) do
     ~H"""
     <div class="ff-page">
-      <section class="ff-section ff-grid-masthead" style="border-bottom: 1px solid var(--rule);">
-        <div>
-          <div class="ff-eyebrow"><%= gettext("The Journal") %> · vol. 03</div>
-          <h1 class="ff-hero-title" style="font-size: clamp(48px, 9vw, 84px); margin-top: 10px;">
+      <section class="ff-section" style="border-bottom: 1px solid var(--rule);">
+        <div class="ff-eyebrow"><%= gettext("The Journal") %> · vol. 03</div>
+        <div class="ff-grid-masthead" style="margin-top: 8px;">
+          <h1 class="ff-hero-title" style="font-size: clamp(36px, 9vw, 84px);">
             <%= gettext("Writing") %>
           </h1>
-          <p style="font-size:17px; line-height:1.55; color: var(--ink-2); max-width: 520px; margin-top:16px;">
-            <%= gettext(
-              "Notes on Elixir, Phoenix & LiveView in production, plus the longer story of getting here from a small city in the Amazon."
-            ) %>
-          </p>
+          <div
+            class="ff-stats-row"
+            style="display:flex; gap: 22px; flex-wrap: wrap; justify-content: center;"
+          >
+            <%= for {n, label} <- [{length(@posts), gettext("posts")}, {2, gettext("languages")}, {3, gettext("since 2023")}] do %>
+              <div class="ff-stat">
+                <div class="num"><%= String.pad_leading("#{n}", 2, "0") %></div>
+                <div class="lbl"><%= label %></div>
+              </div>
+            <% end %>
+          </div>
         </div>
-        <div style="display:flex; gap: 22px; flex-wrap: wrap;">
-          <%= for {n, label} <- [{length(@posts), gettext("posts")}, {2, gettext("languages")}, {3, gettext("since 2023")}] do %>
-            <div class="ff-stat">
-              <div class="num"><%= String.pad_leading("#{n}", 2, "0") %></div>
-              <div class="lbl"><%= label %></div>
-            </div>
-          <% end %>
-        </div>
+        <p style="font-size:17px; line-height:1.55; color: var(--ink-2); max-width: 560px; margin-top:18px;">
+          <%= gettext(
+            "Notes on Elixir, Phoenix & LiveView in production, plus the longer story of getting here from a small city in the Amazon."
+          ) %>
+        </p>
       </section>
 
       <section style="padding: 20px 24px; border-bottom: 1px solid var(--rule); display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
@@ -101,11 +104,13 @@ defmodule FrankFerreiraWeb.BlogLive do
               </div>
             <% end %>
             <div class="ff-mono" style="font-size:11px; color: var(--ink-3);">
-              № 001 · <%= mono_date(featured.created_at) %> · <%= featured.read_minutes %> <%= gettext("min") %>
+              № 001 · <%= mono_date(featured.created_at) %> · <%= featured.read_minutes %> <%= gettext(
+                "min"
+              ) %>
             </div>
             <h2
               class="ff-serif"
-              style="font-size:44px; line-height:1.05; font-weight:500; margin:6px 0 10px; letter-spacing:-0.02em;"
+              style="font-size: clamp(28px, 6.5vw, 44px); line-height:1.05; font-weight:500; margin:6px 0 10px; letter-spacing:-0.02em;"
             >
               <a
                 href={~p"/blog/#{featured.language}/#{featured.id}"}

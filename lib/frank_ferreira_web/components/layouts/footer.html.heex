@@ -1,9 +1,19 @@
 <footer class="ff-footer">
-  <div>© <%= Timex.now().year %> frank.ferreira · <%= gettext("built with phoenix + liveview") %></div>
+  <div>
+    © <%= Timex.now().year %> frank.ferreira · <%= gettext("built with phoenix + liveview") %>
+  </div>
   <div style="display:flex; gap:18px;">
     <a href="https://github.com/franknfjr" target="_blank" rel="noopener">github ↗</a>
     <a href="https://twitter.com/franknfjr" target="_blank" rel="noopener">x ↗</a>
-    <a href="https://www.linkedin.com/in/franknferreira/" target="_blank" rel="noopener">linkedin ↗</a>
-    <a href={"/" <> Gettext.get_locale(FrankFerreiraWeb.Gettext) <> "/rss.xml"} class="accent" target="_blank">rss</a>
+    <a href="https://www.linkedin.com/in/franknferreira/" target="_blank" rel="noopener">
+      linkedin ↗
+    </a>
+    <a
+      href={"/" <> Gettext.get_locale(FrankFerreiraWeb.Gettext) <> "/rss.xml"}
+      class="accent"
+      target="_blank"
+    >
+      rss
+    </a>
   </div>
 </footer>

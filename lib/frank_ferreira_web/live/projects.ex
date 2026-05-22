@@ -319,10 +319,13 @@ defmodule FrankFerreiraWeb.ProjectsLive do
       <section class="ff-section" style="border-bottom: 1px solid var(--rule);">
         <div class="ff-eyebrow">№ 03 — <%= gettext("Index of works") %></div>
         <div class="ff-grid-projects-hdr" style="margin-top: 8px;">
-          <h1 class="ff-hero-title" style="font-size: clamp(48px, 9vw, 84px);">
+          <h1 class="ff-hero-title" style="font-size: clamp(36px, 9vw, 84px);">
             <%= gettext("Projects") %>
           </h1>
-          <div style="display:flex; gap: 28px; flex-wrap: wrap;">
+          <div
+            class="ff-stats-row"
+            style="display:flex; gap: 28px; flex-wrap: wrap; justify-content: center;"
+          >
             <% has_oss = Enum.count(@projects, & &1.github) %>
             <%= for {n, l} <- [{length(@projects), gettext("shipped")}, {has_oss, gettext("open source")}, {2018, gettext("since")}] do %>
               <div class="ff-stat">
@@ -379,13 +382,9 @@ defmodule FrankFerreiraWeb.ProjectsLive do
 
       <section class="ff-section" style="padding-top: 8px;">
         <%= for {project, i} <- Enum.with_index(filtered) do %>
-          <button
-            phx-click="open_modal"
-            phx-value-id={project.id}
-            style="display:grid; grid-template-columns: 50px 90px 1fr auto; gap: 18px; padding: 20px 0; align-items: center; border-bottom: 1px solid var(--rule); background:transparent; border-left:0; border-right:0; border-top:0; width:100%; text-align: left; cursor:pointer; color: inherit; font: inherit;"
-          >
+          <button phx-click="open_modal" phx-value-id={project.id} class="ff-project-row">
             <div class="ff-idx">№ <%= String.pad_leading("#{i + 1}", 2, "0") %></div>
-            <div style="height: 72px; width:90px; border-radius: 8px; background: var(--paper-2); border: 1px solid var(--rule); display:grid; place-items:center; overflow:hidden;">
+            <div class="thumb">
               <img
                 src={project.image || "/images/projects/no-preview.svg"}
                 alt=""
@@ -418,9 +417,9 @@ defmodule FrankFerreiraWeb.ProjectsLive do
                 <% end %>
               </div>
             </div>
-            <div class="ff-mono" style="font-size:11px; color: var(--ink-3); text-align: right;">
-              <div style="color: var(--ink);"><%= mono_date(project.date) %></div>
-              <div style="margin-top:4px; color: var(--accent);"><%= gettext("open") %> ↗</div>
+            <div class="meta">
+              <span class="date"><%= mono_date(project.date) %></span>
+              <span class="open"><%= gettext("open") %> ↗</span>
             </div>
           </button>
         <% end %>

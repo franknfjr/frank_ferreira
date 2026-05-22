@@ -46,7 +46,7 @@ defmodule FrankFerreiraWeb.BlogLive.Show do
         <div>
           <h1
             class="ff-serif"
-            style="font-size: clamp(40px, 8vw, 72px); line-height: 1; font-weight: 500; letter-spacing: -0.025em; margin: 0;"
+            style="font-size: clamp(32px, 8vw, 72px); line-height: 1; font-weight: 500; letter-spacing: -0.025em; margin: 0;"
           >
             <%= @post.title %>
           </h1>
@@ -77,7 +77,11 @@ defmodule FrankFerreiraWeb.BlogLive.Show do
           >
             <%= for {id, text, i} <- @toc do %>
               <li>
-                <a href={"#" <> id} class={"ff-toc-link" <> if(i == 0, do: " is-active", else: "")} data-target={id}>
+                <a
+                  href={"#" <> id}
+                  class={"ff-toc-link" <> if(i == 0, do: " is-active", else: "")}
+                  data-target={id}
+                >
                   <span class="bullet">·</span>
                   <span class="arrow">→</span>
                   <span class="label"><%= text %></span>
@@ -98,19 +102,17 @@ defmodule FrankFerreiraWeb.BlogLive.Show do
             <%= gettext("Share") %>
           </div>
           <div class="ff-mono" style="font-size: 11px; color: var(--ink-3); line-height: 1.9;">
-            <%
-              share_url =
-                "https://frankferreira.dev/blog/" <>
-                  @post.language <> "/" <> @post.id
+            <% share_url =
+              "https://frankferreira.dev/blog/" <>
+                @post.language <> "/" <> @post.id
 
-              tweet =
-                "https://twitter.com/intent/tweet?text=" <>
-                  URI.encode(@post.title) <> "&url=" <> URI.encode(share_url)
+            tweet =
+              "https://twitter.com/intent/tweet?text=" <>
+                URI.encode(@post.title) <> "&url=" <> URI.encode(share_url)
 
-              linkedin =
-                "https://www.linkedin.com/sharing/share-offsite/?url=" <>
-                  URI.encode(share_url)
-            %>
+            linkedin =
+              "https://www.linkedin.com/sharing/share-offsite/?url=" <>
+                URI.encode(share_url) %>
             <div>
               <a
                 href={tweet}
@@ -149,17 +151,20 @@ defmodule FrankFerreiraWeb.BlogLive.Show do
             href={~p"/blog/#{@prev_post.language}/#{@prev_post.id}"}
             style="display:block; padding:18px; background: var(--paper-2); border:1px solid var(--rule); border-radius: 10px; text-decoration:none; color:inherit;"
           >
-            <div class="ff-mono" style="font-size:11px; color: var(--ink-3);">← <%= gettext("previous") %></div>
+            <div class="ff-mono" style="font-size:11px; color: var(--ink-3);">
+              ← <%= gettext("previous") %>
+            </div>
             <div class="ff-serif" style="font-size:20px; font-weight:500; margin-top:6px;">
               <%= @prev_post.title %>
             </div>
           </a>
         <% else %>
-          <div
-            style="padding:18px; background: var(--paper-2); border:1px dashed var(--rule); border-radius: 10px; color: var(--ink-3);"
-          >
+          <div style="padding:18px; background: var(--paper-2); border:1px dashed var(--rule); border-radius: 10px; color: var(--ink-3);">
             <div class="ff-mono" style="font-size:11px;">← <%= gettext("previous") %></div>
-            <div class="ff-serif" style="font-size:20px; font-weight:500; margin-top:6px; font-style: italic;">
+            <div
+              class="ff-serif"
+              style="font-size:20px; font-weight:500; margin-top:6px; font-style: italic;"
+            >
               <%= gettext("this is the first one") %>
             </div>
           </div>
@@ -170,10 +175,7 @@ defmodule FrankFerreiraWeb.BlogLive.Show do
             href={~p"/blog/#{@next_post.language}/#{@next_post.id}"}
             style="display:block; padding:18px; background: var(--accent-soft); border:1px solid var(--accent); border-radius: 10px; text-decoration:none; color:inherit;"
           >
-            <div
-              class="ff-mono"
-              style="font-size:11px; color: var(--accent); text-align: right;"
-            >
+            <div class="ff-mono" style="font-size:11px; color: var(--accent); text-align: right;">
               <%= gettext("next") %> →
             </div>
             <div
@@ -184,11 +186,14 @@ defmodule FrankFerreiraWeb.BlogLive.Show do
             </div>
           </a>
         <% else %>
-          <div
-            style="padding:18px; border:1px dashed var(--rule); border-radius: 10px; color: var(--ink-3);"
-          >
-            <div class="ff-mono" style="font-size:11px; text-align: right;"><%= gettext("next") %> →</div>
-            <div class="ff-serif" style="font-size:20px; font-weight:500; margin-top:6px; text-align: right; font-style: italic;">
+          <div style="padding:18px; border:1px dashed var(--rule); border-radius: 10px; color: var(--ink-3);">
+            <div class="ff-mono" style="font-size:11px; text-align: right;">
+              <%= gettext("next") %> →
+            </div>
+            <div
+              class="ff-serif"
+              style="font-size:20px; font-weight:500; margin-top:6px; text-align: right; font-style: italic;"
+            >
               <%= gettext("you're caught up") %>
             </div>
           </div>

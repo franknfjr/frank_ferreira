@@ -101,7 +101,7 @@ defmodule FrankFerreiraWeb.HomeLive do
             <div class="ff-eyebrow">02 — <%= gettext("Latest writing") %></div>
             <h2
               class="ff-serif"
-              style="font-size:32px; font-weight:500; margin:6px 0 0; letter-spacing:-0.01em;"
+              style="font-size: clamp(24px, 5vw, 32px); font-weight:500; margin:6px 0 0; letter-spacing:-0.01em;"
             >
               <%= gettext("From the journal") %>
             </h2>
@@ -118,7 +118,8 @@ defmodule FrankFerreiraWeb.HomeLive do
         <%= for {post, i} <- Enum.with_index(@posts) do %>
           <a
             href={~p"/blog/#{post.language}/#{post.id}"}
-            style={"display:grid; grid-template-columns: 80px 1fr 130px 80px; gap: 24px; align-items: baseline; padding: 18px 0; border-top: " <> (if i == 0, do: "1px solid var(--rule)", else: "none") <> "; border-bottom: 1px solid var(--rule); text-decoration:none; color:inherit;"}
+            class="ff-post-row"
+            style={if i == 0, do: "border-top: 1px solid var(--rule);", else: ""}
           >
             <div class="ff-idx">№ <%= String.pad_leading("#{i + 1}", 3, "0") %></div>
             <div>
@@ -129,11 +130,11 @@ defmodule FrankFerreiraWeb.HomeLive do
                 <%= post.description %>
               </div>
             </div>
-            <div class="ff-mono" style="font-size:11px; color: var(--ink-3);">
-              <%= mono_date(post.created_at) %>
-            </div>
-            <div class="ff-mono" style="font-size:11px; color: var(--ink-3); text-align:right;">
-              <%= String.pad_leading("#{post.read_minutes}", 2, "0") %> <%= gettext("min") %>
+            <div class="ff-post-meta">
+              <span class="date"><%= mono_date(post.created_at) %></span>
+              <span class="mins">
+                <%= String.pad_leading("#{post.read_minutes}", 2, "0") %> <%= gettext("min") %>
+              </span>
             </div>
           </a>
         <% end %>
@@ -146,7 +147,7 @@ defmodule FrankFerreiraWeb.HomeLive do
             <div class="ff-eyebrow">03 — <%= gettext("Shipping") %></div>
             <h2
               class="ff-serif"
-              style="font-size:32px; font-weight:500; margin:6px 0 0; letter-spacing:-0.01em;"
+              style="font-size: clamp(24px, 5vw, 32px); font-weight:500; margin:6px 0 0; letter-spacing:-0.01em;"
             >
               <%= gettext("Recently shipped") %>
             </h2>

@@ -8,7 +8,7 @@ defmodule FrankFerreiraWeb.UsesLive do
     <div class="ff-page">
       <section class="ff-section" style="border-bottom: 1px solid var(--rule);">
         <div class="ff-eyebrow">№ 05 — <%= gettext("The desk") %></div>
-        <h1 class="ff-hero-title" style="font-size: clamp(48px, 9vw, 76px); margin: 8px 0 18px;">
+        <h1 class="ff-hero-title" style="font-size: clamp(36px, 9vw, 76px); margin: 8px 0 18px;">
           <%= gettext("What I use") %>
         </h1>
         <p style="font-size:17px; line-height:1.55; color: var(--ink-2); max-width: 560px;">
@@ -22,7 +22,7 @@ defmodule FrankFerreiraWeb.UsesLive do
         <div>
           <h2
             class="ff-serif"
-            style="font-size: 28px; font-weight: 500; margin: 0 0 4px; letter-spacing: -0.01em;"
+            style="font-size: clamp(22px, 4.5vw, 28px); font-weight: 500; margin: 0 0 4px; letter-spacing: -0.01em;"
           >
             Hardware
           </h2>
@@ -44,7 +44,7 @@ defmodule FrankFerreiraWeb.UsesLive do
         <div>
           <h2
             class="ff-serif"
-            style="font-size: 28px; font-weight: 500; margin: 0 0 4px; letter-spacing: -0.01em;"
+            style="font-size: clamp(22px, 4.5vw, 28px); font-weight: 500; margin: 0 0 4px; letter-spacing: -0.01em;"
           >
             Software
           </h2>
@@ -72,7 +72,7 @@ defmodule FrankFerreiraWeb.UsesLive do
             <div class="ff-eyebrow" style="color: var(--accent);">/now</div>
             <div
               class="ff-serif"
-              style="font-size: 36px; font-weight: 500; line-height: 1; margin-top: 6px; letter-spacing: -0.01em;"
+              style="font-size: clamp(26px, 5vw, 36px); font-weight: 500; line-height: 1; margin-top: 6px; letter-spacing: -0.01em;"
             >
               <%= gettext("This month") %>
             </div>
@@ -101,10 +101,10 @@ defmodule FrankFerreiraWeb.UsesLive do
 
   defp row(assigns) do
     ~H"""
-    <div style="display:grid; grid-template-columns: 40px 1fr 2fr; gap: 16px; padding: 12px 0; border-top: 1px solid var(--rule); align-items: baseline;">
+    <div class="ff-uses-row">
       <div class="ff-idx"><%= @n %></div>
       <div class="ff-mono" style="font-size:12px; color: var(--ink-3);"><%= @k %></div>
-      <div style="font-size:15px; color: var(--ink);"><%= @v %></div>
+      <div class="v"><%= @v %></div>
     </div>
     """
   end
