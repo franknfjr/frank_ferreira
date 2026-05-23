@@ -1128,7 +1128,7 @@ msgstr "index"
 #: lib/frank_ferreira_web/components/layouts/header.html.heex:20
 #, elixir-autogen, elixir-format
 msgid "nav.projects"
-msgstr "all projects"
+msgstr "projects"
 
 #: lib/frank_ferreira_web/components/layouts/header.html.heex:22
 #, elixir-autogen, elixir-format
@@ -1139,7 +1139,7 @@ msgstr "uses"
 #: lib/frank_ferreira_web/live/blog_live/show.ex:21
 #, elixir-autogen, elixir-format
 msgid "nav.writing"
-msgstr "Writing"
+msgstr "writing"
 
 #: lib/frank_ferreira_web/live/home_live.ex:192
 #: lib/frank_ferreira_web/live/projects.ex:427
