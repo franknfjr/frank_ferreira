@@ -93,10 +93,18 @@ defmodule FrankFerreiraWeb.RSS do
 
     body
     |> absolutize_urls(base)
+    |> strip_presentational_attrs()
     |> self_close_void_tags()
   end
 
   def rewrite_body(body), do: body
+
+  # Drops class= and style= attributes — feed readers ignore styles and the
+  # Tailwind arbitrary-variant classes (e.g. `[a:not(:first-child)]:mt-12`)
+  # confuse strict HTML parsers like the W3C feed validator.
+  defp strip_presentational_attrs(body) do
+    Regex.replace(~r/\s(?:class|style)="[^"]*"/, body, "")
+  end
 
   defp absolutize_urls(body, base) do
     Regex.replace(~r/(\s(?:src|href)=")\/(?!\/)/, body, "\\1#{base}/")
