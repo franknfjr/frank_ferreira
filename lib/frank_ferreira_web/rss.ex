@@ -18,10 +18,11 @@ defmodule FrankFerreiraWeb.RSS do
     todayer = Keyword.get(opts, :todayer, &Date.utc_today/0)
     year = todayer.().year
 
-    locale =
+    rss_lang =
       case locale do
         "br" -> "pt-BR"
         "en" -> "en-US"
+        other -> other
       end
 
     [
@@ -34,7 +35,7 @@ defmodule FrankFerreiraWeb.RSS do
       <atom:link href="#{url(@endpoint, ~p"/#{locale}/rss.xml")}" rel="self" type="application/rss+xml" />
       """,
       "<title>#{cdata(rss.title)}</title>\n",
-      "<language>#{locale}</language>\n",
+      "<language>#{rss_lang}</language>\n",
       "<description>#{cdata(rss.description)}</description>\n",
       "<pubDate>#{post_date(rss.posts)}</pubDate>\n",
       "<link>#{url(@endpoint, ~p"/")}</link>\n",
@@ -72,10 +73,40 @@ defmodule FrankFerreiraWeb.RSS do
       "<link>#{url(@endpoint, ~p"/blog/#{post.language}/#{post}")}</link>\n",
       "<guid isPermaLink=\"true\">#{url(@endpoint, ~p"/blog/#{post.language}/#{post}")}</guid>\n",
       "<pubDate>#{post_date(post)}</pubDate>\n",
-      "<content:encoded>#{cdata(post.body)}</content:encoded>\n",
+      "<content:encoded>#{cdata(rewrite_body(post.body))}</content:encoded>\n",
       "</item>\n"
     ]
   end
 
   def cdata(content), do: "<![CDATA[#{content}]]>"
+
+  @doc """
+  Prepares a post body for inclusion in `<content:encoded>`:
+
+    * rewrites relative `src`/`href` URLs starting with `/` to absolute URLs
+      using the configured endpoint host (W3C `ContainsRelRef` warning)
+    * self-closes HTML void tags like `<img>`, `<br>`, `<hr>` so the body is
+      valid XHTML (`NotHtml` warning from the W3C feed validator)
+  """
+  def rewrite_body(body) when is_binary(body) do
+    base = url(@endpoint, ~p"/") |> String.trim_trailing("/")
+
+    body
+    |> absolutize_urls(base)
+    |> self_close_void_tags()
+  end
+
+  def rewrite_body(body), do: body
+
+  defp absolutize_urls(body, base) do
+    Regex.replace(~r/(\s(?:src|href)=")\/(?!\/)/, body, "\\1#{base}/")
+  end
+
+  @void_tags ~w[img br hr meta input link area base col embed source track wbr]
+
+  defp self_close_void_tags(body) do
+    Enum.reduce(@void_tags, body, fn tag, acc ->
+      Regex.replace(~r/<#{tag}\b([^>]*?)(?<!\/)>/i, acc, "<#{tag}\\1 />")
+    end)
+  end
 end
