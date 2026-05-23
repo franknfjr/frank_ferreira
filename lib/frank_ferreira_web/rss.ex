@@ -99,11 +99,19 @@ defmodule FrankFerreiraWeb.RSS do
 
   def rewrite_body(body), do: body
 
-  # Drops class= and style= attributes — feed readers ignore styles and the
-  # Tailwind arbitrary-variant classes (e.g. `[a:not(:first-child)]:mt-12`)
-  # confuse strict HTML parsers like the W3C feed validator.
+  # Cleans up presentational / framework-specific markup that isn't useful
+  # in a feed and can confuse strict HTML parsers:
+  #
+  #   * Heading slugs generated from titles like `What "boring" means`
+  #     produce <h2 id="what-"boring"-actually-means"> — malformed HTML.
+  #     We just drop *all* attributes from h1-h6.
+  #   * Tailwind arbitrary-variant classes (`[a:not(:first-child)]:mt-12`)
+  #     trip the W3C feed validator's HTML parser.
+  #   * id / phx-* attributes are LiveView noise inside an RSS payload.
   defp strip_presentational_attrs(body) do
-    Regex.replace(~r/\s(?:class|style)="[^"]*"/, body, "")
+    body
+    |> then(&Regex.replace(~r/<(h[1-6])\s[^>]*>/i, &1, "<\\1>"))
+    |> then(&Regex.replace(~r/\s(?:class|style|id|phx-[a-z-]+)="[^"]*"/, &1, ""))
   end
 
   defp absolutize_urls(body, base) do
