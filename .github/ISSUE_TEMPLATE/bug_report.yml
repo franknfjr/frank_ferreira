@@ -1,0 +1,64 @@
+name: Bug report
+description: Report something that isn't working as expected
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to file a bug report. Please fill out the details below.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: A clear description of the bug and what you expected to happen instead.
+      placeholder: When I click X on page Y, Z happens, but I expected W.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Go to '...'
+        2. Click on '...'
+        3. Scroll to '...'
+        4. See error
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: URL / route
+      placeholder: e.g. /blog/en/some-post
+  - type: dropdown
+    id: locale
+    attributes:
+      label: Locale
+      options:
+        - en
+        - br (pt-BR)
+        - other
+    validations:
+      required: false
+  - type: input
+    id: browser
+    attributes:
+      label: Browser & OS
+      placeholder: e.g. Chrome 130 on macOS 15
+    validations:
+      required: true
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots / logs
+      description: Drop screenshots, console errors, or server logs here.
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Checks
+      options:
+        - label: I searched existing issues and didn't find a duplicate
+          required: true
+        - label: I agree to follow the project's Code of Conduct
+          required: true
