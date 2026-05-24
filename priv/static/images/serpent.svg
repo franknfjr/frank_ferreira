@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" width="192" height="192" shape-rendering="crispEdges">
+  <!-- Rounded dark background -->
+  <rect width="192" height="192" rx="40" fill="#0B2A12"/>
+  <!-- Subtle pixel grid -->
+  <g fill="#1FAB52" opacity="0.08">
+    <rect x="0" y="48" width="192" height="1"/>
+    <rect x="0" y="96" width="192" height="1"/>
+    <rect x="0" y="144" width="192" height="1"/>
+    <rect x="48" y="0" width="1" height="192"/>
+    <rect x="96" y="0" width="1" height="192"/>
+    <rect x="144" y="0" width="1" height="192"/>
+  </g>
+  <!-- Snake body on a 7×7 grid (cell=22, origin x=19,y=19). Path: tail→head -->
+  <!-- Tail (dim) -->
+  <g fill="#1FAB52">
+    <rect x="41"  y="107" width="20" height="20"/>
+    <rect x="63"  y="107" width="20" height="20"/>
+    <rect x="85"  y="107" width="20" height="20"/>
+    <rect x="85"  y="85"  width="20" height="20"/>
+  </g>
+  <!-- Mid body (neon) -->
+  <g fill="#39FF7A">
+    <rect x="85"  y="63"  width="20" height="20"/>
+    <rect x="107" y="63"  width="20" height="20"/>
+    <rect x="129" y="63"  width="20" height="20"/>
+    <rect x="129" y="85"  width="20" height="20"/>
+    <rect x="129" y="107" width="20" height="20"/>
+  </g>
+  <!-- Head (accent) -->
+  <rect x="129" y="129" width="20" height="20" fill="#7CFFA8"/>
+  <!-- Head top highlight -->
+  <rect x="129" y="129" width="20" height="4" fill="#FFFFFF" opacity="0.3"/>
+  <!-- Eye -->
+  <rect x="140" y="135" width="5" height="5" fill="#052D11"/>
+  <rect x="141" y="136" width="2" height="2" fill="#FFFFFF"/>
+  <!-- Body top highlights for 8-bit shading -->
+  <g fill="#FFFFFF" opacity="0.12">
+    <rect x="41"  y="107" width="20" height="4"/>
+    <rect x="63"  y="107" width="20" height="4"/>
+    <rect x="85"  y="107" width="20" height="4"/>
+    <rect x="85"  y="85"  width="20" height="4"/>
+    <rect x="85"  y="63"  width="20" height="4"/>
+    <rect x="107" y="63"  width="20" height="4"/>
+    <rect x="129" y="63"  width="20" height="4"/>
+    <rect x="129" y="85"  width="20" height="4"/>
+    <rect x="129" y="107" width="20" height="4"/>
+  </g>
+  <!-- Food pixel (apple) -->
+  <rect x="41"  y="63"  width="20" height="20" fill="#FF3B3B"/>
+  <rect x="41"  y="63"  width="20" height="4"  fill="#FFFFFF" opacity="0.35"/>
+</svg>

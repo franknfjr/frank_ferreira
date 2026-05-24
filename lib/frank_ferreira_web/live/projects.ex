@@ -4,6 +4,27 @@ defmodule FrankFerreiraWeb.ProjectsLive do
   def mount(_params, _session, socket) do
     projects = [
       %{
+        id: "serpent",
+        name: "Serpent",
+        date: ~D[2026-05-23],
+        image: "/images/serpent.svg",
+        description:
+          gettext(
+            "Retro 8-bit snake game for Android with skins, ranking, and chiptune soundtrack — currently in Play Store review."
+          ),
+        full_description:
+          gettext(
+            "Serpent revisits the classic Nokia snake with chiptune music synthesized in real time, unlockable skins, achievements, and a global ranking. Free, offline-first, no login. Built natively for Android and currently under Play Store review. This entry is the landing page for the game."
+          ),
+        url: "https://serpent.frankferreira.com.br",
+        github: nil,
+        tech: [
+          %{name: "Android", logo: "android.com"},
+          %{name: "Kotlin", logo: "kotlinlang.org"},
+          %{name: "HTML", logo: "/images/html5-logo.svg"}
+        ]
+      },
+      %{
         id: "hugo-andre-personal",
         name: "Hugo André Personal",
         date: ~D[2026-03-20],
