@@ -542,8 +542,5 @@ defmodule FrankFerreiraWeb.ProjectsLive do
     """
   end
 
-  defp mono_date(%Date{year: y, month: m, day: d}) do
-    yy = y |> Integer.to_string() |> String.slice(-2..-1)
-    "#{yy}·#{String.pad_leading("#{m}", 2, "0")}·#{String.pad_leading("#{d}", 2, "0")}"
-  end
+  defp mono_date(%Date{} = d), do: FrankFerreiraWeb.Format.mono_date_short(d)
 end

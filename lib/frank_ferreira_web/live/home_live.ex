@@ -200,7 +200,7 @@ defmodule FrankFerreiraWeb.HomeLive do
     """
   end
 
-  defp mono_date(%Date{year: y, month: m, day: d}) do
-    "#{y} · #{String.pad_leading("#{m}", 2, "0")} · #{String.pad_leading("#{d}", 2, "0")}"
+  defp mono_date(%Date{} = d) do
+    FrankFerreiraWeb.Format.mono_date(d) |> String.replace("·", " · ")
   end
 end
