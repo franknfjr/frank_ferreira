@@ -404,7 +404,7 @@ defmodule FrankFerreiraWeb.ProjectsLive do
       <section class="ff-section" style="padding-top: 8px;">
         <%= for {project, i} <- Enum.with_index(filtered) do %>
           <button phx-click="open_modal" phx-value-id={project.id} class="ff-project-row">
-            <div class="ff-idx">№ <%= String.pad_leading("#{i + 1}", 2, "0") %></div>
+            <div class="ff-idx">№ <%= String.pad_leading("#{length(filtered) - i}", 2, "0") %></div>
             <div class="thumb">
               <img
                 src={project.image || "/images/projects/no-preview.svg"}

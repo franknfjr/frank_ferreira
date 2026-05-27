@@ -121,7 +121,7 @@ defmodule FrankFerreiraWeb.HomeLive do
             class="ff-post-row"
             style={if i == 0, do: "border-top: 1px solid var(--rule);", else: ""}
           >
-            <div class="ff-idx">№ <%= String.pad_leading("#{i + 1}", 3, "0") %></div>
+            <div class="ff-idx">№ <%= String.pad_leading("#{length(@posts) - i}", 3, "0") %></div>
             <div>
               <div class="ff-serif" style="font-size:22px; font-weight:500; line-height:1.2;">
                 <%= post.title %>

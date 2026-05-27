@@ -104,7 +104,7 @@ defmodule FrankFerreiraWeb.BlogLive do
               </div>
             <% end %>
             <div class="ff-mono" style="font-size:11px; color: var(--ink-3);">
-              № 001 · <%= mono_date(featured.created_at) %> · <%= featured.read_minutes %> <%= gettext(
+              № <%= String.pad_leading("#{length(rest) + 1}", 3, "0") %> · <%= mono_date(featured.created_at) %> · <%= featured.read_minutes %> <%= gettext(
                 "min"
               ) %>
             </div>
@@ -143,7 +143,7 @@ defmodule FrankFerreiraWeb.BlogLive do
               style="display:block; padding:20px 0; border-bottom: 1px solid var(--rule); text-decoration:none; color:inherit;"
             >
               <div style="display:flex; justify-content: space-between; align-items: baseline; gap: 12px;">
-                <div class="ff-idx">№ <%= String.pad_leading("#{idx + 2}", 3, "0") %></div>
+                <div class="ff-idx">№ <%= String.pad_leading("#{length(rest) - idx}", 3, "0") %></div>
                 <div class="ff-mono" style="font-size:11px; color: var(--ink-3);">
                   <%= mono_date(post.created_at) %> · <%= post.read_minutes %> <%= gettext("min") %>
                 </div>
