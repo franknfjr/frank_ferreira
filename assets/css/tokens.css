@@ -1,25 +1,25 @@
 /* ============================================================
    frank.ferreira — Design Tokens
-   Editorial dev-journal: warm paper, deep ink, terracotta accent
+   Editorial dev-journal: cool slate paper, deep ink, cobalt accent
    ============================================================ */
 
 :root {
-  /* Palette — light (paper) */
-  --paper: #f4efe6;
-  --paper-2: #ede6d8;
-  --paper-3: #e3dac8;
-  --ink: #1a1816;
-  --ink-2: #3a3530;
-  --ink-3: #6a635a;
-  --ink-4: #a09889;
-  --rule: #d6cdb8;
+  /* Palette — light (slate) */
+  --paper: #eceef2;          /* cool slate */
+  --paper-2: #e1e4ec;        /* second tone */
+  --paper-3: #d7dbe6;        /* hairline / chip */
+  --ink: #14161c;            /* near black, cool */
+  --ink-2: #33384a;
+  --ink-3: #5f6576;          /* muted */
+  --ink-4: #9aa0ae;          /* subtle */
+  --rule: #d4d8e1;           /* hairline rules */
 
-  --accent: #c0532c;
-  --accent-2: #d97757;
-  --accent-soft: #f2dcd0;
+  --accent: #2f54eb;         /* cobalt */
+  --accent-2: #5a78f0;       /* lighter */
+  --accent-soft: #dde3fb;    /* tint */
 
-  --good: #5d7a3a;
-  --highlight: #f6ecd2;
+  --good: #2e7d57;           /* cool green */
+  --highlight: #e3ecf8;      /* highlighter wash */
 
   /* Type */
   --serif: "Newsreader", "Source Serif Pro", ui-serif, Georgia, serif;
@@ -34,19 +34,19 @@
 }
 
 html.dark {
-  --paper: #14110d;
-  --paper-2: #1c1813;
-  --paper-3: #251f18;
-  --ink: #f1ead9;
-  --ink-2: #d6cdb8;
-  --ink-3: #948b7a;
-  --ink-4: #5a5347;
-  --rule: #2d271f;
-  --accent: #e08161;
-  --accent-2: #f0a78a;
-  --accent-soft: #2c1c14;
-  --good: #9bb87a;
-  --highlight: #2a2316;
+  --paper: #0f1117;
+  --paper-2: #171a22;
+  --paper-3: #1f232d;
+  --ink: #e9ebf2;
+  --ink-2: #c4c8d4;
+  --ink-3: #888f9e;
+  --ink-4: #565d6b;
+  --rule: #262a35;
+  --accent: #5a78f0;
+  --accent-2: #8298f5;
+  --accent-soft: #1a2240;
+  --good: #6fae89;
+  --highlight: #1a2233;
 }
 
 html, body {
@@ -236,13 +236,15 @@ html { scroll-behavior: smooth; }
   background: var(--paper-2); border: 1px solid var(--rule);
   border-radius: 4px; padding: 1px 5px;
 }
+/* Code blocks keep the light slate background (the light --paper-2), but fixed in
+   both light and dark mode so the light MDEx syntax colours stay readable. */
 .ff-prose pre {
-  background: var(--paper-2); border: 1px solid var(--rule);
-  border-radius: 10px; padding: 16px 18px;
-  font-family: var(--mono); font-size: 13px; line-height: 1.6;
-  color: var(--ink-2); overflow-x: auto;
+  background: #e1e4ec; border: 1px solid #d4d8e1;
+  border-radius: 10px; padding: 16px 18px; margin: 22px 0;
+  font-family: var(--mono); font-size: 14.5px; line-height: 1.65;
+  color: #33384a; overflow-x: auto;
 }
-.ff-prose pre code { background: transparent; border: 0; padding: 0; }
+.ff-prose pre code { background: transparent; border: 0; padding: 0; color: #33384a; }
 .ff-prose ul, .ff-prose ol { padding-left: 22px; }
 .ff-prose img {
   border-radius: 10px; border: 1px solid var(--rule);
@@ -437,6 +439,29 @@ html { scroll-behavior: smooth; }
   position: absolute;
   left: -16px; top: .35em; bottom: .35em; width: 3px;
   background: var(--accent); border-radius: 2px;
+}
+
+/* Live status dot — pulsing "ao vivo" indicator */
+.ff-live {
+  position: relative; flex: none;
+  display: inline-grid; place-items: center;
+  width: 8px; height: 8px;
+}
+.ff-live .dot {
+  width: 8px; height: 8px; border-radius: 99px;
+  background: var(--good);
+}
+.ff-live .ping {
+  position: absolute; inset: 0; border-radius: 99px;
+  background: var(--good);
+  animation: ff-ping 1.6s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+@keyframes ff-ping {
+  0%        { transform: scale(1);   opacity: 0.55; }
+  75%, 100% { transform: scale(2.8); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ff-live .ping { animation: none; }
 }
 
 /* Stat block: centered values + labels */

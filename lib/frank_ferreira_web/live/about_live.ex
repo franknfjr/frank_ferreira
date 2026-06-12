@@ -65,10 +65,14 @@ defmodule FrankFerreiraWeb.AboutLive do
                gettext("Presented IrriSusten at the Brazilian Computer Society Congress in Natal.")},
               {"2022", gettext("Elixir."),
                gettext("Started working remotely as a backend developer.")},
-              {"2026", gettext("This site."),
-               gettext("A redesigned journal — built with Phoenix, LiveView, & Tailwind.")}
+              {"2023", gettext("This site."),
+               gettext("A redesigned journal — built with Phoenix, LiveView, & Tailwind.")},
+              {"2024", gettext("Community."),
+               gettext(
+                 "Joined the organizing teams of three dev communities: DevsNorte, AWS User Group, and ELUG PA."
+               )}
             ] %>
-            <%= for {{y, t, d}, i} <- Enum.with_index(timeline) do %>
+            <%= for {{y, t, d}, i} <- timeline |> Enum.reverse() |> Enum.with_index() do %>
               <div
                 class="ff-tl-row"
                 style={if i == 0, do: "border-top: 1px solid var(--rule);", else: ""}
@@ -101,7 +105,7 @@ defmodule FrankFerreiraWeb.AboutLive do
             <dl class="ff-mono" style="font-size: 12px; line-height: 1.8; margin: 0;">
               <%= for {k, v, accent} <- [
                 {gettext("based in"), "Ananindeua, BR", false},
-                {gettext("role"), gettext("backend eng"), false},
+                {gettext("role"), gettext("full-stack eng"), false},
                 {gettext("stack"), "elixir · pg", false},
                 {gettext("writing in"), "en · pt-BR", false},
                 {gettext("local time"), @date <> " −03", true}

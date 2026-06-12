@@ -104,9 +104,9 @@ defmodule FrankFerreiraWeb.BlogLive do
               </div>
             <% end %>
             <div class="ff-mono" style="font-size:11px; color: var(--ink-3);">
-              № <%= String.pad_leading("#{length(rest) + 1}", 3, "0") %> · <%= mono_date(featured.created_at) %> · <%= featured.read_minutes %> <%= gettext(
-                "min"
-              ) %>
+              № <%= String.pad_leading("#{length(rest) + 1}", 3, "0") %> · <%= mono_date(
+                featured.created_at
+              ) %> · <%= featured.read_minutes %> <%= gettext("min") %>
             </div>
             <h2
               class="ff-serif"

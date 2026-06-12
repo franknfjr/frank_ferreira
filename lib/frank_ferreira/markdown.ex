@@ -115,11 +115,16 @@ defmodule FrankFerreira.Markdown do
     get_text(children) <> get_text(nodes)
   end
 
+  # Produce a clean, URL-safe slug. Keeping punctuation here (e.g. the ">" in a
+  # "|>" heading) yields ids with characters that are invalid in an HTML id and
+  # break downstream attribute parsing, so we strip everything but [a-z0-9-].
   defp format_id(value) do
     value
-    |> String.trim()
-    |> String.replace(" ", "-")
     |> String.downcase()
+    |> String.normalize(:nfd)
+    |> String.replace(~r/[^a-z0-9\s-]/u, "")
+    |> String.trim()
+    |> String.replace(~r/\s+/, "-")
   end
 
   def to_html(text, opts \\ [])

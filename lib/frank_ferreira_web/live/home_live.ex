@@ -29,13 +29,11 @@ defmodule FrankFerreiraWeb.HomeLive do
               № 001 — <%= gettext("Hello, World.") %>
             </div>
             <h1 class="ff-hero-title">
-              <%= gettext("Software,") %><br />
-              <em><%= gettext("quietly") %></em> <%= gettext("built") %><br />
-              <%= gettext("from Belém.") %>
+              <%= raw(gettext("Building <em>simple</em> software.")) %>
             </h1>
             <p style="font-size: 19px; line-height: 1.55; max-width: 540px; color: var(--ink-2); margin-top: 28px;">
               <%= gettext("I'm") %> <strong style="font-weight:600;">Frank Ferreira</strong>, <%= gettext(
-                "a backend engineer in the Amazon. I work in Elixir & Phoenix, and write here about the long way from a Christmas Pentium to LiveView in production."
+                "a full-stack engineer in the Amazon. I work in Elixir & Phoenix, and write here about the long way from a Christmas Pentium to LiveView in production."
               ) %>
             </p>
             <div style="display:flex; gap: 12px; margin-top: 32px; flex-wrap: wrap;">
@@ -50,7 +48,9 @@ defmodule FrankFerreiraWeb.HomeLive do
                 <%= gettext("Now / Status") %>
               </div>
               <div style="display:flex; align-items:center; gap: 10px; margin-bottom: 12px;">
-                <span style="width:8px;height:8px;border-radius:99px;background:var(--good);box-shadow:0 0 0 4px color-mix(in oklch, var(--good) 25%, transparent);">
+                <span class="ff-live" aria-hidden="true">
+                  <span class="ping"></span>
+                  <span class="dot"></span>
                 </span>
                 <span class="ff-mono" style="font-size:12px;">
                   <%= gettext("open to interesting work") %>
@@ -60,7 +60,7 @@ defmodule FrankFerreiraWeb.HomeLive do
                 class="ff-mono"
                 style="font-size:12px; color:var(--ink-2); line-height:1.8; padding-left:0; list-style:none; margin:0;"
               >
-                <li>→ <%= gettext("remote · backend · elixir") %></li>
+                <li>→ <%= gettext("remote · full-stack · elixir") %></li>
                 <li>
                   → <%= gettext("shipping") %>
                   <a
@@ -71,7 +71,7 @@ defmodule FrankFerreiraWeb.HomeLive do
                     agendaletiva.com.br
                   </a>
                 </li>
-                <li>→ <%= gettext("teaching scratch on weekends") %></li>
+                <li>→ <%= gettext("organizing dev communities on weekends") %></li>
               </ul>
               <div class="ff-rule" style="margin: 16px 0;"></div>
               <div class="ff-mono" style="font-size:11px; color: var(--ink-3);">
@@ -98,7 +98,7 @@ defmodule FrankFerreiraWeb.HomeLive do
       <section class="ff-section" style="border-top: 1px solid var(--rule); padding-top: 32px;">
         <div style="display:flex; justify-content: space-between; align-items: baseline; margin-bottom: 18px; gap: 16px; flex-wrap: wrap;">
           <div>
-            <div class="ff-eyebrow">02 — <%= gettext("Latest writing") %></div>
+            <div class="ff-eyebrow">02 — <%= gettext("Latest articles") %></div>
             <h2
               class="ff-serif"
               style="font-size: clamp(24px, 5vw, 32px); font-weight:500; margin:6px 0 0; letter-spacing:-0.01em;"

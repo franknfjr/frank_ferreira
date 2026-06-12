@@ -19,15 +19,15 @@ defmodule Mix.Tasks.Blog.GenCover do
       GEMINI_API_KEY=... mix blog.gen_cover priv/posts/2026/03-12-on-boring-backends-en_US.md
 
       # Override the auto-built prompt
-      GEMINI_API_KEY=... mix blog.gen_cover welcome-to-my-blog --prompt "editorial illustration of a vintage Pentium tower on a warm cream background, terracotta accent"
+      GEMINI_API_KEY=... mix blog.gen_cover welcome-to-my-blog --prompt "editorial illustration of a vintage Pentium tower on a cool slate background, cobalt accent"
 
       # Don't overwrite an existing file (default overwrites)
       GEMINI_API_KEY=... mix blog.gen_cover welcome-to-my-blog --no-force
 
   ## Style
 
-  Cover art follows the editorial dev-journal direction: warm paper background,
-  deep ink, terracotta accent, no text in the image. The prompt is built from
+  Cover art follows the editorial dev-journal direction: cool slate background,
+  deep ink, cobalt accent, no text in the image. The prompt is built from
   the post's title + description + tags unless overridden via `--prompt`.
   """
 
@@ -40,9 +40,10 @@ defmodule Mix.Tasks.Blog.GenCover do
   @model "gemini-2.5-flash-image"
 
   @style_suffix """
-  Editorial dev-journal illustration. Warm cream paper background (#f4efe6), \
-  deep ink details, a single terracotta accent (#c0532c). \
+  Editorial dev-journal illustration. Cool slate paper background (#eceef2), \
+  deep ink details, a single cobalt accent (#2f54eb). \
   Hand-drawn feel, hairline rules, subtle texture. No text, no letters, no logos. \
+  If any incidental text or label appears, it must be in English, never Portuguese. \
   Wide 1200x630 composition with clear breathing room. \
   Minimal, contemplative, slightly nostalgic.\
   """

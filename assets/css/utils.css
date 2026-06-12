@@ -132,6 +132,9 @@ pre .copy-button:focus {
   position: absolute;
   top: 5px;
   right: 5px;
+  /* keep the screen-reader-only "copy" label out of text the reader selects */
+  user-select: none;
+  -webkit-user-select: none;
   padding: 4px;
   background-color: var(--codeBackground);
   border: none;

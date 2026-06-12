@@ -31,7 +31,7 @@ defmodule FrankFerreiraWeb.BlogLive.Show do
           style="font-size:11px; color: var(--ink-3); line-height: 1.8;"
         >
           <div class="ff-idx" style="font-size:14px;">
-            № <%= String.pad_leading("#{:erlang.phash2(@post.id, 99) + 1}", 3, "0") %>
+            № <%= String.pad_leading("#{@post_number}", 3, "0") %>
           </div>
           <div style="margin-top:14px;"><%= gettext("filed under") %></div>
           <div style="margin-top:6px;">
@@ -223,10 +223,19 @@ defmodule FrankFerreiraWeb.BlogLive.Show do
 
     socket
     |> assign(:post, post)
+    |> assign(:post_number, post_number(post, locale))
     |> assign(:body_with_ids, body_with_ids)
     |> assign(:toc, toc)
     |> assign(:prev_post, prev)
     |> assign(:next_post, next)
+  end
+
+  # Same descending scheme as the listings: newest published post is the highest
+  # number, oldest is № 001. `published_posts/1` is sorted newest-first.
+  defp post_number(post, locale) do
+    posts = Blog.published_posts(locale)
+    idx = Enum.find_index(posts, &(&1.id == post.id)) || 0
+    length(posts) - idx
   end
 
   # `published_posts/1` is sorted newest-first.
@@ -242,44 +251,44 @@ defmodule FrankFerreiraWeb.BlogLive.Show do
     {prev, next}
   end
 
+  # Assigns a slug id to every <h2> and returns the TOC. We rewrite ONLY the
+  # <h2> tags via regex instead of re-serialising the whole document with Floki:
+  # a Floki round-trip normalises whitespace inside code blocks and collapses
+  # the `<span class="w">\n</span>` tokens that Makeup emits, mashing every code
+  # block onto a single line. Touching only <h2> leaves code byte-for-byte intact.
+  @h2_regex ~r{<h2([^>]*)>(.*?)</h2>}s
+
   defp build_toc(body) when is_binary(body) do
-    case Floki.parse_fragment(body) do
-      {:ok, tree} ->
-        {tree, toc} =
-          tree
-          |> Enum.map_reduce([], fn node, acc ->
-            case node do
-              {"h2", attrs, children} ->
-                text = Floki.text({"h2", attrs, children}) |> String.trim()
-                id = slugify(text)
-                new_attrs = put_attr(attrs, "id", id)
-                {{"h2", new_attrs, children}, [{id, text} | acc]}
+    toc =
+      Regex.scan(@h2_regex, body)
+      |> Enum.map(fn [_full, _attrs, inner] ->
+        {slugify(heading_text(inner)), heading_text(inner)}
+      end)
+      |> Enum.with_index()
+      |> Enum.map(fn {{id, text}, i} -> {id, text, i} end)
 
-              other ->
-                {other, acc}
-            end
-          end)
+    html =
+      Regex.replace(@h2_regex, body, fn _full, attrs, inner ->
+        "<h2#{set_id(attrs, slugify(heading_text(inner)))}>#{inner}</h2>"
+      end)
 
-        html = Floki.raw_html(tree, encode: false)
-
-        toc =
-          toc
-          |> Enum.reverse()
-          |> Enum.with_index()
-          |> Enum.map(fn {{id, text}, i} -> {id, text, i} end)
-
-        {html, toc}
-
-      _ ->
-        {body, []}
-    end
+    {html, toc}
   end
 
-  defp put_attr(attrs, key, val) do
-    if Enum.any?(attrs, fn {k, _} -> k == key end) do
-      Enum.map(attrs, fn {k, v} -> if k == key, do: {k, val}, else: {k, v} end)
+  defp build_toc(body), do: {body, []}
+
+  defp heading_text(inner) do
+    inner
+    |> String.replace(~r{<[^>]*>}, "")
+    |> HtmlEntities.decode()
+    |> String.trim()
+  end
+
+  defp set_id(attrs, id) do
+    if String.contains?(attrs, "id=") do
+      Regex.replace(~r{id="[^"]*"}, attrs, ~s(id="#{id}"), global: false)
     else
-      attrs ++ [{key, val}]
+      ~s( id="#{id}") <> attrs
     end
   end
 
