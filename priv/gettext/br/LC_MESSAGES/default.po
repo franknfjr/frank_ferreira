@@ -21,7 +21,7 @@ msgstr "Sobre"
 msgid "Actions"
 msgstr "Ações"
 
-#: lib/frank_ferreira_web/live/projects.ex:344
+#: lib/frank_ferreira_web/live/projects.ex:365
 #, elixir-autogen, elixir-format
 msgid "Projects"
 msgstr "Projetos"
@@ -87,47 +87,47 @@ msgstr "Sucesso!"
 msgid "We can't find the internet"
 msgstr "Não conseguimos encontrar a internet"
 
-#: lib/frank_ferreira_web/live/blog_live/show.ex:323
+#: lib/frank_ferreira_web/live/blog_live/show.ex:325
 #, elixir-autogen, elixir-format
 msgid "May"
 msgstr "Mai"
 
-#: lib/frank_ferreira_web/live/projects.ex:226
+#: lib/frank_ferreira_web/live/projects.ex:247
 #, elixir-autogen, elixir-format
 msgid "Healthcare"
 msgstr "Cuidados de saúde"
 
-#: lib/frank_ferreira_web/live/projects.ex:261
+#: lib/frank_ferreira_web/live/projects.ex:282
 #, elixir-autogen, elixir-format
 msgid "Introduction to Elixir and Phoenix"
 msgstr "Introdução ao Elixir e Phoenix"
 
-#: lib/frank_ferreira_web/live/projects.ex:279
+#: lib/frank_ferreira_web/live/projects.ex:300
 #, elixir-autogen, elixir-format
 msgid "IrriSusten"
 msgstr ""
 
-#: lib/frank_ferreira_web/live/projects.ex:267
+#: lib/frank_ferreira_web/live/projects.ex:288
 #, elixir-autogen, elixir-format
 msgid "Repository for the Elixir and Phoenix mini-course, provided by the Applied Computing Laboratory at UFRA, functioning as a central repository for educational materials tailored to students and tech enthusiasts keen on exploring the dynamic realms of Elixir and Phoenix development."
 msgstr "Repositório para o mini-curso de Elixir e Phoenix, fornecido pelo Laboratório de Computação Aplicada da UFRA, funcionando como um repositório central para materiais educativos voltados para estudantes e entusiastas de tecnologia interessados em explorar os dinâmicos campos de desenvolvimento de Elixir e Phoenix."
 
-#: lib/frank_ferreira_web/live/projects.ex:198
+#: lib/frank_ferreira_web/live/projects.ex:219
 #, elixir-autogen, elixir-format
 msgid "The Voter Intentions System is a digital platform designed to facilitate the collection and analysis of data related to voters' preferences in a specific political context."
 msgstr "O Sistema de Intenções de Voto é uma plataforma digital projetada para facilitar a coleta e análise de dados relacionados às preferências dos eleitores em um contexto político específico."
 
-#: lib/frank_ferreira_web/live/projects.ex:287
+#: lib/frank_ferreira_web/live/projects.ex:308
 #, elixir-autogen, elixir-format
 msgid "The study introduces Irrisusten, an information system to manage plantation irrigation. It automates agricultural production control and reduces water wastage. It features web and mobile interfaces, utilizing physical components like Arduino Uno, sensors, relays, and Bluetooth modules."
 msgstr "O estudo apresenta o Irrisusten, um sistema de informações para gerenciar a irrigação de plantações. Ele automatiza o controle da produção agrícola e reduz o desperdício de água. Possui interfaces web e mobile, utilizando componentes físicos como Arduino Uno, sensores, relés e módulos Bluetooth."
 
-#: lib/frank_ferreira_web/live/projects.ex:193
+#: lib/frank_ferreira_web/live/projects.ex:214
 #, elixir-autogen, elixir-format
 msgid "Voter Intentions System"
 msgstr "Sistema de Intenções de Voto"
 
-#: lib/frank_ferreira_web/live/projects.ex:215
+#: lib/frank_ferreira_web/live/projects.ex:236
 #, elixir-autogen, elixir-format
 msgid "The Markdown in Elixir project converts Markdown files to HTML and Livebook using the Elixir language, leveraging its efficiency and scalability. It provides a flexible solution for developers to format text quickly and effectively in various online and data development contexts."
 msgstr "O projeto Markdown em Elixir converte arquivos Markdown para HTML e Livebook usando a linguagem Elixir, aproveitando sua eficiência e escalabilidade. Ele oferece uma solução flexível para desenvolvedores formatarem texto de forma rápida e eficaz em diversos contextos de desenvolvimento online e de dados."
@@ -388,102 +388,102 @@ msgstr "XXXVIII Congresso da Sociedade Brasileira de Computação (CSBC 2018)"
 msgid "Yes, my first code was made in Delphi"
 msgstr "Sim, meu primeiro código foi feito em Delphi."
 
-#: lib/frank_ferreira_web/live/blog_live/show.ex:322
+#: lib/frank_ferreira_web/live/blog_live/show.ex:324
 #, elixir-autogen, elixir-format
 msgid "April"
 msgstr "Abr"
 
-#: lib/frank_ferreira_web/live/blog_live/show.ex:326
+#: lib/frank_ferreira_web/live/blog_live/show.ex:328
 #, elixir-autogen, elixir-format
 msgid "August"
 msgstr "Ago"
 
-#: lib/frank_ferreira_web/live/blog_live/show.ex:330
+#: lib/frank_ferreira_web/live/blog_live/show.ex:332
 #, elixir-autogen, elixir-format
 msgid "December"
 msgstr "Dezembro"
 
-#: lib/frank_ferreira_web/live/blog_live/show.ex:320
+#: lib/frank_ferreira_web/live/blog_live/show.ex:322
 #, elixir-autogen, elixir-format
 msgid "February"
 msgstr "Fevereiro"
 
-#: lib/frank_ferreira_web/live/blog_live/show.ex:312
+#: lib/frank_ferreira_web/live/blog_live/show.ex:314
 #, elixir-autogen, elixir-format
 msgid "Friday"
 msgstr "Sex."
 
-#: lib/frank_ferreira_web/live/blog_live/show.ex:331
+#: lib/frank_ferreira_web/live/blog_live/show.ex:333
 #, elixir-autogen, elixir-format
 msgid "Invalid month"
 msgstr "Mês Inválido"
 
-#: lib/frank_ferreira_web/live/blog_live/show.ex:314
+#: lib/frank_ferreira_web/live/blog_live/show.ex:316
 #, elixir-autogen, elixir-format
 msgid "Invalid weekday"
 msgstr "Semana Inválida"
 
-#: lib/frank_ferreira_web/live/blog_live/show.ex:319
+#: lib/frank_ferreira_web/live/blog_live/show.ex:321
 #, elixir-autogen, elixir-format
 msgid "January"
 msgstr "Jan"
 
-#: lib/frank_ferreira_web/live/blog_live/show.ex:325
+#: lib/frank_ferreira_web/live/blog_live/show.ex:327
 #, elixir-autogen, elixir-format
 msgid "July"
 msgstr "Jul"
 
-#: lib/frank_ferreira_web/live/blog_live/show.ex:324
+#: lib/frank_ferreira_web/live/blog_live/show.ex:326
 #, elixir-autogen, elixir-format
 msgid "June"
 msgstr "Jun"
 
-#: lib/frank_ferreira_web/live/blog_live/show.ex:321
+#: lib/frank_ferreira_web/live/blog_live/show.ex:323
 #, elixir-autogen, elixir-format
 msgid "March"
 msgstr "Mar"
 
-#: lib/frank_ferreira_web/live/blog_live/show.ex:308
+#: lib/frank_ferreira_web/live/blog_live/show.ex:310
 #, elixir-autogen, elixir-format
 msgid "Monday"
 msgstr "Segunda"
 
-#: lib/frank_ferreira_web/live/blog_live/show.ex:329
+#: lib/frank_ferreira_web/live/blog_live/show.ex:331
 #, elixir-autogen, elixir-format
 msgid "November"
 msgstr "Novembro"
 
-#: lib/frank_ferreira_web/live/blog_live/show.ex:328
+#: lib/frank_ferreira_web/live/blog_live/show.ex:330
 #, elixir-autogen, elixir-format
 msgid "October"
 msgstr "Outubro"
 
-#: lib/frank_ferreira_web/live/blog_live/show.ex:313
+#: lib/frank_ferreira_web/live/blog_live/show.ex:315
 #, elixir-autogen, elixir-format
 msgid "Saturday"
 msgstr "Sábado"
 
-#: lib/frank_ferreira_web/live/blog_live/show.ex:327
+#: lib/frank_ferreira_web/live/blog_live/show.ex:329
 #, elixir-autogen, elixir-format
 msgid "September"
 msgstr "Setembro"
 
-#: lib/frank_ferreira_web/live/blog_live/show.ex:307
+#: lib/frank_ferreira_web/live/blog_live/show.ex:309
 #, elixir-autogen, elixir-format
 msgid "Sunday"
 msgstr "Domingo"
 
-#: lib/frank_ferreira_web/live/blog_live/show.ex:311
+#: lib/frank_ferreira_web/live/blog_live/show.ex:313
 #, elixir-autogen, elixir-format
 msgid "Thursday"
 msgstr "Quinta"
 
-#: lib/frank_ferreira_web/live/blog_live/show.ex:309
+#: lib/frank_ferreira_web/live/blog_live/show.ex:311
 #, elixir-autogen, elixir-format
 msgid "Tuesday"
 msgstr "Terça"
 
-#: lib/frank_ferreira_web/live/blog_live/show.ex:310
+#: lib/frank_ferreira_web/live/blog_live/show.ex:312
 #, elixir-autogen, elixir-format
 msgid "Wednesday"
 msgstr "Quarta"
@@ -493,17 +493,17 @@ msgstr "Quarta"
 msgid "Building software in Brazil. Passionate about creating tools that make life easier."
 msgstr "Construindo software no Brasil. Apaixonado por criar ferramentas que facilitam a vida."
 
-#: lib/frank_ferreira_web/live/projects.ex:213
+#: lib/frank_ferreira_web/live/projects.ex:234
 #, elixir-autogen, elixir-format
 msgid "Converts Markdown files to HTML and Livebook using Elixir."
 msgstr "Converte arquivos Markdown para HTML e Livebook usando Elixir."
 
-#: lib/frank_ferreira_web/live/projects.ex:230
+#: lib/frank_ferreira_web/live/projects.ex:251
 #, elixir-autogen, elixir-format
 msgid "Dashboard for patient appointments, medications, and hospital indicators."
 msgstr "Dashboard para consultas de pacientes, medicamentos e indicadores hospitalares."
 
-#: lib/frank_ferreira_web/live/projects.ex:265
+#: lib/frank_ferreira_web/live/projects.ex:286
 #, elixir-autogen, elixir-format
 msgid "Educational repository for Elixir and Phoenix mini-course at UFRA."
 msgstr "Repositório educacional para o mini-curso de Elixir e Phoenix na UFRA."
@@ -513,117 +513,117 @@ msgstr "Repositório educacional para o mini-curso de Elixir e Phoenix na UFRA."
 msgid "Hey, I'm Frank"
 msgstr "Ei, sou o Frank"
 
-#: lib/frank_ferreira_web/live/projects.ex:283
+#: lib/frank_ferreira_web/live/projects.ex:304
 #, elixir-autogen, elixir-format
 msgid "Information system to manage plantation irrigation with web and mobile interfaces."
 msgstr "Sistema de informação para gerenciar irrigação de plantações com interfaces web e mobile."
 
-#: lib/frank_ferreira_web/live/projects.ex:248
+#: lib/frank_ferreira_web/live/projects.ex:269
 #, elixir-autogen, elixir-format
 msgid "Internal content delivery network for file management."
 msgstr "Rede de distribuição de conteúdo interna para gerenciamento de arquivos."
 
-#: lib/frank_ferreira_web/live/projects.ex:196
+#: lib/frank_ferreira_web/live/projects.ex:217
 #, elixir-autogen, elixir-format
 msgid "Platform for collecting and analyzing voter preference data."
 msgstr "Plataforma para coleta e análise de dados de preferência dos eleitores."
 
-#: lib/frank_ferreira_web/live/projects.ex:527
+#: lib/frank_ferreira_web/live/projects.ex:564
 #, elixir-autogen, elixir-format
 msgid "Private project - no public links available"
 msgstr "Projeto privado - sem links públicos disponíveis"
 
-#: lib/frank_ferreira_web/live/projects.ex:232
+#: lib/frank_ferreira_web/live/projects.ex:253
 #, elixir-autogen, elixir-format
 msgid "The 'Healthcare' app provides a comprehensive overview of patient appointments, medications, phone calls, surgeries, financial transactions, and other relevant data, offering healthcare professionals a detailed insight into daily hospital indicators for better management and decision-making."
 msgstr "\n            O aplicativo 'Healthcare' fornece uma visão abrangente das consultas dos pacientes, medicamentos, telefonemas, cirurgias, transações financeiras e outros dados relevantes, oferecendo aos profissionais de saúde uma visão detalhada dos indicadores diários do hospital para melhor gestão e tomada de decisões."
 
-#: lib/frank_ferreira_web/live/projects.ex:250
+#: lib/frank_ferreira_web/live/projects.ex:271
 #, elixir-autogen, elixir-format
 msgid "The CDN (Content Delivery Network) system developed in Elixir was initially designed for internal file management. Using the Elixir language, the system offered an efficient and scalable solution to manage content distribution, optimizing access and file delivery across a network."
 msgstr "O sistema CDN (Content Delivery Network) desenvolvido em Elixir foi inicialmente projetado para gerenciamento interno de arquivos. Usando a linguagem Elixir, o sistema ofereceu uma solução eficiente e escalável para gerenciar a distribuição de conteúdo, otimizando o acesso e a entrega de arquivos através de uma rede. Esta plataforma permitiu o armazenamento, recuperação e atualização de arquivos de forma rápida e confiável, atendendo às necessidades de controle interno de uma organização."
 
-#: lib/frank_ferreira_web/live/projects.ex:519
+#: lib/frank_ferreira_web/live/projects.ex:556
 #, elixir-autogen, elixir-format
 msgid "View Project"
 msgstr "Ver Projeto"
 
-#: lib/frank_ferreira_web/live/projects.ex:119
+#: lib/frank_ferreira_web/live/projects.ex:140
 #, elixir-autogen, elixir-format
 msgid "Landing page developed for football player Mario Artur (Lateral / Meio Campista). A modern, responsive single-page application built with React and Vite, featuring the player's profile, career highlights, and contact information."
 msgstr "Landing page desenvolvida para o jogador de futebol Mario Artur (Lateral / Meio Campista). Uma aplicação single-page moderna e responsiva construída com React e Vite, apresentando o perfil do jogador, destaques da carreira e informações de contato."
 
-#: lib/frank_ferreira_web/live/projects.ex:115
+#: lib/frank_ferreira_web/live/projects.ex:136
 #, elixir-autogen, elixir-format
 msgid "Landing page for football player Mario Artur with player profile and career info."
 msgstr "Landing page para o jogador de futebol Mario Artur com perfil e informações da carreira."
 
-#: lib/frank_ferreira_web/live/projects.ex:98
+#: lib/frank_ferreira_web/live/projects.ex:119
 #, elixir-autogen, elixir-format
 msgid "Professional website developed for psychologist Bruna Caroline, offering online and in-person psychotherapy services. A modern, responsive single-page application built with React and Vite, deployed on Vercel."
 msgstr "Site profissional desenvolvido para a psicóloga Bruna Caroline, oferecendo serviços de psicoterapia online e presencial. Uma aplicação single-page moderna e responsiva construída com React e Vite, implantada na Vercel."
 
-#: lib/frank_ferreira_web/live/projects.ex:94
+#: lib/frank_ferreira_web/live/projects.ex:115
 #, elixir-autogen, elixir-format
 msgid "Professional website for psychologist Bruna Caroline with online and in-person psychotherapy services."
 msgstr "Site profissional para a psicóloga Bruna Caroline com serviços de psicoterapia online e presencial."
 
-#: lib/frank_ferreira_web/live/projects.ex:77
+#: lib/frank_ferreira_web/live/projects.ex:98
 #, elixir-autogen, elixir-format
 msgid "Product catalog and showcase developed for Circuito das Plantas, a plant shop offering a wide variety of plants, seedlings, and gardening products. A modern, responsive application built with React and Vite, featuring a product catalog and showcase for requesting products."
 msgstr "Catálogo de produtos e vitrine desenvolvido para o Circuito das Plantas, uma loja de plantas que oferece uma grande variedade de plantas, mudas e produtos de jardinagem. Uma aplicação moderna e responsiva construída com React e Vite, com catálogo de produtos e vitrine para solicitação de produtos."
 
-#: lib/frank_ferreira_web/live/projects.ex:73
+#: lib/frank_ferreira_web/live/projects.ex:94
 #, elixir-autogen, elixir-format
 msgid "Product catalog and showcase for requesting plants, seedlings, and gardening products."
 msgstr "Catálogo de produtos e vitrine para solicitação de plantas, mudas e produtos de jardinagem."
 
-#: lib/frank_ferreira_web/live/projects.ex:161
+#: lib/frank_ferreira_web/live/projects.ex:182
 #, elixir-autogen, elixir-format
 msgid "School management platform developed for Agenda Letiva, providing tools for managing student assessments, grades, and academic scheduling. Built with Elixir, Phoenix, and LiveView, offering a real-time, responsive interface for educators and administrators."
 msgstr "Plataforma de gestão escolar desenvolvida para a Agenda Letiva, oferecendo ferramentas para gerenciar avaliações de alunos, notas e calendário acadêmico. Construída com Elixir, Phoenix e LiveView, proporcionando uma interface responsiva e em tempo real para educadores e administradores."
 
-#: lib/frank_ferreira_web/live/projects.ex:157
+#: lib/frank_ferreira_web/live/projects.ex:178
 #, elixir-autogen, elixir-format
 msgid "School management platform for student assessments, grades, and academic scheduling."
 msgstr "Plataforma de gestão escolar para avaliações de alunos, notas e calendário acadêmico."
 
-#: lib/frank_ferreira_web/live/projects.ex:136
+#: lib/frank_ferreira_web/live/projects.ex:157
 #, elixir-autogen, elixir-format
 msgid "Mobile task management app with custom categories, filters, and confetti celebrations."
 msgstr "App mobile de gerenciamento de tarefas com categorias personalizadas, filtros e confetes de celebração."
 
-#: lib/frank_ferreira_web/live/projects.ex:140
+#: lib/frank_ferreira_web/live/projects.ex:161
 #, elixir-autogen, elixir-format
 msgid "Tarefinhas is a mobile task management app for Android, designed to organize tasks in a simple and fun way. Built with React Native and Expo, it features custom categories, task filtering, and confetti celebrations for completed tasks."
 msgstr "Tarefinhas é um app mobile de gerenciamento de tarefas para Android, projetado para organizar tarefas de forma simples e divertida. Construído com React Native e Expo, possui categorias personalizadas, filtro de tarefas e confetes de celebração para tarefas concluídas."
 
-#: lib/frank_ferreira_web/live/projects.ex:52
+#: lib/frank_ferreira_web/live/projects.ex:73
 #, elixir-autogen, elixir-format
 msgid "Educational space delivery game built as a fun challenge for kids with trending themes in Brazil."
 msgstr "Jogo educativo de entregas espaciais criado como desafio divertido para crianças com temas em alta no Brasil."
 
-#: lib/frank_ferreira_web/live/projects.ex:56
+#: lib/frank_ferreira_web/live/projects.ex:77
 #, elixir-autogen, elixir-format
 msgid "Entregador das Galaxias is an educational browser game created as a challenge for my niece Sofia, combining trending themes in Brazil 2026 in a playful and non-violent format. Built with pure HTML, CSS, and JavaScript, it features a space delivery adventure designed to be fun and relevant for kids."
 msgstr "Entregador das Galáxias é um jogo educativo no navegador criado como desafio para minha sobrinha Sofia, combinando temas em alta no Brasil 2026 em um formato lúdico e não violento. Construído com HTML, CSS e JavaScript puros, apresenta uma aventura de entregas espaciais projetada para ser divertida e relevante para crianças."
 
-#: lib/frank_ferreira_web/live/projects.ex:178
+#: lib/frank_ferreira_web/live/projects.ex:199
 #, elixir-autogen, elixir-format
 msgid "Real-time interactive voting app for live presentations and talks."
 msgstr "App de votação interativa em tempo real para apresentações e palestras."
 
-#: lib/frank_ferreira_web/live/projects.ex:180
+#: lib/frank_ferreira_web/live/projects.ex:201
 #, elixir-autogen, elixir-format
 msgid "VoceDecide is a real-time interactive voting application designed for live presentations and talks. Built with Elixir, Phoenix, and LiveView, it allows the audience to vote and decide what happens next during a presentation."
 msgstr "VoceDecide é uma aplicação de votação interativa em tempo real para apresentações e palestras. Construída com Elixir, Phoenix e LiveView, permite que o público vote e decida o que acontece a seguir durante uma apresentação."
 
-#: lib/frank_ferreira_web/live/projects.ex:33
+#: lib/frank_ferreira_web/live/projects.ex:54
 #, elixir-autogen, elixir-format
 msgid "Personal trainer website for body transformation programs for women 40+."
 msgstr "Site de personal trainer com programas de transformação corporal para mulheres 40+."
 
-#: lib/frank_ferreira_web/live/projects.ex:35
+#: lib/frank_ferreira_web/live/projects.ex:56
 #, elixir-autogen, elixir-format
 msgid "Professional website developed for Hugo André Personal, a personal trainer with 15+ years of experience specializing in body transformation for women 40+. Features training programs, workout details, and WhatsApp integration for client contact. Built with React and Vite, deployed on Vercel."
 msgstr "Site profissional desenvolvido para Hugo André Personal, personal trainer com mais de 15 anos de experiência especializado em transformação corporal para mulheres 40+. Inclui programas de treino, detalhes dos exercícios e integração com WhatsApp para contato com clientes. Construído com React e Vite, hospedado na Vercel."
@@ -668,7 +668,7 @@ msgstr "ecossistema Elixir"
 msgid "Elixir."
 msgstr "Elixir."
 
-#: lib/frank_ferreira_web/live/about_live.ex:122
+#: lib/frank_ferreira_web/live/about_live.ex:124
 #, elixir-autogen, elixir-format
 msgid "Find me"
 msgstr "Onde me achar"
@@ -728,7 +728,7 @@ msgstr "Gosto de resolver problemas complexos e criar soluções eficientes. Est
 msgid "I'm"
 msgstr "Sou o"
 
-#: lib/frank_ferreira_web/live/projects.ex:341
+#: lib/frank_ferreira_web/live/projects.ex:362
 #, elixir-autogen, elixir-format
 msgid "Index of works"
 msgstr "Índice de trabalhos"
@@ -753,7 +753,7 @@ msgstr "Agora / Status"
 msgid "Presented IrriSusten at the Brazilian Computer Society Congress in Natal."
 msgstr "Apresentei o IrriSusten no Congresso da Sociedade Brasileira de Computação em Natal."
 
-#: lib/frank_ferreira_web/live/about_live.ex:102
+#: lib/frank_ferreira_web/live/about_live.ex:104
 #, elixir-autogen, elixir-format
 msgid "Quick facts"
 msgstr "Resumo"
@@ -823,7 +823,7 @@ msgstr "A bancada"
 msgid "The hardware and software I reach for every day — for writing Elixir, shipping Phoenix apps, and the occasional weekend game project."
 msgstr "O hardware e software que uso todo dia — para escrever Elixir, lançar apps Phoenix e o eventual projeto de jogo de fim de semana."
 
-#: lib/frank_ferreira_web/live/projects.ex:360
+#: lib/frank_ferreira_web/live/projects.ex:381
 #, elixir-autogen, elixir-format
 msgid "Things I've built and contributed to — client work, weekend experiments, and the occasional gift for my niece."
 msgstr "Coisas que construí e contribuí — trabalho para clientes, experimentos de fim de semana e um presente ocasional para minha sobrinha."
@@ -873,7 +873,7 @@ msgstr "Projetos"
 msgid "archive"
 msgstr "arquivo"
 
-#: lib/frank_ferreira_web/live/about_live.ex:105
+#: lib/frank_ferreira_web/live/about_live.ex:107
 #, elixir-autogen, elixir-format
 msgid "based in"
 msgstr "moro em"
@@ -898,7 +898,7 @@ msgstr "destaque · mais lido"
 msgid "filed under"
 msgstr "arquivado em"
 
-#: lib/frank_ferreira_web/live/projects.ex:368
+#: lib/frank_ferreira_web/live/projects.ex:389
 #, elixir-autogen, elixir-format
 msgid "filter"
 msgstr "filtro"
@@ -913,7 +913,7 @@ msgstr "idiomas"
 msgid "last updated"
 msgstr "atualizado em"
 
-#: lib/frank_ferreira_web/live/about_live.ex:109
+#: lib/frank_ferreira_web/live/about_live.ex:111
 #: lib/frank_ferreira_web/live/home_live.ex:80
 #, elixir-autogen, elixir-format
 msgid "local time"
@@ -934,9 +934,9 @@ msgstr "mais recentes"
 msgid "nothing else here yet."
 msgstr "nada mais por aqui ainda."
 
-#: lib/frank_ferreira_web/live/projects.ex:351
-#: lib/frank_ferreira_web/live/projects.ex:428
-#: lib/frank_ferreira_web/live/projects.ex:500
+#: lib/frank_ferreira_web/live/projects.ex:372
+#: lib/frank_ferreira_web/live/projects.ex:455
+#: lib/frank_ferreira_web/live/projects.ex:537
 #, elixir-autogen, elixir-format
 msgid "open source"
 msgstr "open source"
@@ -956,12 +956,12 @@ msgstr "posts"
 msgid "re-reading"
 msgstr "relendo"
 
-#: lib/frank_ferreira_web/live/about_live.ex:106
+#: lib/frank_ferreira_web/live/about_live.ex:108
 #, elixir-autogen, elixir-format
 msgid "role"
 msgstr "função"
 
-#: lib/frank_ferreira_web/live/projects.ex:351
+#: lib/frank_ferreira_web/live/projects.ex:372
 #, elixir-autogen, elixir-format
 msgid "shipped"
 msgstr "enviados"
@@ -971,7 +971,7 @@ msgstr "enviados"
 msgid "shipping"
 msgstr "lançando"
 
-#: lib/frank_ferreira_web/live/projects.ex:351
+#: lib/frank_ferreira_web/live/projects.ex:372
 #, elixir-autogen, elixir-format
 msgid "since"
 msgstr "desde"
@@ -986,7 +986,7 @@ msgstr "desde 2023"
 msgid "sort"
 msgstr "ordem"
 
-#: lib/frank_ferreira_web/live/about_live.ex:107
+#: lib/frank_ferreira_web/live/about_live.ex:109
 #, elixir-autogen, elixir-format
 msgid "stack"
 msgstr "stack"
@@ -1016,7 +1016,7 @@ msgstr "atualizado"
 msgid "where I've been involved in challenging projects that have shaped how I think."
 msgstr "onde me envolvi em projetos desafiadores que moldaram como penso."
 
-#: lib/frank_ferreira_web/live/about_live.ex:108
+#: lib/frank_ferreira_web/live/about_live.ex:110
 #, elixir-autogen, elixir-format
 msgid "writing in"
 msgstr "escrevo em"
@@ -1037,7 +1037,7 @@ msgid "Share"
 msgstr "Compartilhar"
 
 #: lib/frank_ferreira_web/live/blog_live.ex:61
-#: lib/frank_ferreira_web/live/projects.ex:375
+#: lib/frank_ferreira_web/live/projects.ex:396
 #, elixir-autogen, elixir-format
 msgid "all"
 msgstr "tudo"
@@ -1052,17 +1052,17 @@ msgstr "feito com phoenix + liveview"
 msgid "copy link"
 msgstr "copiar link"
 
-#: lib/frank_ferreira_web/live/projects.ex:389
+#: lib/frank_ferreira_web/live/projects.ex:410
 #, elixir-autogen, elixir-format
 msgid "index"
 msgstr "índice"
 
-#: lib/frank_ferreira_web/live/projects.ex:421
+#: lib/frank_ferreira_web/live/projects.ex:448
 #, elixir-autogen, elixir-format
 msgid "latest"
 msgstr "novo"
 
-#: lib/frank_ferreira_web/live/blog_live.ex:107
+#: lib/frank_ferreira_web/live/blog_live.ex:109
 #: lib/frank_ferreira_web/live/blog_live.ex:148
 #: lib/frank_ferreira_web/live/blog_live/show.ex:24
 #: lib/frank_ferreira_web/live/home_live.ex:136
@@ -1097,12 +1097,12 @@ msgid "nav.writing"
 msgstr "artigos"
 
 #: lib/frank_ferreira_web/live/home_live.ex:193
-#: lib/frank_ferreira_web/live/projects.ex:443
+#: lib/frank_ferreira_web/live/projects.ex:470
 #, elixir-autogen, elixir-format
 msgid "open"
 msgstr "abrir"
 
-#: lib/frank_ferreira_web/live/projects.ex:389
+#: lib/frank_ferreira_web/live/projects.ex:410
 #, elixir-autogen, elixir-format
 msgid "view"
 msgstr "modo"
@@ -1149,7 +1149,7 @@ msgstr ""
 msgid "a full-stack engineer in the Amazon. I work in Elixir & Phoenix, and write here about the long way from a Christmas Pentium to LiveView in production."
 msgstr "engenheiro full-stack na Amazônia. Trabalho com Elixir e Phoenix, e escrevo aqui sobre o caminho de um Pentium de Natal até LiveView em produção."
 
-#: lib/frank_ferreira_web/live/about_live.ex:106
+#: lib/frank_ferreira_web/live/about_live.ex:108
 #, elixir-autogen, elixir-format
 msgid "full-stack eng"
 msgstr "eng. full-stack"
@@ -1183,3 +1183,13 @@ msgstr "Comunidade."
 #, elixir-autogen, elixir-format
 msgid "Joined the organizing teams of three dev communities: DevsNorte, AWS User Group, and ELUG PA."
 msgstr "Entrei para a organização de três comunidades dev: DevsNorte, AWS User Group e Elug PA."
+
+#: lib/frank_ferreira_web/live/projects.ex:37
+#, elixir-autogen, elixir-format
+msgid "Parazão da Memória is a memory card game themed around Pará. It pairs cards with sound effects, spoken cues, and haptic feedback for a tactile feel, built with Expo and React Native (TypeScript). The Expo build is done and an Android release for the Play Store is on the way."
+msgstr "Parazão da Memória é um jogo da memória com tema paraense. Combina as cartas com efeitos sonoros, narração por voz e feedback tátil (vibração), feito com Expo e React Native (TypeScript). O build no Expo está pronto e uma versão Android para a Play Store está a caminho."
+
+#: lib/frank_ferreira_web/live/projects.ex:33
+#, elixir-autogen, elixir-format
+msgid "Pará-themed memory card game with sound, speech, and haptics. Built with Expo and React Native; an Android release is on the way."
+msgstr "Jogo da memória com tema paraense, com som, fala e vibração. Feito com Expo e React Native; uma versão Android está a caminho."

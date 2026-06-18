@@ -25,6 +25,27 @@ defmodule FrankFerreiraWeb.ProjectsLive do
         ]
       },
       %{
+        id: "parazao-da-memoria",
+        name: "Parazão da Memória",
+        date: ~D[2026-05-07],
+        image: "/images/parazaodamemoria.png",
+        description:
+          gettext(
+            "Pará-themed memory card game with sound, speech, and haptics. Built with Expo and React Native; an Android release is on the way."
+          ),
+        full_description:
+          gettext(
+            "Parazão da Memória is a memory card game themed around Pará. It pairs cards with sound effects, spoken cues, and haptic feedback for a tactile feel, built with Expo and React Native (TypeScript). The Expo build is done and an Android release for the Play Store is on the way."
+          ),
+        url: nil,
+        github: nil,
+        tech: [
+          %{name: "Expo", logo: "expo.dev"},
+          %{name: "React Native", logo: "reactnative.dev"},
+          %{name: "TypeScript", logo: "typescriptlang.org"}
+        ]
+      },
+      %{
         id: "hugo-andre-personal",
         name: "Hugo André Personal",
         date: ~D[2026-03-20],
