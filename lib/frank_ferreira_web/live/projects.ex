@@ -406,11 +406,17 @@ defmodule FrankFerreiraWeb.ProjectsLive do
           <button phx-click="open_modal" phx-value-id={project.id} class="ff-project-row">
             <div class="ff-idx">№ <%= String.pad_leading("#{length(filtered) - i}", 2, "0") %></div>
             <div class="thumb">
-              <img
-                src={project.image || "/images/projects/no-preview.svg"}
-                alt=""
-                style="max-width:85%; max-height:80%; object-fit:contain;"
-              />
+              <%= if project.image do %>
+                <img
+                  src={project.image}
+                  alt=""
+                  style="max-width:85%; max-height:80%; object-fit:contain;"
+                />
+              <% else %>
+                <span class="ff-proj-glyph" style="font-size: 34px;" aria-hidden="true">
+                  <%= String.first(project.name) %>
+                </span>
+              <% end %>
             </div>
             <div>
               <div style="display:flex; align-items:center; gap:10px; flex-wrap: wrap;">
@@ -464,11 +470,21 @@ defmodule FrankFerreiraWeb.ProjectsLive do
           >
             <div style="padding: 22px 24px; border-bottom: 1px solid var(--rule); display:flex; justify-content: space-between; align-items: flex-start; gap: 12px;">
               <div style="display:flex; align-items:center; gap:12px;">
-                <img
-                  src={@selected_project.image || "/images/projects/no-preview.svg"}
-                  alt=""
-                  style="width: 56px; height:56px; border-radius:10px; object-fit:contain; background: var(--paper-3);"
-                />
+                <%= if @selected_project.image do %>
+                  <img
+                    src={@selected_project.image}
+                    alt=""
+                    style="width: 56px; height:56px; border-radius:10px; object-fit:contain; background: var(--paper-3);"
+                  />
+                <% else %>
+                  <span
+                    class="ff-proj-glyph"
+                    style="width: 56px; height: 56px; border-radius: 10px; background: var(--paper-3); font-size: 28px; flex: none;"
+                    aria-hidden="true"
+                  >
+                    <%= String.first(@selected_project.name) %>
+                  </span>
+                <% end %>
                 <h2
                   class="ff-serif"
                   style="font-size: 26px; font-weight: 500; margin:0; letter-spacing:-0.01em;"

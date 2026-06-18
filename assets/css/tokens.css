@@ -441,6 +441,18 @@ html { scroll-behavior: smooth; }
   background: var(--accent); border-radius: 2px;
 }
 
+/* Project fallback glyph — shown when a project has no preview image.
+   The project's initial in serif italic cobalt, matching the brandmark. */
+.ff-proj-glyph {
+  display: grid; place-items: center;
+  width: 100%; height: 100%;
+  font-family: var(--serif);
+  font-style: italic; font-weight: 600;
+  color: var(--accent);
+  line-height: 1;
+  user-select: none; -webkit-user-select: none;
+}
+
 /* Live status dot — pulsing "ao vivo" indicator */
 .ff-live {
   position: relative; flex: none;
