@@ -140,24 +140,38 @@ defmodule FrankFerreiraWeb.BlogLive do
           <%= for {post, idx} <- Enum.with_index(rest) do %>
             <a
               href={~p"/blog/#{post.language}/#{post.id}"}
-              style="display:block; padding:20px 0; border-bottom: 1px solid var(--rule); text-decoration:none; color:inherit;"
+              style="display:flex; gap:16px; align-items:center; padding:20px 0; border-bottom: 1px solid var(--rule); text-decoration:none; color:inherit;"
             >
-              <div style="display:flex; justify-content: space-between; align-items: baseline; gap: 12px;">
-                <div class="ff-idx">№ <%= String.pad_leading("#{length(rest) - idx}", 3, "0") %></div>
-                <div class="ff-mono" style="font-size:11px; color: var(--ink-3);">
-                  <%= mono_date(post.created_at) %> · <%= post.read_minutes %> <%= gettext("min") %>
+              <%= if post.cover_image do %>
+                <img
+                  src={post.cover_image}
+                  alt=""
+                  style="width:104px; height:70px; flex:none; object-fit:cover; border-radius:8px; border:1px solid var(--rule);"
+                />
+              <% else %>
+                <div class="ff-ph" style="width:104px; height:70px; flex:none; border-radius:8px;">
                 </div>
-              </div>
-              <div
-                class="ff-serif"
-                style="font-size:22px; font-weight:500; margin:6px 0 6px; line-height:1.2;"
-              >
-                <%= post.title %>
-              </div>
-              <div style="display:flex; gap:10px; flex-wrap: wrap;">
-                <%= for t <- post.tags do %>
-                  <span class="ff-tag">#<%= t %></span>
-                <% end %>
+              <% end %>
+              <div style="flex:1; min-width:0;">
+                <div style="display:flex; justify-content: space-between; align-items: baseline; gap: 12px;">
+                  <div class="ff-idx">
+                    № <%= String.pad_leading("#{length(rest) - idx}", 3, "0") %>
+                  </div>
+                  <div class="ff-mono" style="font-size:11px; color: var(--ink-3);">
+                    <%= mono_date(post.created_at) %> · <%= post.read_minutes %> <%= gettext("min") %>
+                  </div>
+                </div>
+                <div
+                  class="ff-serif"
+                  style="font-size:22px; font-weight:500; margin:6px 0 6px; line-height:1.2;"
+                >
+                  <%= post.title %>
+                </div>
+                <div style="display:flex; gap:10px; flex-wrap: wrap;">
+                  <%= for t <- post.tags do %>
+                    <span class="ff-tag">#<%= t %></span>
+                  <% end %>
+                </div>
               </div>
             </a>
           <% end %>
