@@ -5,7 +5,7 @@ defmodule FrankFerreiraWeb.HomeLive do
   def mount(_params, session, socket) do
     locale = Map.get(session, "locale", socket.assigns[:locale] || "en")
     posts = Blog.published_posts(locale) |> Enum.take(3)
-    shipped = FrankFerreira.Projects.featured(3)
+    shipped = FrankFerreira.Projects.recent(3)
     if connected?(socket), do: Process.send_after(self(), :tick, 60_000)
 
     {:ok,
@@ -73,6 +73,7 @@ defmodule FrankFerreiraWeb.HomeLive do
                   >
                     agendaletiva.com.br
                   </a>
+                  🔥
                 </li>
                 <li>→ <%= gettext("organizing dev communities on weekends") %></li>
               </ul>
@@ -187,13 +188,8 @@ defmodule FrankFerreiraWeb.HomeLive do
                 <% end %>
               </div>
               <div>
-                <div style="display:flex; align-items:center; gap:8px;">
-                  <div class="ff-serif" style="font-size:19px; font-weight:500;">
-                    <%= project.name %>
-                  </div>
-                  <%= if project[:highlight] do %>
-                    <span aria-label="highlight" title="highlight">🔥</span>
-                  <% end %>
+                <div class="ff-serif" style="font-size:19px; font-weight:500;">
+                  <%= project.name %>
                 </div>
                 <div style="font-size:13px; color: var(--ink-3); margin-top:4px;">
                   <%= project.description %>

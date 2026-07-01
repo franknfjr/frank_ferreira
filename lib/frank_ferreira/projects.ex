@@ -4,10 +4,6 @@ defmodule FrankFerreira.Projects do
 
   Both the Projects index (`FrankFerreiraWeb.ProjectsLive`) and the home page
   "Recently shipped" section read from here, so the two never drift apart.
-
-  A project can carry `highlight: true` to be pinned and featured on the home
-  page (rendered with a 🔥). This is a manual, editorial flag: it does not
-  follow any date logic, you set it by hand on whatever launch you want to push.
   """
 
   import FrankFerreiraWeb.Gettext
@@ -186,7 +182,6 @@ defmodule FrankFerreira.Projects do
         name: "Agenda Letiva",
         date: ~D[2025-12-01],
         image: "/images/agendaletiva.png",
-        highlight: true,
         description:
           gettext(
             "School management platform for student assessments, grades, and academic scheduling."
@@ -333,17 +328,11 @@ defmodule FrankFerreira.Projects do
   end
 
   @doc """
-  Projects for the home page "Recently shipped" strip.
-
-  Any project flagged `highlight: true` is pinned first (that is the 🔥 launch),
-  and the remaining slots are filled with the most recently dated projects.
+  The most recently dated projects, for the home page "Recently shipped" strip.
   """
-  def featured(limit \\ 3) do
-    {pinned, rest} = Enum.split_with(list(), &(&1[:highlight] == true))
-    rest = Enum.sort_by(rest, & &1.date, {:desc, Date})
-
-    (pinned ++ rest)
-    |> Enum.uniq_by(& &1.id)
+  def recent(limit \\ 3) do
+    list()
+    |> Enum.sort_by(& &1.date, {:desc, Date})
     |> Enum.take(limit)
   end
 end
