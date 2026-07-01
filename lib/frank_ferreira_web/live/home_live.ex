@@ -5,8 +5,11 @@ defmodule FrankFerreiraWeb.HomeLive do
   def mount(_params, session, socket) do
     locale = Map.get(session, "locale", socket.assigns[:locale] || "en")
     posts = Blog.published_posts(locale) |> Enum.take(3)
+    shipped = FrankFerreira.Projects.featured(3)
     if connected?(socket), do: Process.send_after(self(), :tick, 60_000)
-    {:ok, assign(socket, posts: posts, locale: locale, now: format_local_time())}
+
+    {:ok,
+     assign(socket, posts: posts, shipped: shipped, locale: locale, now: format_local_time())}
   end
 
   def handle_info(:tick, socket) do
@@ -37,7 +40,7 @@ defmodule FrankFerreiraWeb.HomeLive do
               ) %>
             </p>
             <div style="display:flex; gap: 12px; margin-top: 32px; flex-wrap: wrap;">
-              <a href="/blog" class="ff-btn"><%= gettext("Read the journal") %> →</a>
+              <a href="/blog" class="ff-btn"><%= gettext("Read articles") %> →</a>
               <a href="/projects" class="ff-btn ghost"><%= gettext("See projects") %></a>
             </div>
           </div>
@@ -162,34 +165,45 @@ defmodule FrankFerreiraWeb.HomeLive do
         </div>
 
         <div class="grid gap-4" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
-          <%= for {img, name, blurb, date, url} <- [
-            {"agendaletiva.png", "Agenda Letiva", gettext("School management. Phoenix · LiveView."), "25·12·01", "https://agendaletiva.com.br"},
-            {"entregadordasgalaxias.png", "Entregador das Galáxias", gettext("A space delivery game for my niece."), "26·03·06", "https://entregadordasgalaxias.frankferreira.com.br"},
-            {"tarefinhas.png", "Tarefinhas", gettext("Task manager for Android. RN · Expo."), "26·02·14", "https://tarefinhas.frankferreira.com.br"}
-          ] do %>
+          <%= for project <- @shipped do %>
             <a
-              href={url}
-              target="_blank"
-              rel="noopener"
+              href={project.url || "/projects"}
+              target={if project.url, do: "_blank", else: nil}
+              rel={if project.url, do: "noopener", else: nil}
               class="ff-card"
               style="padding:18px; display:flex; flex-direction:column; gap:14px; text-decoration:none; color: inherit;"
             >
-              <div style="aspect-ratio: 2 / 1; border-radius:8px; overflow:hidden; background: var(--paper-2);">
-                <img
-                  src={"/images/projects-card/" <> img}
-                  alt=""
-                  style="width:100%; height:100%; object-fit:cover; display:block;"
-                />
+              <div style="aspect-ratio: 2 / 1; border-radius:8px; overflow:hidden; background: var(--paper-2); display:flex; align-items:center; justify-content:center;">
+                <%= if project.image do %>
+                  <img
+                    src={project.image}
+                    alt=""
+                    style="width:100%; height:100%; object-fit:cover; display:block;"
+                  />
+                <% else %>
+                  <span class="ff-proj-glyph" style="font-size: 34px;" aria-hidden="true">
+                    <%= String.first(project.name) %>
+                  </span>
+                <% end %>
               </div>
               <div>
-                <div class="ff-serif" style="font-size:19px; font-weight:500;"><%= name %></div>
-                <div style="font-size:13px; color: var(--ink-3); margin-top:4px;"><%= blurb %></div>
+                <div style="display:flex; align-items:center; gap:8px;">
+                  <div class="ff-serif" style="font-size:19px; font-weight:500;">
+                    <%= project.name %>
+                  </div>
+                  <%= if project[:highlight] do %>
+                    <span aria-label="highlight" title="highlight">🔥</span>
+                  <% end %>
+                </div>
+                <div style="font-size:13px; color: var(--ink-3); margin-top:4px;">
+                  <%= project.description %>
+                </div>
               </div>
               <div
                 class="ff-mono"
                 style="font-size:11px; color: var(--ink-4); display:flex; justify-content:space-between;"
               >
-                <span><%= date %></span>
+                <span><%= FrankFerreiraWeb.Format.mono_date_short(project.date) %></span>
                 <span style="color: var(--accent);"><%= gettext("open") %> ↗</span>
               </div>
             </a>
